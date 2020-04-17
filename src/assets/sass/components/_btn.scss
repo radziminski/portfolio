@@ -1,0 +1,20 @@
+.btn {
+    display: block;
+    outline: none;
+    text-transform: none;
+    border: none;
+    color: $color-black;
+    font: inherit;
+    font-size: 2rem;
+    background-color: $color-primary;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    display: inline-block;
+    margin-right: 3rem;
+
+    &--ghost {
+        border: 2px solid $color-primary;
+        background-color: transparent;
+        color: $color-primary;
+    }
+}

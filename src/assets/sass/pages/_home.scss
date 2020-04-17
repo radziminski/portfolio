@@ -1,0 +1,34 @@
+.section {
+    
+    &--white {
+        padding: $gutter-section-start 0 $gutter-section-end 0;
+        background-color: $color-white;
+
+        @include respond(tab-land) {
+            padding: 3.5rem 0 8rem 0;
+        }
+        @include respond(tab-port) {
+            padding: 3rem 0 6rem 0;
+        }
+
+        
+    }
+
+    &--grey {
+        padding: $gutter-section-start 0 $gutter-section-end 0;
+        background-color: $color-grey-light;
+
+        @include respond(tab-land) {
+            padding: 3.5rem 0 8rem 0;
+        }
+        @include respond(tab-port) {
+            padding: 3rem 0 6rem 0;
+        }
+
+    }
+
+}
+
+.footer {
+   
+}

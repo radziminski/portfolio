@@ -1,0 +1,21 @@
+.logo {
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    top: 6rem;
+    left: 18rem;
+    line-height: 4.1rem;
+    z-index: 10;
+
+    &__firstName {
+        color: $color-white;
+        padding: 0.3rem 0.6rem;
+    }
+
+    &__lastName {
+        padding: 0.3rem 0.6rem;
+        background-color: $color-white;
+        color: $color-dark;
+    }
+}
