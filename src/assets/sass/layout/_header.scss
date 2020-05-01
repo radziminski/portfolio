@@ -14,7 +14,7 @@
     &__heading-top {
         font-size: 2rem;
         color: $color-primary;
-        font-weight: 500;
+        font-weight: 600;
         position: relative;
         padding-left: 5rem;
         text-transform: uppercase;
@@ -23,7 +23,7 @@
 
         &:before {
             display: block;
-            content: '';
+            content: "";
             position: absolute;
             top: 50%;
             left: 0;

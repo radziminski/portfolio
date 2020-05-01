@@ -1,39 +1,40 @@
-import React, { Component } from 'react';
-import Logo from '../components/Logo';
-import Nav from '../components/Nav';
+import React, { Component } from "react";
+import Logo from "../components/Logo";
+import Nav from "../components/Nav";
 //import Linker from '../components/Linker';
-import Btn from '../components/Btn';
+import Btn from "../components/Btn";
+import NavBar from "../components/NavBar";
 
 export class Header extends Component {
     state = {
-        greetingMsg: 'Good evening!',
+        greetingMsg: "Good evening!",
     };
 
     componentDidMount() {
         let dayTime = new Date().getHours();
         console.log(dayTime);
         if (dayTime < 12 && dayTime > 4) {
-            this.setState({ greetingMsg: 'Good morning!' });
+            this.setState({ greetingMsg: "Good morning!" });
         } else if (dayTime < 18) {
-            this.setState({ greetingMsg: 'Good afternoon!' });
+            this.setState({ greetingMsg: "Good afternoon!" });
         }
     }
 
     render() {
         return (
             <header className="header">
-                <Logo />
-                <Nav />
+                {/* <Logo /> */}
+                {/* <Nav /> */}
                 {/* <Linker /> */}
+                <NavBar />
                 <div className="header__heading-box">
                     <div className="header__heading-top">{this.state.greetingMsg}</div>
                     <div className="header__heading-primary">
                         I'm <span className="u-color-primary">Jan</span> Radzimiński
                     </div>
                     <p className="header__about">
-                        Full-stack developer, computer scientist and music producer.Nisi
-                        reprehenderit nisi cillum sit. In laborum reprehenderit aliquip et et amet
-                        sit quis enim voluptate duis.
+                        Full-stack developer, computer scientist and music producer.Nisi reprehenderit nisi cillum sit.
+                        In laborum reprehenderit aliquip et et amet sit quis enim voluptate duis.
                     </p>
                     {/* <div className="header__heading-secondary">
                         <span>Full Stack Developer</span>

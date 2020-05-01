@@ -1,20 +1,22 @@
-@import './abstracts/functions';
-@import './abstracts/mixins';
-@import './abstracts/variables';
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
 
-@import './base/animations';
-@import './base/base';
-@import './base/typography';
-@import './base/utilities';
-@import './components/logo';
-@import './components/linker';
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+@import "./components/logo";
+@import "./components/linker";
 //COMPONENTS//
-@import './components/btn';
-@import './components/nav';
+@import "./components/btn";
+@import "./components/nav";
 
-@import './layout/hamburger';
-@import './layout/header';
-@import './layout/background';
+@import "./layout/hamburger";
+@import "./layout/header";
+@import "./layout/background";
+@import "./layout/navbar";
 //LAYOUTS//
 
-@import './pages/home';
+@import "./pages/home";

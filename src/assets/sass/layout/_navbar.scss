@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 12rem;
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        color: $color-white;
+    }
+
+    &__item {
+        text-decoration: none;
+        color: $color-grey-light;
+        padding: 1rem 2.5rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+}
