@@ -1,5 +1,6 @@
-import React from "react";
-import Logo from "./Logo";
+import React from 'react';
+import Logo from './Logo';
+import Language from './Language';
 
 const NavBar = () => {
     return (
@@ -13,6 +14,7 @@ const NavBar = () => {
                 <li className="navbar__item">Experiance</li>
                 <li className="navbar__item">Contact</li>
             </ul>
+            <Language />
         </div>
     );
 };

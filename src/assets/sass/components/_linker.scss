@@ -1,25 +1,18 @@
 .linker {
+    display: block;
     position: absolute;
-    height: 100vh;
     top: 0;
-    left: 9rem;
-    display: flex;
-    width: 4rem;
-    justify-content: space-between;
-    z-index: 2;
+    left: 50%;
+    transform: translate(-50%);
+    width: 5.5rem;
+    height: 2rem;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 
-    &__line {
-        height: 100%;
-        width: 2px;
+    &--dark {
+        background-color: $color-x-dark;
+    }
 
-        opacity: 0.55;
-        //box-shadow: 0 0 0.4rem rgba($color-primary, 0.5);
-        &:first-child {
-            background-image: linear-gradient(to bottom, $color-grey 85%, transparent 95%);
-        }
-
-        &:last-child {
-            background-image: linear-gradient(to bottom, $color-grey 75%, transparent 85%);
-        }
+    &--light {
+        background-color: $color-dark;
     }
 }

@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: $color-dark;
+    color: $color-grey-light;
+    font-size: 1.8rem;
+
+    &__upper {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    &__lower {
+        font-size: 1.4rem;
+    }
+}

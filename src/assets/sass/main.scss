@@ -1,22 +1,34 @@
-@import "./abstracts/functions";
-@import "./abstracts/mixins";
-@import "./abstracts/variables";
+@import './abstracts/functions';
+@import './abstracts/mixins';
+@import './abstracts/variables';
 
-@import "./base/animations";
-@import "./base/base";
-@import "./base/typography";
-@import "./base/utilities";
+@import './base/animations';
+@import './base/base';
+@import './base/typography';
+@import './base/utilities';
 
-@import "./components/logo";
-@import "./components/linker";
+@import './components/logo';
+@import './components/linker';
 //COMPONENTS//
-@import "./components/btn";
-@import "./components/nav";
+@import './components/two-side-card';
+@import './components/projects';
+@import './components/linker';
+@import './components/placeholder';
+@import './components/placeholder';
+@import './components/paragraph';
+@import './components/contact-form';
+@import './components/btn';
+@import './components/nav';
+@import './components/language';
+@import './components/socials';
+@import './components/contact-list';
 
-@import "./layout/hamburger";
-@import "./layout/header";
-@import "./layout/background";
-@import "./layout/navbar";
+@import './layout/hamburger';
+@import './layout/header';
+@import './layout/background';
+@import './layout/navbar';
+@import './layout/grid';
+@import './layout/footer';
 //LAYOUTS//
 
-@import "./pages/home";
+@import './pages/home';

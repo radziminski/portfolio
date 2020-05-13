@@ -5,3 +5,68 @@ body {
     line-height: 1.7;
     color: $color-grey-dark;
 }
+
+.section-title {
+    color: $color-primary;
+    font-size: 3.6rem;
+    padding-left: 5.5rem;
+    position: relative;
+    font-weight: 500;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        background-color: $color-primary;
+        height: 3px;
+        width: 4rem;
+    }
+
+    &--centered {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0 4.5rem;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: $color-primary;
+            height: 3px;
+            width: 3.5rem;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: $color-primary;
+            height: 3px;
+            width: 3.5rem;
+        }
+    }
+
+    &--right {
+        padding-left: 0;
+        padding-right: 5.5rem;
+
+        &:after {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+.section-paragraph {
+    font-size: 2rem;
+    color: $color-grey-light;
+}

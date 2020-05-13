@@ -11,10 +11,40 @@
     padding: 1rem 2.5rem;
     display: inline-block;
     margin-right: 3rem;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.08);
+    }
+
+    &:active {
+        transform: translateY(0.2rem) scale(1.04);
+    }
 
     &--ghost {
         border: 2px solid $color-primary;
         background-color: transparent;
         color: $color-primary;
+    }
+
+    &--ghost-off {
+        border: 2px solid $color-grey;
+        background-color: transparent;
+        color: $color-grey;
+        cursor: auto;
+
+        &:hover {
+            transform: none;
+        }
+
+        &:active {
+            transform: none;
+        }
+    }
+
+    &--wide {
+        padding: 0.6rem 3rem;
+        font-size: 1.8rem;
+        margin-right: 0rem;
     }
 }

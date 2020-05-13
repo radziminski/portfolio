@@ -23,7 +23,7 @@
 
         &:before {
             display: block;
-            content: "";
+            content: '';
             position: absolute;
             top: 50%;
             left: 0;
@@ -54,5 +54,27 @@
         font-weight: 300;
         display: flex;
         justify-content: space-around;
+    }
+
+    &__scroll-btn {
+        color: $color-grey-light;
+        position: absolute;
+        right: 20%;
+        bottom: 5rem;
+        transform: translate(-50%, -50%);
+        font-size: 3.8rem;
+        transition: color 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__socials {
+        position: absolute;
+        right: 12rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }

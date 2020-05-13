@@ -10,7 +10,6 @@ html {
     // This defines what 1rem is (currently 10px)
     font-size: 62.5%;
 
-
     @include respond(small-deskt) {
         font-size: 59%;
     }
@@ -23,7 +22,6 @@ html {
         font-size: 50%;
     }
 
-
     @include respond(big-deskt) {
         font-size: 75%;
     }
@@ -32,4 +30,24 @@ html {
 body {
     background-color: white;
     box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    font: inherit;
+    background-color: inherit;
+    color: inherit;
+    outline: none;
 }

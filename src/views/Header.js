@@ -1,37 +1,39 @@
-import React, { Component } from "react";
-import Logo from "../components/Logo";
-import Nav from "../components/Nav";
+import React, { Component } from 'react';
+import Logo from '../components/Logo';
+import Nav from '../components/Nav';
 //import Linker from '../components/Linker';
-import Btn from "../components/Btn";
-import NavBar from "../components/NavBar";
+import Btn from '../components/Btn';
+import NavBar from '../components/NavBar';
+import SocialsBar from '../components/SocialsBar';
+import { FiArrowDownCircle } from 'react-icons/fi';
 
 export class Header extends Component {
     state = {
-        greetingMsg: "Good evening!",
+        greetingMsg: 'Good evening!',
     };
 
     componentDidMount() {
         let dayTime = new Date().getHours();
         console.log(dayTime);
         if (dayTime < 12 && dayTime > 4) {
-            this.setState({ greetingMsg: "Good morning!" });
+            this.setState({ greetingMsg: 'Good morning!' });
         } else if (dayTime < 18) {
-            this.setState({ greetingMsg: "Good afternoon!" });
+            this.setState({ greetingMsg: 'Good afternoon!' });
         }
     }
 
     render() {
         return (
             <header className="header">
-                {/* <Logo /> */}
-                {/* <Nav /> */}
-                {/* <Linker /> */}
                 <NavBar />
+                <div className="header__socials">
+                    <SocialsBar />
+                </div>
                 <div className="header__heading-box">
                     <div className="header__heading-top">{this.state.greetingMsg}</div>
-                    <div className="header__heading-primary">
+                    <h1 className="header__heading-primary">
                         I'm <span className="u-color-primary">Jan</span> Radzimiński
-                    </div>
+                    </h1>
                     <p className="header__about">
                         Full-stack developer, computer scientist and music producer.Nisi reprehenderit nisi cillum sit.
                         In laborum reprehenderit aliquip et et amet sit quis enim voluptate duis.
@@ -41,9 +43,12 @@ export class Header extends Component {
                         <span>|</span>
                         <span>Music Producer</span>
                     </div> */}
-                    <Btn>Download CV</Btn>
-                    <Btn type="ghost">About me</Btn>
+                    <Btn>Contact Me</Btn>
+                    <Btn type="ghost">About</Btn>
                 </div>
+                <button className="header__scroll-btn">
+                    <FiArrowDownCircle />
+                </button>
             </header>
         );
     }

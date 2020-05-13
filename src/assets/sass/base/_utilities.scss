@@ -1,3 +1,33 @@
 .u-color-primary {
     color: $color-primary;
 }
+
+.u-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.u-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.u-x-margin-top {
+    margin-top: 10rem;
+}
+
+.u-b-margin-top {
+    margin-top: 6rem;
+}
+
+.u-m-margin-top {
+    margin-top: 3rem;
+}
+
+.u-m-margin-left {
+    margin-left: 3rem;
+}
+
+.u-b-margin-left {
+    margin-left: 6rem;
+}
