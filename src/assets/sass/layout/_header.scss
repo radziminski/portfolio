@@ -143,5 +143,8 @@
             left: 30%;
             bottom: 3.6rem;
         }
+        @include respond(x-small-phone) {
+            left: 33%;
+        }
     }
 }
