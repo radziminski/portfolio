@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Logo from '../components/Logo';
-import Nav from '../components/Nav';
+
 //import Linker from '../components/Linker';
 import Btn from '../components/Btn';
-import NavBar from '../components/NavBar';
+
 import SocialsBar from '../components/SocialsBar';
 import { FiArrowDownCircle } from 'react-icons/fi';
 
@@ -23,11 +22,12 @@ export class Header extends Component {
     }
 
     render() {
+        let socialsBarType = 'vertical';
+        if (window.innerWidth < 725) socialsBarType = 'horizontal';
         return (
             <header className="header">
-                <NavBar />
                 <div className="header__socials">
-                    <SocialsBar />
+                    <SocialsBar type={socialsBarType} />
                 </div>
                 <div className="header__heading-box">
                     <div className="header__heading-top">{this.state.greetingMsg}</div>

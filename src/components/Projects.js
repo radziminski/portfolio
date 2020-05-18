@@ -5,12 +5,45 @@ import { AiFillHtml5 } from 'react-icons/ai';
 import { DiCss3, DiJavascript1, DiReact, DiMongodb, DiFirebase } from 'react-icons/di';
 import { FaNode } from 'react-icons/fa';
 import Btn from './Btn';
+import SelectInput from './SelectInput';
+
+const filterOptions = [
+    {
+        id: 'all',
+        name: 'All',
+    },
+    {
+        id: 'html',
+        name: 'HTML | CSS',
+    },
+    {
+        id: 'js',
+        name: 'Javascript',
+    },
+    {
+        id: 'react',
+        name: 'React | Redux',
+    },
+    {
+        id: 'nodejs',
+        name: 'Node.JS',
+    },
+    {
+        id: 'other',
+        name: 'Others',
+    },
+];
 
 class Projects extends Component {
-    maxCardsNum = 6;
+    getMaxCardsNum = () => {
+        if (window.innerWidth <= 600) return 3;
+        if (window.innerWidth <= 900) return 4;
+        return 6;
+    };
+
     state = {
-        showCardsNum: this.maxCardsNum,
-        currFilter: null,
+        showCardsNum: this.getMaxCardsNum(),
+        currFilter: 'all',
     };
 
     getTechIcon = (tech) => {
@@ -38,7 +71,6 @@ class Projects extends Component {
 
     filter = (e) => {
         if (!e.target.id) return;
-        if (e.target.id === 'all' || e.target.id === this.state.currFilter) this.setState({ currFilter: null });
         else this.setState({ currFilter: e.target.id });
     };
 
@@ -54,7 +86,7 @@ class Projects extends Component {
     render() {
         let filteredProjects = [...projects];
 
-        if (this.state.currFilter) {
+        if (this.state.currFilter && this.state.currFilter !== 'all') {
             filteredProjects = filteredProjects.filter((el) => el.stack.includes(this.state.currFilter));
         }
 
@@ -81,6 +113,24 @@ class Projects extends Component {
             </div>
         );
 
+        let projectFilter = (
+            <ul className="projects__filter" onClick={this.filter}>
+                {filterOptions.map((el, id) => (
+                    <li key={id} className={this.getFilterBtnClass(el.id)} id={el.id}>
+                        {el.name}
+                    </li>
+                ))}
+            </ul>
+        );
+
+        if (window.innerWidth < 600) {
+            projectFilter = (
+                <div className="u-centered u-m-margin-top">
+                    <SelectInput title="Filter" list={filterOptions} filter={this.filter} />
+                </div>
+            );
+        }
+
         if (filteredProjects.length === initLength) {
             loadMoreBtn = (
                 <div className="projects__btn projects__btn">
@@ -93,26 +143,7 @@ class Projects extends Component {
 
         return (
             <div className="projects">
-                <ul className="projects__filter" onClick={this.filter}>
-                    <li className={this.getFilterBtnClass(null)} id="all">
-                        All
-                    </li>
-                    <li className={this.getFilterBtnClass('html')} id="html">
-                        HTML&nbsp;|&nbsp;CSS
-                    </li>
-                    <li className={this.getFilterBtnClass('js')} id="js">
-                        Javascript
-                    </li>
-                    <li className={this.getFilterBtnClass('react')} id="react">
-                        React&nbsp;|&nbsp;Redux
-                    </li>
-                    <li className={this.getFilterBtnClass('nodejs')} id="nodejs">
-                        Node.JS
-                    </li>
-                    <li className={this.getFilterBtnClass('other')} id="other">
-                        Others
-                    </li>
-                </ul>
+                {projectFilter}
                 <div className="projects__container">{cards}</div>
                 {loadMoreBtn}
             </div>

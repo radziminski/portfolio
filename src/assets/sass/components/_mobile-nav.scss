@@ -1,0 +1,32 @@
+.mobile-nav {
+    display: block;
+    position: absolute;
+    color: red;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+    font-size: 2.3rem;
+    color: $color-primary;
+
+    @include respond(small-phone) {
+        font-size: 2.2rem;
+    }
+
+    &__element {
+        display: block;
+        width: 100%;
+        padding: 2.5rem;
+        text-align: center;
+        background-color: $color-x-dark;
+        animation: move-in-down 0.15s ease-out;
+        cursor: pointer;
+
+        &:nth-child(even) {
+            background-color: $color-dark;
+        }
+
+        &:hover {
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.mobile-nav-icon {
+    display: block;
+    width: 48px;
+    height: 31px;
+    display: none;
+    cursor: pointer;
+    z-index: 180;
+
+    &__bar {
+        width: 100%;
+        display: block;
+        height: 5px;
+        background-color: $color-primary;
+        transition: opacity 0.2s, transform 0.2s;
+        opacity: 1;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &--active &__bar {
+        &:first-child {
+            transform: translateY(13px) rotate(45deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:last-child {
+            transform: translateY(-13px) rotate(-45deg);
+        }
+    }
+
+    @include respond(tab-port) {
+        display: block;
+    }
+
+    @include respond(phone) {
+        width: 45px;
+        height: 28px;
+
+        &__bar {
+            height: 4px;
+
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+
+        &--active &__bar {
+            &:first-child {
+                transform: translateY(12px) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: translateY(-12px) rotate(-45deg);
+            }
+        }
+    }
+    @include respond(small-phone) {
+        &__bar {
+            &:not(:last-child) {
+                margin-bottom: 7px;
+            }
+        }
+
+        &--active &__bar {
+            &:first-child {
+                transform: translateY(11px) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: translateY(-11px) rotate(-45deg);
+            }
+        }
+    }
+}

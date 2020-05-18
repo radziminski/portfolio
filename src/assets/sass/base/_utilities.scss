@@ -31,3 +31,43 @@
 .u-b-margin-left {
     margin-left: 6rem;
 }
+
+.u-x-margin-left {
+    margin-left: 10rem;
+}
+
+.u-xx-margin-left {
+    margin-left: 15rem;
+
+    @include respond(tab-port) {
+        margin-left: 10rem;
+    }
+    @include respond(phone) {
+        margin-left: 7rem;
+    }
+}
+
+.u-m-margin-right {
+    margin-left: 3rem;
+}
+
+.u-m-padding-right {
+    padding-right: 3rem;
+}
+
+.u-m-padding-left {
+    padding-left: 3rem;
+}
+
+.u-normal-wordspacing {
+    word-spacing: normal;
+}
+
+.u-pos-relative {
+    position: relative;
+}
+
+.u-full-size {
+    width: 100%;
+    height: 100%;
+}

@@ -1,38 +1,104 @@
 .section {
-    &--light {
+    &--light,
+    &--dark {
         padding: $gutter-section-start $gutter-horizontal $gutter-section-end $gutter-horizontal;
-        background-color: $color-dark;
         position: relative;
 
+        @include respond(small-deskt) {
+            padding: $gutter-section-start-small $gutter-horizontal-small $gutter-section-end-small
+                $gutter-horizontal-small;
+        }
         @include respond(tab-land) {
-            padding: 3.5rem 0 8rem 0;
+            padding: $gutter-section-start-tab $gutter-horizontal-tab $gutter-section-end-tab $gutter-horizontal-tab;
         }
         @include respond(tab-port) {
-            padding: 3rem 0 6rem 0;
+            padding: $gutter-section-start-min $gutter-horizontal-min $gutter-section-end-min $gutter-horizontal-min;
+        }
+        @include respond(small-phone) {
+            padding: $gutter-section-start-micro $gutter-horizontal-micro $gutter-section-end-micro
+                $gutter-horizontal-micro;
         }
     }
 
+    &--light {
+        background-color: $color-dark;
+    }
+
     &--dark {
-        padding: $gutter-section-start $gutter-horizontal $gutter-section-end $gutter-horizontal;
         background-color: $color-x-dark;
         color: $color-grey-light;
-        position: relative;
-
-        @include respond(tab-land) {
-            padding: 3.5rem 0 8rem 0;
-        }
-        @include respond(tab-port) {
-            padding: 3rem 0 6rem 0;
-        }
     }
 
     &--col {
         display: flex;
         justify-content: space-between;
     }
+
+    &--col-tab-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(small-tab-port) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &--col-phone-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(phone) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &--row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
-.section-about {
+.section-skills {
+    position: relative;
+
+    &__title {
+        transform: rotate(-90deg) translate(2rem, -120%);
+        position: absolute;
+        top: 50%;
+
+        @include respond(small-tab-port) {
+            position: relative;
+            transform: none;
+        }
+    }
+
+    &__others {
+        color: $color-grey-light;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        text-align: justify;
+        padding: 2rem 2rem 0 2rem;
+        word-spacing: 0.6rem;
+
+        @include respond(tab-port) {
+            font-size: 1.6rem;
+        }
+        @include respond(small-tab-port) {
+            font-size: 1.6rem;
+            width: 95%;
+            padding: 0;
+            margin: 2rem auto;
+            max-width: 70rem;
+        }
+    }
 }
 
 .section-contact {
@@ -43,6 +109,20 @@
         position: absolute;
         bottom: 0;
         left: -2.5rem;
+        @include respond(phone) {
+            right: 8rem;
+            left: auto;
+        }
+        @include respond(small-phone) {
+            right: 4rem;
+        }
+    }
+
+    &__info {
+        position: relative;
+        @include respond(phone) {
+            padding-bottom: 10rem;
+        }
     }
 }
 

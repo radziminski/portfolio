@@ -6,12 +6,12 @@ import Linker from '../components/Linker';
 
 const About = () => {
     return (
-        <section className="section-about section--dark section--col">
+        <section className={`section-about section--dark section--col-tab-wrap`}>
             <Linker type="light" />
-            <div className="col-1-of-3">
+            <div className="col-1-of-3 col-1-of-3--tab-wrap">
                 <Placeholder width="100%" height="100%" />
             </div>
-            <div className="col-2-of-3 u-b-margin-left">
+            <div className="col-2-of-3 col-2-of-3--tab-wrap u-b-margin-left">
                 <SectionTitle>About</SectionTitle>
                 <Paragraph>
                     Laborum officia veniam voluptate commodo est excepteur dolore pariatur voluptate elit tempor. Irure

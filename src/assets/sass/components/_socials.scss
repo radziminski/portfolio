@@ -25,6 +25,18 @@
             color: $color-primary;
             transform: scale(1.2);
         }
+
+        @include respond(tab-port) {
+            font-size: 2.8rem;
+        }
+
+        @include respond(small-tab-port) {
+            font-size: 3rem;
+        }
+
+        @include respond(phone) {
+            padding: 0.6rem 1.8rem;
+        }
     }
 
     &:hover &__element:not(:hover) {

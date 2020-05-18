@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer__upper">&copy; Copyright 2020</div>
             <div className="footer__lower">
-                Made by <span className="u-color-primary">Jan Radzimiński</span>
+                Created by <span className="u-color-primary">Jan Radzimiński</span>
             </div>
         </footer>
     );

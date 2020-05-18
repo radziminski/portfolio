@@ -8,7 +8,9 @@
 
 /* 
     Breakpoint arguments:
+    - small-phone
     - phone
+    - small-tab-port
     - tab-port
     - tab-land
     - big-deskt
@@ -25,6 +27,13 @@
     @if ($breakpoint) == phone {
         @media (max-width: 37.5em) {
             // 600 px
+            @content;
+        }
+    }
+
+    @if ($breakpoint) == small-tab-port {
+        @media (max-width: 45.25em) {
+            // 720 px
             @content;
         }
     }

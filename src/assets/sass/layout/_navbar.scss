@@ -1,13 +1,65 @@
 .navbar {
     display: flex;
-    justify-content: space-evenly;
-    padding: 4rem 12rem;
+    justify-content: space-between;
+    padding: 4rem 12%;
+    background-color: $color-dark;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: border 0.2s, box-shadow 0.2s, padding 0.2s;
+
+    @include respond(small-deskt) {
+        padding: 4rem 8%;
+    }
+    @include respond(tab-land) {
+        padding: 4rem 5rem;
+    }
+
+    @include respond(tab-port) {
+        justify-content: space-between;
+        padding: 6rem 9%;
+        align-items: center;
+        position: fixed;
+        z-index: 180;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color-dark;
+
+        &--sticked {
+            padding: 5rem 9%;
+            box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.25);
+            border-bottom: 2px solid rgba($color-x-dark, 0.7);
+        }
+    }
+
+    @include respond(phone) {
+        &--sticked {
+            padding: 4.5rem 9%;
+        }
+    }
+
+    @include respond(small-phone) {
+        padding: 4rem 9%;
+        &--sticked {
+            padding: 4rem 9%;
+        }
+    }
+
+    &--sticked {
+    }
 
     &__menu {
         list-style: none;
         display: flex;
         justify-content: space-around;
         color: $color-white;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+        z-index: 180;
     }
 
     &__item {
@@ -18,9 +70,29 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         cursor: pointer;
+        transition: all 0.2s;
+
+        @include respond(tab-land) {
+            padding: 1rem 1.2rem;
+            font-size: 1.6rem;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            margin: 0.4rem auto;
+            width: 0%;
+            height: 1px;
+            background-color: $color-primary;
+            transition: width 0.2s;
+        }
 
         &:hover {
             color: $color-primary;
+
+            &:after {
+                width: 80%;
+            }
         }
     }
 }

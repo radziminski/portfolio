@@ -9,6 +9,15 @@
         left: 40%;
         transform: translate(-50%, -50%);
         text-align: left;
+
+        @include respond(small-tab-port) {
+            width: 80%;
+            left: 50%;
+        }
+
+        @include respond(small-phone) {
+            top: 50%;
+        }
     }
 
     &__heading-top {
@@ -32,6 +41,10 @@
             height: 2px;
             background-color: $color-primary;
         }
+
+        @include respond(small-phone) {
+            font-size: 1.6rem;
+        }
     }
 
     &__about {
@@ -41,12 +54,28 @@
         font-weight: 300;
         max-width: 70rem;
         margin-bottom: 4rem;
+
+        @include respond(small-phone) {
+            font-size: 1.7rem;
+        }
     }
 
     &__heading-primary {
         font-size: 5.5rem;
         color: $color-white;
         font-weight: 600;
+
+        @include respond(phone) {
+            font-size: 4.5rem;
+            line-height: 5rem;
+            margin: 2.5rem 0;
+        }
+
+        @include respond(small-phone) {
+            font-size: 4.2rem;
+            line-height: 4.5rem;
+            margin: 2rem 0;
+        }
     }
     &__heading-secondary {
         font-size: 2.5rem;
@@ -54,6 +83,9 @@
         font-weight: 300;
         display: flex;
         justify-content: space-around;
+        @include respond(small-phone) {
+            font-size: 2rem;
+        }
     }
 
     &__scroll-btn {
@@ -69,12 +101,47 @@
         &:hover {
             color: $color-primary;
         }
+
+        @include respond(tab-port) {
+            bottom: 7rem;
+        }
+
+        @include respond(small-tab-port) {
+            transform: translate(-50%, 0);
+            bottom: 8rem;
+            right: 18%;
+        }
+        @include respond(phone) {
+            right: 16%;
+        }
+
+        @include respond(small-phone) {
+            right: 6%;
+            bottom: 3.6rem;
+        }
     }
 
     &__socials {
         position: absolute;
-        right: 12rem;
+        right: 9%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        @include respond(tab-port) {
+            right: 6rem;
+        }
+
+        @include respond(small-tab-port) {
+            top: auto;
+            right: auto;
+            bottom: 8rem;
+            left: 17rem;
+            transform: translate(-50%, 0);
+        }
+
+        @include respond(small-phone) {
+            left: 30%;
+            bottom: 3.6rem;
+        }
     }
 }

@@ -1,22 +1,54 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Logo from './Logo';
 import Language from './Language';
+import MobileNav from './MobileNav';
+import Modal from './Modal';
 
-const NavBar = () => {
-    return (
-        <div className="navbar">
-            <Logo />
-            <ul className="navbar__menu">
-                <li className="navbar__item">Home</li>
-                <li className="navbar__item">About</li>
-                <li className="navbar__item">Projects</li>
-                <li className="navbar__item">Education</li>
-                <li className="navbar__item">Experiance</li>
-                <li className="navbar__item">Contact</li>
-            </ul>
-            <Language />
-        </div>
-    );
-};
+class NavBar extends Component {
+    state = {
+        isSticked: false,
+        showNav: false,
+    };
+
+    componentDidMount = () => {
+        const offsetForToolbarSticked = 100;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > offsetForToolbarSticked && !this.state.isSticked) this.setState({ isSticked: true });
+            else if (window.scrollY < offsetForToolbarSticked && this.state.isSticked)
+                this.setState({ isSticked: false });
+        });
+    };
+
+    toggleNav = () => {
+        this.setState({ showNav: !this.state.showNav });
+    };
+
+    render() {
+        let stickedClass = '';
+        if (this.state.isSticked) stickedClass = 'navbar--sticked';
+        let modal = null;
+        if (this.state.showNav) modal = <Modal onClick={this.toggleNav} />;
+        let mobileNav = <MobileNav showNav={this.state.showNav} toggleNav={this.toggleNav} />;
+        if (window.innerWidth > 900) mobileNav = null;
+        return (
+            <Fragment>
+                <div className={`navbar ${stickedClass}`}>
+                    <Logo />
+                    <ul className={`navbar__menu`}>
+                        <li className="navbar__item">Home</li>
+                        <li className="navbar__item">About</li>
+                        <li className="navbar__item">Projects</li>
+                        <li className="navbar__item">Education</li>
+                        <li className="navbar__item">Experiance</li>
+                        <li className="navbar__item">Contact</li>
+                    </ul>
+                    <Language />
+                    {mobileNav}
+                </div>
+                {modal}
+            </Fragment>
+        );
+    }
+}
 
 export default NavBar;

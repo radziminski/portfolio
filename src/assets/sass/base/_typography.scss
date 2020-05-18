@@ -25,7 +25,7 @@ body {
         width: 4rem;
     }
 
-    &--centered {
+    &--center {
         display: inline-block;
         margin: 0 auto;
         padding: 0 4.5rem;
@@ -63,6 +63,19 @@ body {
             left: auto;
             right: 0;
         }
+    }
+}
+
+.subtitle {
+    display: block;
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+
+    @include respond(small-tab-port) {
+        font-size: 2.2rem;
+        text-align: left;
     }
 }
 

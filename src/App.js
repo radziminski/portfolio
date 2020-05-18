@@ -8,10 +8,12 @@ import Footer from './views/Footer';
 import Skills from './views/Skills';
 import Projects from './views/Portfolio';
 import Experiance from './views/Experiance';
+import NavBar from './components/NavBar';
 
 function App() {
     return (
         <div className="App">
+            <NavBar />
             <Header />
             <About />
             <Skills />

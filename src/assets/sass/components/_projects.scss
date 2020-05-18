@@ -5,6 +5,18 @@
         display: flex;
         justify-content: space-between;
         margin: 2.5rem 15rem;
+
+        @include respond(small-deskt) {
+            margin: 2.5rem 12rem;
+        }
+
+        @include respond(tab-port) {
+            margin: 2.5rem 10rem;
+        }
+
+        @include respond(small-tab-port) {
+            margin: 2.5rem auto;
+        }
     }
 
     &__filter-btn {
@@ -13,6 +25,7 @@
         font-size: 1.7rem;
         text-transform: uppercase;
         transition: all 0.2s;
+        font-weight: 300;
 
         &:hover {
             transform: scale(1.15);
@@ -20,7 +33,6 @@
 
         &--active {
             color: $color-primary;
-            font-weight: 400;
         }
 
         &--passive-active {
@@ -34,6 +46,13 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 5rem;
+
+        @include respond(tab-port) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond(phone) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__card {
