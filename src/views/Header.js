@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-
-//import Linker from '../components/Linker';
 import Btn from '../components/Btn';
-
 import SocialsBar from '../components/SocialsBar';
 import { FiArrowDownCircle } from 'react-icons/fi';
 
@@ -16,7 +13,7 @@ export class Header extends Component {
         console.log(dayTime);
         if (dayTime < 12 && dayTime > 4) {
             this.setState({ greetingMsg: 'Good morning!' });
-        } else if (dayTime < 18) {
+        } else if (dayTime < 18 && dayTime > 11) {
             this.setState({ greetingMsg: 'Good afternoon!' });
         }
     }
