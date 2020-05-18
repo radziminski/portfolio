@@ -1,0 +1,46 @@
+.desktop-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: $color-white;
+
+    @include respond(tab-port) {
+        display: none;
+    }
+    z-index: 180;
+
+    &__item {
+        text-decoration: none;
+        color: $color-grey-light;
+        padding: 1rem 2.5rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        @include respond(tab-land) {
+            padding: 1rem 1.2rem;
+            font-size: 1.6rem;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            margin: 0.4rem auto;
+            width: 0%;
+            height: 1px;
+            background-color: $color-primary;
+            transition: width 0.2s;
+        }
+
+        &:hover {
+            color: $color-primary;
+
+            &:after {
+                width: 80%;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -6,7 +6,7 @@ import exp from '../assets/data/eduAndExp';
 
 const Experiance = () => {
     return (
-        <section className="section-experiance section--light">
+        <section className="section-experiance section--light" name="section-experiance">
             <Linker type="dark" />
             <SectionTitle>Experiance</SectionTitle>
             <Timeline points={exp} />

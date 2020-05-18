@@ -25,7 +25,7 @@ export class Header extends Component {
         let socialsBarType = 'vertical';
         if (window.innerWidth < 725) socialsBarType = 'horizontal';
         return (
-            <header className="header">
+            <header className="header" name="header">
                 <div className="header__socials">
                     <SocialsBar type={socialsBarType} />
                 </div>

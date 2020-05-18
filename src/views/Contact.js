@@ -7,7 +7,7 @@ import Linker from '../components/Linker';
 export class Contact extends Component {
     render() {
         return (
-            <div className="section-contact section--dark ">
+            <div className="section-contact section--dark " name="section-contact">
                 <Linker type="light" />
                 <div className={`section-contact__container section--col-phone-wrap`}>
                     <div className="section-contact__info col-1-of-2 col-1-of-2--phone-wrap ">

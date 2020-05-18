@@ -3,6 +3,7 @@ import Logo from './Logo';
 import Language from './Language';
 import MobileNav from './MobileNav';
 import Modal from './Modal';
+import DesktopNav from './DesktopNav';
 
 class NavBar extends Component {
     state = {
@@ -20,6 +21,7 @@ class NavBar extends Component {
     };
 
     toggleNav = () => {
+        console.log('t');
         this.setState({ showNav: !this.state.showNav });
     };
 
@@ -34,14 +36,7 @@ class NavBar extends Component {
             <Fragment>
                 <div className={`navbar ${stickedClass}`}>
                     <Logo />
-                    <ul className={`navbar__menu`}>
-                        <li className="navbar__item">Home</li>
-                        <li className="navbar__item">About</li>
-                        <li className="navbar__item">Projects</li>
-                        <li className="navbar__item">Education</li>
-                        <li className="navbar__item">Experiance</li>
-                        <li className="navbar__item">Contact</li>
-                    </ul>
+                    <DesktopNav />
                     <Language />
                     {mobileNav}
                 </div>

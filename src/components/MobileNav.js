@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import MobileNavIcon from './MobileNavIcon';
+import { Link } from 'react-scroll';
+import navLinks from '../assets/data/navLinks';
 
 const MobileNav = ({ showNav, toggleNav }) => {
     let nav = null;
@@ -7,11 +9,21 @@ const MobileNav = ({ showNav, toggleNav }) => {
         nav = (
             <Fragment>
                 <ul className="mobile-nav">
-                    <li className="mobile-nav__element">About</li>
-                    <li className="mobile-nav__element">Skills</li>
-                    <li className="mobile-nav__element">Projects</li>
-                    <li className="mobile-nav__element">Experiance</li>
-                    <li className="mobile-nav__element">Contact</li>
+                    {navLinks.map((el, id) => (
+                        <Link
+                            key={id}
+                            activeClass="active"
+                            to={el.linkTo}
+                            spy={true}
+                            smooth={true}
+                            offset={-130}
+                            duration={500}
+                        >
+                            <li className="mobile-nav__element" onClick={toggleNav}>
+                                {el.name}
+                            </li>
+                        </Link>
+                    ))}
                 </ul>
             </Fragment>
         );

@@ -32,7 +32,7 @@ const Skills = () => {
     }
 
     return (
-        <section className="section-skills section--light">
+        <section className="section-skills section--light" name="section-skills">
             <Linker type="dark" />
             <div className={`section-skills__title ${titleCenteringClass}`}>
                 <SectionTitle type={titleType}>My Skills</SectionTitle>

@@ -5,7 +5,7 @@ import Linker from '../components/Linker';
 
 const Projects = () => {
     return (
-        <section className="section-projects section--dark">
+        <section className="section-projects section--dark" name="section-projects">
             <Linker type="light" />
             <div className="u-centered">
                 <SectionTitle type="center">Projects</SectionTitle>

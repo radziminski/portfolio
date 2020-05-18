@@ -6,7 +6,7 @@ import Linker from '../components/Linker';
 
 const About = () => {
     return (
-        <section className={`section-about section--dark section--col-tab-wrap`}>
+        <section className={`section-about section--dark section--col-tab-wrap`} name="section-about">
             <Linker type="light" />
             <div className="col-1-of-3 col-1-of-3--tab-wrap">
                 <Placeholder width="100%" height="100%" />
