@@ -8,7 +8,7 @@ const MobileNav = ({ showNav, toggleNav }) => {
     if (showNav) {
         let scrollLinkOffset = 130;
         if (window.innerWidth < 600) scrollLinkOffset = 80;
-        if (window.innerWidth < 480) scrollLinkOffset = 60;
+        if (window.innerWidth < 480) scrollLinkOffset = 68;
         nav = (
             <Fragment>
                 <ul className="mobile-nav">
