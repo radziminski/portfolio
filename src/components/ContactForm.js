@@ -15,7 +15,7 @@ class ContactForm extends Component {
     };
 
     onChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({ [e.target.id]: e.target.value });
     };
 
     onMessageFocus = (e) => {
@@ -89,26 +89,14 @@ class ContactForm extends Component {
         return (
             <form className="contact-form" onSubmit={this.onSubmit}>
                 <div className="contact-form__input-box">
-                    <input
-                        type="email"
-                        className="contact-form__input"
-                        name="email"
-                        onChange={this.onChange}
-                        required
-                    />
+                    <input type="email" className="contact-form__input" id="email" onChange={this.onChange} required />
                     <label htmlFor="email" className={emailLabelClassName}>
                         Email
                     </label>
                 </div>
 
                 <div className="contact-form__input-box">
-                    <input
-                        type="text"
-                        className="contact-form__input"
-                        name="subject"
-                        onChange={this.onChange}
-                        required
-                    />
+                    <input type="text" className="contact-form__input" id="subject" onChange={this.onChange} required />
                     <label htmlFor="subject" className={subjectLabelClassName}>
                         Subject
                     </label>
@@ -118,7 +106,7 @@ class ContactForm extends Component {
                     <textarea
                         type="text"
                         className="contact-form__textarea"
-                        name="message"
+                        id="message"
                         onChange={this.onChange}
                         onFocus={this.onMessageFocus}
                         onBlur={this.onMessageFocus}

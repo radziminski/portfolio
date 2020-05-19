@@ -13,6 +13,13 @@ body {
     position: relative;
     font-weight: 500;
 
+    @include respond(phone) {
+        font-size: 3.5rem;
+    }
+
+    @include respond(small-phone) {
+        font-size: 3.4rem;
+    }
     &::after {
         content: '';
         display: block;
@@ -76,6 +83,14 @@ body {
     @include respond(small-tab-port) {
         font-size: 2.2rem;
         text-align: left;
+    }
+
+    @include respond(phone) {
+        font-size: 2.1rem;
+    }
+
+    @include respond(small-phone) {
+        font-size: 2rem;
     }
 }
 
