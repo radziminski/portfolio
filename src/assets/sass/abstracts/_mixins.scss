@@ -24,6 +24,13 @@
         }
     }
 
+    @if ($breakpoint) == small-phone-land {
+        // 2200 px
+        @media (max-height: 30em) {
+            @content;
+        }
+    }
+
     @if ($breakpoint) == small-phone {
         @media (max-width: 30em) {
             // 480 px
@@ -73,9 +80,9 @@
         }
     }
 
-    @if ($breakpoint) == small-phone-land {
+    @if ($breakpoint) == 4k-deskt {
         // 2200 px
-        @media (max-height: 30em) {
+        @media (min-width: 220em) {
             @content;
         }
     }

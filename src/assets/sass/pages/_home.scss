@@ -18,6 +18,10 @@
             padding: $gutter-section-start-micro $gutter-horizontal-micro $gutter-section-end-micro
                 $gutter-horizontal-micro;
         }
+        @include respond(big-deskt) {
+            padding: $gutter-section-start-large $gutter-horizontal-large $gutter-section-end-large
+                $gutter-horizontal-large;
+        }
     }
 
     &--light {

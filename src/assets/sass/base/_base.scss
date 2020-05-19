@@ -23,7 +23,10 @@ html {
     }
 
     @include respond(big-deskt) {
-        font-size: 75%;
+        font-size: 80%;
+    }
+    @include respond(4k-deskt) {
+        font-size: 95%;
     }
 }
 
