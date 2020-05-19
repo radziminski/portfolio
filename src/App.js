@@ -7,7 +7,7 @@ import Contact from './views/Contact';
 import Footer from './views/Footer';
 import Skills from './views/Skills';
 import Projects from './views/Portfolio';
-import Experiance from './views/Experiance';
+import Experience from './views/Experience';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
                 <About />
                 <Skills />
                 <Projects />
-                <Experiance />
+                <Experience />
                 <Contact />
             </main>
             <Footer />

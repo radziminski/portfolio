@@ -7,7 +7,7 @@ function Skill(name, percentage, type, featured = false) {
     };
 }
 
-const skills = [
+export const mainSkills = [
     Skill('HTML + CSS/SCSS', '90', 'web', true),
     Skill('Javascript', '85', 'web', true),
     //Skill('HTML', '90', 'web', true),
@@ -25,4 +25,20 @@ const skills = [
     //Skill('Matlab', '40', 'other'),
 ];
 
-export default skills;
+export const sideSkills = [
+    'git',
+    'github',
+    'webpack',
+    'npm',
+    'django',
+    'c#',
+    'ASP.NET',
+    'regex',
+    'QT',
+    '8051 assembly',
+    'Matlab',
+    'FL Studio',
+    'Pro Tools',
+    'Adobe Photoshop',
+    'Adobe After Effects',
+];

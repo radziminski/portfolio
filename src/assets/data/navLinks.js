@@ -16,8 +16,8 @@ const navLinks = [
         linkTo: 'section-projects',
     },
     {
-        name: 'Experiance',
-        linkTo: 'section-experiance',
+        name: 'Experience',
+        linkTo: 'section-experience',
     },
     {
         name: 'Contact',

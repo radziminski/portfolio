@@ -5,12 +5,12 @@ import Timeline from '../components/Timeline';
 import exp from '../assets/data/eduAndExp';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
-const Experiance = () => {
+const Experience = () => {
     return (
-        <section className="section-experiance section--light" name="section-experiance">
+        <section className="section-experience section--light" name="section-experience">
             <Linker type="dark" />
             <SectionTitle>
-                Experiance <MdKeyboardArrowDown className="title-icon" />
+                Experience <MdKeyboardArrowDown className="title-icon" />
             </SectionTitle>
             <Timeline points={exp} />
             <div className="u-right">
@@ -22,4 +22,4 @@ const Experiance = () => {
     );
 };
 
-export default Experiance;
+export default Experience;

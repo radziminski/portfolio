@@ -17,6 +17,10 @@
         font-size: 2.8rem;
     }
 
+    @include respond(x-small-phone) {
+        font-size: 2.6rem;
+    }
+
     &__firstName {
         color: $color-white;
         padding: 0.4rem 0.6rem;

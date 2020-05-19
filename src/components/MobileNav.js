@@ -6,18 +6,23 @@ import navLinks from '../assets/data/navLinks';
 const MobileNav = ({ showNav, toggleNav }) => {
     let nav = null;
     if (showNav) {
+        let scrollLinkOffset = 130;
+        if (window.innerWidth < 600) scrollLinkOffset = 80;
+        if (window.innerWidth < 480) scrollLinkOffset = 60;
         nav = (
             <Fragment>
                 <ul className="mobile-nav">
                     {navLinks.map((el, id) => (
-                        <li key={id} className="mobile-nav__element" onClick={toggleNav}>
+                        <li key={id}>
                             <Link
                                 activeClass="active"
                                 to={el.linkTo}
                                 spy={true}
                                 smooth={true}
-                                offset={-130}
+                                offset={-scrollLinkOffset}
                                 duration={500}
+                                className="mobile-nav__element"
+                                onClick={toggleNav}
                             >
                                 {el.name}
                             </Link>

@@ -78,4 +78,25 @@
             }
         }
     }
+    @include respond(x-small-phone) {
+        width: 45px;
+        height: 29px;
+        &__bar {
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+        }
+
+        &--active &__bar {
+            &:first-child {
+                transform: translateY(10px) rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: translateY(-10px) rotate(-45deg);
+            }
+        }
+    }
 }

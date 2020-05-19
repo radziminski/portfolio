@@ -2,16 +2,16 @@ import React from 'react';
 import SectionTitle from '../components/SectionTitle';
 import Subtitle from '../components/Subtitle';
 import ProgressBar from '../components/ProgressBar';
-import skills from '../assets/data/skills';
+import { mainSkills, sideSkills } from '../assets/data/skills';
 import Linker from '../components/Linker';
 
 const Skills = () => {
-    const webBars = skills.map((el, i) => {
+    const webBars = mainSkills.map((el, i) => {
         if (el.type !== 'web') return null;
         return <ProgressBar key={i} percentage={el.percentage} label={el.name} />;
     });
 
-    const otherBars = skills.map((el, i) => {
+    const otherBars = mainSkills.map((el, i) => {
         if (el.type === 'web') return null;
         return <ProgressBar key={i} percentage={el.percentage} label={el.name} />;
     });
@@ -48,9 +48,8 @@ const Skills = () => {
                 </div>
             </div>
             <div className={lastChildContainerClass}>
-                <span className="u-color-primary u-normal-wordspacing">I have also worked with:</span> git, github,
-                webpack, npm, django, c#, ASP.NET, regex, QT, 8051 assembly, Matlab, FL Studio, Pro Tools, Adobe
-                Photoshop, Adobe After Effects.
+                <span className="u-color-primary u-normal-wordspacing">I have also worked with: </span>
+                {sideSkills.join(', ')}
             </div>
         </section>
     );

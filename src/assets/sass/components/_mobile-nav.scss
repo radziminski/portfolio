@@ -26,6 +26,10 @@
             background-color: $color-dark;
         }
 
+        @include respond(small-phone) {
+            padding: 2rem;
+        }
+
         &:hover {
         }
     }
