@@ -16,7 +16,7 @@
         }
 
         @include respond(small-phone) {
-            top: 50%;
+            top: 48%;
         }
     }
 
@@ -118,7 +118,7 @@
 
         @include respond(small-phone) {
             right: 6%;
-            bottom: 3.6rem;
+            bottom: 5.4rem;
         }
     }
 
@@ -142,10 +142,10 @@
 
         @include respond(small-phone) {
             left: 30%;
-            bottom: 3.6rem;
+            bottom: 5.4rem;
         }
         @include respond(x-small-phone) {
-            left: 33%;
+            left: 34%;
         }
     }
 }

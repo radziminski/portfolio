@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Btn from '../components/Btn';
 import SocialsBar from '../components/SocialsBar';
 import { FiArrowDownCircle } from 'react-icons/fi';
+import { Link } from 'react-scroll';
 
 export class Header extends Component {
     state = {
@@ -40,12 +41,16 @@ export class Header extends Component {
                         <span>|</span>
                         <span>Music Producer</span>
                     </div> */}
-                    <Btn>Contact Me</Btn>
-                    <Btn type="ghost">About</Btn>
+                    <Btn linkTo="section-contact">Contact Me</Btn>
+                    <Btn type="ghost" linkTo="section-about">
+                        About
+                    </Btn>
                 </div>
-                <button className="header__scroll-btn">
-                    <FiArrowDownCircle />
-                </button>
+                <Link activeClass="active" to={'section-about'} spy={true} smooth={true} offset={-130} duration={500}>
+                    <button className="header__scroll-btn">
+                        <FiArrowDownCircle />
+                    </button>
+                </Link>
             </header>
         );
     }

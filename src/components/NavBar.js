@@ -21,7 +21,6 @@ class NavBar extends Component {
     };
 
     toggleNav = () => {
-        console.log('t');
         this.setState({ showNav: !this.state.showNav });
     };
 

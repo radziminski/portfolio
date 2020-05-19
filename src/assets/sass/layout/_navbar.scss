@@ -41,9 +41,9 @@
     }
 
     @include respond(small-phone) {
-        padding: 4rem 9%;
+        padding: 3rem 9%;
         &--sticked {
-            padding: 4rem 9%;
+            padding: 3rem 9%;
         }
     }
 
