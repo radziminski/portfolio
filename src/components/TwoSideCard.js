@@ -23,11 +23,13 @@ const TwoSideCard = (props) => {
         );
     }
 
-    const icons = props.icons.map((el, i) => (
-        <div className="two-side-card__icon" key={i}>
-            {el}
-        </div>
-    ));
+    const icons = props.icons
+        .filter((el) => el)
+        .map((el, i) => (
+            <div className="two-side-card__icon" key={i}>
+                {el}
+            </div>
+        ));
 
     let className = 'two-side-card';
     if (props.className) className = 'two-side-card ' + props.className;

@@ -7,7 +7,15 @@ const DesktopNav = () => {
         <ul className="desktop-nav">
             {navLinks.map((el, id) => (
                 <li key={id} className="desktop-nav__item">
-                    <Link activeClass="active" to={el.linkTo} spy={true} smooth={true} offset={0} duration={500}>
+                    <Link
+                        className="desktop-nav__link"
+                        activeClass="active"
+                        to={el.linkTo}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={500}
+                    >
                         {el.name}
                     </Link>
                 </li>

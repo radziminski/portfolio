@@ -46,6 +46,12 @@
             padding: 3rem 9%;
         }
     }
+    @include respond(small-phone-land) {
+        padding: 2rem 9%;
+        &--sticked {
+            padding: 2rem 9%;
+        }
+    }
 
     &--sticked {
     }

@@ -3,6 +3,9 @@ import SectionTitle from '../components/SectionTitle';
 import Paragraph from '../components/Paragraph';
 import Placeholder from '../components/Placeholder';
 import Linker from '../components/Linker';
+import getText from '../assets/data/text';
+
+const stringToParagraph = (string) => string.split('\n').map((el, id) => <Paragraph key={id}>{el}</Paragraph>);
 
 const About = () => {
     return (
@@ -13,19 +16,7 @@ const About = () => {
             </div>
             <div className="col-2-of-3 col-2-of-3--tab-wrap u-b-margin-left">
                 <SectionTitle>About</SectionTitle>
-                <Paragraph>
-                    Laborum officia veniam voluptate commodo est excepteur dolore pariatur voluptate elit tempor. Irure
-                    qui nostrud culpa tempor tempor.
-                </Paragraph>
-                <Paragraph>
-                    In in veniam eiusmod labore culpa nostrud ea. Labore laboris tempor dolor in exercitation id
-                    voluptate veniam qui quis. Culpa ad mollit nulla nostrud ullamco eu non ea qui commodo commodo anim.
-                    Tempor pariatur enim culpa cupidatat qui adipisicing anim deserunt laborum
-                </Paragraph>
-                <Paragraph>
-                    In in veniam eiusmod labore culpa nostrud ea. Labore laboris tempor dolor in exercitation id
-                    voluptate veniam qui quis. Culpa ad mollit nulla nostrud ullamco eu non ea.
-                </Paragraph>
+                {stringToParagraph(getText('EN').about)}
             </div>
         </section>
     );

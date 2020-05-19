@@ -12,6 +12,9 @@
     @include respond(small-phone) {
         font-size: 1.9rem;
     }
+    @include respond(small-phone-land) {
+        font-size: 1.7rem;
+    }
 
     &__element {
         display: block;
@@ -28,6 +31,9 @@
 
         @include respond(small-phone) {
             padding: 2rem;
+        }
+        @include respond(small-phone-land) {
+            padding: 1rem;
         }
 
         &:hover {

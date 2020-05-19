@@ -26,6 +26,7 @@
         text-transform: uppercase;
         transition: all 0.2s;
         font-weight: 300;
+        user-select: none;
 
         &:hover {
             transform: scale(1.15);

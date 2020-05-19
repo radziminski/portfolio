@@ -71,6 +71,7 @@ class Projects extends Component {
 
     filter = (e) => {
         if (!e.target.id) return;
+        if (e.target.id === this.state.currFilter) this.setState({ currFilter: 'all' });
         else this.setState({ currFilter: e.target.id });
     };
 
@@ -93,17 +94,19 @@ class Projects extends Component {
         const initLength = filteredProjects.length;
 
         filteredProjects = filteredProjects.slice(0, this.state.showCardsNum);
-        const cards = filteredProjects.map((el, i) => (
-            <TwoSideCard
-                key={i}
-                title={el.title}
-                subTitle={el.subTitle}
-                description={el.description}
-                githubLink={el.githubLink}
-                liveLink={el.liveLink}
-                icons={el.stack.map((el) => this.getTechIcon(el))}
-            />
-        ));
+        const cards = filteredProjects.map((el, i) => {
+            return (
+                <TwoSideCard
+                    key={i}
+                    title={el.title}
+                    subTitle={el.subTitle}
+                    description={el.description}
+                    githubLink={el.githubLink}
+                    liveLink={el.liveLink}
+                    icons={el.stack.map((el) => this.getTechIcon(el))}
+                />
+            );
+        });
 
         let loadMoreBtn = (
             <div className="projects__btn ">
