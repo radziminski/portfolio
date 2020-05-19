@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebookF } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 import { AiOutlineLinkedin, AiFillGithub } from 'react-icons/ai';
+import ExternalLink from '../components/ExternalLink';
 
 const SocialsBar = (props) => {
     let listClass =
@@ -13,26 +14,26 @@ const SocialsBar = (props) => {
     return (
         <div className="socials-bar">
             <ul className={listClass}>
-                <a href="/">
-                    <li className="socials-bar__element">
+                <li className="socials-bar__element">
+                    <ExternalLink linkTo="https://www.facebook.com/jradziminski" label="Facebook">
                         <FaFacebookF />
-                    </li>
-                </a>
-                <a href="/">
-                    <li className="socials-bar__element">
+                    </ExternalLink>
+                </li>
+                <li className="socials-bar__element">
+                    <ExternalLink linkTo="https://www.instagram.com/jradziminski/" label="Instagram">
                         <FiInstagram />
-                    </li>
-                </a>
-                <a href="/">
-                    <li className="socials-bar__element">
+                    </ExternalLink>
+                </li>
+                <li className="socials-bar__element">
+                    <ExternalLink linkTo="https://www.linkedin.com" label="Linkedin">
                         <AiOutlineLinkedin />
-                    </li>
-                </a>
-                <a href="/">
-                    <li className="socials-bar__element">
+                    </ExternalLink>
+                </li>
+                <li className="socials-bar__element">
+                    <ExternalLink linkTo="https://github.com/radziminski" label="Github">
                         <AiFillGithub />
-                    </li>
-                </a>
+                    </ExternalLink>
+                </li>
             </ul>
         </div>
     );

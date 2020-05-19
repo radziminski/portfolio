@@ -47,9 +47,9 @@ export class Header extends Component {
                     </Btn>
                 </div>
                 <Link activeClass="active" to={'section-about'} spy={true} smooth={true} offset={-130} duration={500}>
-                    <button className="header__scroll-btn">
+                    <div className="header__scroll-btn">
                         <FiArrowDownCircle />
-                    </button>
+                    </div>
                 </Link>
             </header>
         );

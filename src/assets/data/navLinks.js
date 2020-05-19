@@ -8,6 +8,10 @@ const navLinks = [
         linkTo: 'section-about',
     },
     {
+        name: 'Skills',
+        linkTo: 'section-skills',
+    },
+    {
         name: 'Projects',
         linkTo: 'section-projects',
     },

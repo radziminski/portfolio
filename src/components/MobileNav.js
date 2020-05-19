@@ -10,19 +10,18 @@ const MobileNav = ({ showNav, toggleNav }) => {
             <Fragment>
                 <ul className="mobile-nav">
                     {navLinks.map((el, id) => (
-                        <Link
-                            key={id}
-                            activeClass="active"
-                            to={el.linkTo}
-                            spy={true}
-                            smooth={true}
-                            offset={-130}
-                            duration={500}
-                        >
-                            <li className="mobile-nav__element" onClick={toggleNav}>
+                        <li key={id} className="mobile-nav__element" onClick={toggleNav}>
+                            <Link
+                                activeClass="active"
+                                to={el.linkTo}
+                                spy={true}
+                                smooth={true}
+                                offset={-130}
+                                duration={500}
+                            >
                                 {el.name}
-                            </li>
-                        </Link>
+                            </Link>
+                        </li>
                     ))}
                 </ul>
             </Fragment>

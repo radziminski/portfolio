@@ -1,23 +1,24 @@
 import React from 'react';
 import { FaGithub, FaPlayCircle } from 'react-icons/fa';
+import ExternalLink from '../components/ExternalLink';
 
 const TwoSideCard = (props) => {
     let buttons = (
         <div className="two-side-card__links">
-            <a href={props.githubLink} className="two-side-card__link">
+            <ExternalLink linkTo={props.githubLink} className="two-side-card__link" label="Github Repo">
                 <FaGithub className="two-side-card__link-icon" />
-            </a>
+            </ExternalLink>
         </div>
     );
     if (props.liveLink) {
         buttons = (
             <div className="two-side-card__links">
-                <a href={props.githubLink} className="two-side-card__link" target="_blank" rel="noopener noreferrer">
+                <ExternalLink linkTo={props.githubLink} className="two-side-card__link" label="Github Repo">
                     <FaGithub className="two-side-card__link-icon" />
-                </a>
-                <a href={props.liveLink} className="two-side-card__link" target="_blank" rel="noopener noreferrer">
+                </ExternalLink>
+                <ExternalLink linkTo={props.liveLink} className="two-side-card__link" label="Live Demo">
                     <FaPlayCircle className="two-side-card__link-icon" />
-                </a>
+                </ExternalLink>
             </div>
         );
     }
