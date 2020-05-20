@@ -1,6 +1,6 @@
 export const about = `
 I am a third year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
-During last few years I decided to focus on learning technologies connected with web development. I love designing and implementing complete web applications - the satisfaction after finishing the project is irreplacable. 
+During the last few years I decided to focus on learning technologies connected with web development. I love designing and implementing complete web applications - the satisfaction after finishing the project is irreplacable. 
 In my free time I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of university ski team, where we are activly participating in national skiing competitions. 
 `;
 
