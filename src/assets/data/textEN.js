@@ -1,7 +1,7 @@
 export const about = `
-Laborum officia veniam voluptate commodo est excepteur dolore pariatur voluptate elit tempor. Irure qui nostrud culpa tempor tempor.
-In in veniam eiusmod labore culpa nostrud ea. Labore laboris tempor dolor in exercitation id voluptate veniam qui quis. Culpa ad mollit nulla nostrud ullamco eu non ea qui commodo commodo anim. Tempor pariatur enim culpa cupidatat qui adipisicing anim deserunt laborum.
-In my free time I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of my university's ski team, where we are activly participating in national skiing competitions. 
+I am a third year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
+During last few years I decided to focus on learning technologies connected with web development. I love designing and implementing complete web applications - the satisfaction after finishing the project is irreplacable. 
+In my free time I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of university ski team, where we are activly participating in national skiing competitions. 
 `;
 
 export const greetings = {
@@ -15,7 +15,7 @@ export const headerTitle = `I'm`;
 export const headerSubtitle = `Full-stack developer, computer scientist and music producer. Student of bachelor studies at Faculty of Electronics and Information Technology at Warsaw University of Technology.`;
 
 export const sectionTitles = {
-    about: 'About',
+    about: 'About Me',
     skills: 'My Skills',
     skillsSubFirst: 'Web Technologies',
     skillsSubSecond: 'Other Technologies',
