@@ -7,7 +7,7 @@ function Experience(start, end, description) {
 }
 
 const expList = [
-    Experience(2014, 2017, 'I Social general secondary school, mathematical / computer science profile'),
+    Experience(2014, 2017, 'I general secondary school in Warsaw, mathematical / IT profile'),
     Experience(2015, 'now', 'Music producer (with Diamond Seller level) at House Of Tracks'),
     Experience(
         2017,

@@ -14,6 +14,8 @@ const Skills = () => {
 
     const otherBars = mainSkills.map((el, i) => {
         if (el.type === 'web') return null;
+        if (el.name.length > 15)
+            return <ProgressBar key={i} percentage={el.percentage} label={el.name} isTextLong={true} />;
         return <ProgressBar key={i} percentage={el.percentage} label={el.name} />;
     });
 

@@ -8,6 +8,9 @@
         font-size: 1.8rem;
         margin: 2.5rem 0;
     }
+    @include respond(small-phone) {
+        font-size: 1.7rem;
+    }
 
     &__bar {
         height: 5px;
