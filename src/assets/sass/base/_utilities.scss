@@ -81,5 +81,6 @@
 .u-mobile-small {
     @include respond(small-phone) {
         font-size: 1.4rem;
+        letter-spacing: 0.05px;
     }
 }

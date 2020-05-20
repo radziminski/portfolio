@@ -20,7 +20,7 @@
         }
 
         @include respond(small-phone) {
-            top: 51%;
+            top: 50%;
         }
         @include respond(small-phone-land) {
             top: 44%;

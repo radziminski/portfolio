@@ -19,9 +19,9 @@ const projects = [
         ['html', 'css', 'js']
     ),
     Project(
-        'Baza Pytan',
+        'Covid FAQ',
         'FAQ based portal',
-        'Website made for the needs of polish voluntary service, which helped in medical enviroment during the times of coronavirus outbreak.',
+        'Website made for the needs of voluntary service, which helped Polish medical enviroment during the times of coronavirus outbreak.',
         'https://github.com/radziminski/baza-pytan-react',
         'https://baza-pytan-covid.netlify.com',
         ['react', 'redux', 'firebase']
