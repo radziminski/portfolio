@@ -21,7 +21,7 @@ const projects = [
     Project(
         'Baza Pytan',
         'FAQ based portal',
-        'Website made for the needs of polish voluntary service, which helped in medical enviroment in times of coronavirus outbreak.',
+        'Website made for the needs of polish voluntary service, which helped in medical enviroment during the times of coronavirus outbreak.',
         'https://github.com/radziminski/baza-pytan-react',
         'https://baza-pytan-covid.netlify.com',
         ['react', 'redux', 'firebase']
@@ -37,7 +37,7 @@ const projects = [
     Project(
         'Vienna Residence',
         'Hotel reservations website',
-        'Website of a Vienna Residence hotel with fully working reservations system.',
+        'Website of a Vienna Residence hotel with fully working reservations system. [backend in development]',
         'https://github.com/radziminski/vienna-residence',
         'https://radziminski.github.io/vienna-residence',
         ['react', 'nodejs', 'mongodb']
@@ -45,9 +45,9 @@ const projects = [
     Project(
         'Collab Finder',
         'Web App connecting music producers',
-        'Social-network based website where music producers can find others and collaborate on their music.',
-        'https://github.com/radziminski/vienna-residence',
-        'https://radziminski.github.io/vienna-residence',
+        'Social-network based website where music producers can find others and collaborate on their music. [frontend in development]',
+        'https://github.com/radziminski/collab-finder',
+        '',
         ['react', 'redux', 'nodejs', 'mongodb']
     ),
 ];

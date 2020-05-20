@@ -25,7 +25,7 @@ const SocialsBar = (props) => {
                     </ExternalLink>
                 </li>
                 <li className="socials-bar__element">
-                    <ExternalLink linkTo="https://www.linkedin.com" label="Linkedin">
+                    <ExternalLink linkTo="https://www.linkedin.com/in/jan-radzimi%C5%84ski-860707162/" label="Linkedin">
                         <AiOutlineLinkedin />
                     </ExternalLink>
                 </li>

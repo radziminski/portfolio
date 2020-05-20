@@ -4,6 +4,7 @@ import Subtitle from '../components/Subtitle';
 import ProgressBar from '../components/ProgressBar';
 import { mainSkills, sideSkills } from '../assets/data/skills';
 import Linker from '../components/Linker';
+import getText from '../assets/data/text';
 
 const Skills = () => {
     const webBars = mainSkills.map((el, i) => {
@@ -35,20 +36,22 @@ const Skills = () => {
         <section className="section-skills section--light" name="section-skills">
             <Linker type="dark" />
             <div className={`section-skills__title ${titleCenteringClass}`}>
-                <SectionTitle type={titleType}>My Skills</SectionTitle>
+                <SectionTitle type={titleType}>{getText('EN').sectionTitles.skills}</SectionTitle>
             </div>
             <div className={parentContainerClass}>
                 <div className={firstChildContainerClass}>
-                    <Subtitle>Web Technologies</Subtitle>
+                    <Subtitle>{getText('EN').sectionTitles.skillsSubFirst}:</Subtitle>
                     {webBars}
                 </div>
                 <div className={midChildContainerClass}>
-                    <Subtitle>Other Technologies</Subtitle>
+                    <Subtitle>{getText('EN').sectionTitles.skillsSubSecond}:</Subtitle>
                     {otherBars}
                 </div>
             </div>
             <div className={lastChildContainerClass}>
-                <span className="u-color-primary u-normal-wordspacing">I have also worked with: </span>
+                <span className="u-color-primary u-normal-wordspacing">
+                    {getText('EN').sectionTitles.skillsSubThird}:{' '}
+                </span>
                 {sideSkills.join(', ')}
             </div>
         </section>

@@ -1,0 +1,22 @@
+.selfphoto {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+
+    align-self: center;
+
+    @include respond(small-tab-port) {
+        max-width: 35rem;
+    }
+
+    @include respond(phone) {
+        max-width: 30rem;
+    }
+    @include respond(small-phone) {
+        max-width: 29rem;
+    }
+    &__img {
+        width: 100%;
+    }
+}

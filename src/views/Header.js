@@ -3,10 +3,12 @@ import Btn from '../components/Btn';
 import SocialsBar from '../components/SocialsBar';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import { Link } from 'react-scroll';
+import getText from '../assets/data/text';
 
 export class Header extends Component {
     state = {
         greetingMsg: 'Good evening!',
+        text: getText('EN'),
     };
 
     componentDidMount() {
@@ -30,20 +32,13 @@ export class Header extends Component {
                 <div className="header__heading-box">
                     <div className="header__heading-top">{this.state.greetingMsg}</div>
                     <h1 className="header__heading-primary">
-                        I'm <span className="u-color-primary">Jan</span> Radzimiński
+                        {this.state.text.headerTitle} <span className="u-color-primary">Jan</span> Radzimiński
                     </h1>
-                    <p className="header__about">
-                        Full-stack developer, computer scientist and music producer.Nisi reprehenderit nisi cillum sit.
-                        In laborum reprehenderit aliquip et et amet sit quis enim voluptate duis.
-                    </p>
-                    {/* <div className="header__heading-secondary">
-                        <span>Full Stack Developer</span>
-                        <span>|</span>
-                        <span>Music Producer</span>
-                    </div> */}
-                    <Btn linkTo="section-contact">Contact Me</Btn>
+                    <p className="header__about">{this.state.text.headerSubtitle}</p>
+
+                    <Btn linkTo="section-contact">{this.state.text.btns.contact}</Btn>
                     <Btn type="ghost" linkTo="section-about">
-                        About
+                        {this.state.text.btns.about}
                     </Btn>
                 </div>
                 <Link activeClass="active" to={'section-about'} spy={true} smooth={true} offset={-130} duration={500}>
