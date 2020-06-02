@@ -10,7 +10,7 @@
     color: $color-primary;
 
     @include respond(small-phone) {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
     }
     @include respond(small-phone-land) {
         font-size: 1.7rem;
@@ -30,7 +30,7 @@
         }
 
         @include respond(small-phone) {
-            padding: 2rem;
+            padding: 1.8rem;
         }
         @include respond(small-phone-land) {
             padding: 1rem;

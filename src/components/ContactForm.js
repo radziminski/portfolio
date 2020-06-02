@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Btn from './Btn';
 import { database as db } from '../firebase';
 import DotLoader from './DotLoader';
+import getText from '../assets/data/text';
 
 class ContactForm extends Component {
     state = {
@@ -53,6 +54,8 @@ class ContactForm extends Component {
     };
 
     render() {
+        const text = getText(this.props.language);
+
         const emailLabelClassName = this.state.email
             ? 'contact-form__label contact-form__label--selected'
             : 'contact-form__label';
@@ -74,15 +77,13 @@ class ContactForm extends Component {
         else if (this.state.showInfo && this.state.sentSuccess)
             loader = (
                 <div className="contact-form__loader-box">
-                    <div className="contact-form__info">Message sent successfully.</div>
+                    <div className="contact-form__info">{text.form.messageSuccess}</div>
                 </div>
             );
         else if (this.state.showInfo && !this.state.sentSuccess)
             loader = (
                 <div className="contact-form__loader-box">
-                    <div className="contact-form__info contact-form__info--errors">
-                        There was an errror while sending the message. Please try again later.
-                    </div>
+                    <div className="contact-form__info contact-form__info--errors">{text.form.messageFail}</div>
                 </div>
             );
 
@@ -98,7 +99,7 @@ class ContactForm extends Component {
                 <div className="contact-form__input-box">
                     <input type="text" className="contact-form__input" id="subject" onChange={this.onChange} required />
                     <label htmlFor="subject" className={subjectLabelClassName}>
-                        Subject
+                        {text.form.subject}
                     </label>
                 </div>
 
@@ -113,14 +114,14 @@ class ContactForm extends Component {
                         required
                     />
                     <label htmlFor="message" className={messageLabelClassName}>
-                        Message
+                        {text.form.message}
                     </label>
                 </div>
 
                 <div className="contact-form__btns">
                     {loader}
                     <Btn type="wide" form>
-                        Send!
+                        {text.btns.send}
                     </Btn>
                 </div>
             </form>

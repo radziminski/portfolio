@@ -1,7 +1,7 @@
 export const about = `
-I am a third year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
-During the last few years I decided to focus on learning technologies connected with web development. I love designing and implementing complete web applications - the satisfaction after finishing the project is irreplacable. 
-In my free time I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of university ski team, where we are activly participating in national skiing competitions. 
+I am a third-year Computer Science student. I have started coding in primary school and my programming passion has been growing ever since.
+During the last few years, I have focused on learning different technologies connected with web development. I love designing and implementing complete web applications - the satisfaction after finishing the project is irreplaceable. 
+In my free time, I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of the university ski team, where I am actively participating in national academic skiing competitions. 
 `;
 
 export const greetings = {
@@ -34,4 +34,11 @@ export const btns = {
     contact: 'Contact Me',
     about: 'About',
     send: 'Send!',
+};
+
+export const form = {
+    subject: 'Subject',
+    message: 'Message',
+    messageSuccess: 'Message sent successfully.',
+    messageFail: 'There was an errror while sending the message. Please try again later.',
 };

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './assets/sass/main.scss';
-
 import Header from './views/Header';
 import About from './views/About';
 import Contact from './views/Contact';
@@ -9,18 +8,28 @@ import Skills from './views/Skills';
 import Projects from './views/Portfolio';
 import Experience from './views/Experience';
 import NavBar from './components/NavBar';
-
 function App() {
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'EN');
+
+    const toggleLanguage = () => {
+        if (language === 'EN') {
+            localStorage.setItem('language', 'PL');
+            return setLanguage('PL');
+        }
+        localStorage.setItem('language', 'EN');
+        setLanguage('EN');
+    };
+
     return (
         <div className="App">
-            <NavBar />
+            <NavBar language={language} toggleLanguage={toggleLanguage} />
             <main>
-                <Header />
-                <About />
-                <Skills />
-                <Projects />
-                <Experience />
-                <Contact />
+                <Header language={language} />
+                <About language={language} />
+                <Skills language={language} />
+                <Projects language={language} />
+                <Experience language={language} />
+                <Contact language={language} />
             </main>
             <Footer />
         </div>

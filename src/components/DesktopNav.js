@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import navLinks from '../assets/data/navLinks';
+import navLinksEN from '../assets/data/navLinksEN';
+import navLinksPL from '../assets/data/navLinksPL';
 
-const DesktopNav = () => {
+const DesktopNav = ({ language }) => {
+    let navLinks = navLinksEN;
+    if (language === 'PL') navLinks = navLinksPL;
+
     return (
         <ul className="desktop-nav">
             {navLinks.map((el, id) => (

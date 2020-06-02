@@ -39,18 +39,21 @@ class NavBar extends Component {
         if (this.state.isSticked) stickedClass = 'navbar--sticked';
         let modal = null;
         if (this.state.showNav) modal = <Modal onClick={this.toggleNav} />;
-        let mobileNav = <MobileNav showNav={this.state.showNav} toggleNav={this.toggleNav} />;
+        let mobileNav = (
+            <MobileNav showNav={this.state.showNav} toggleNav={this.toggleNav} language={this.props.language} />
+        );
         if (window.innerWidth > 900) mobileNav = null;
 
         let portableNav = null;
-        if (this.state.showPortableNav && window.innerWidth > 900) portableNav = <DesktopPortableNav />;
+        if (this.state.showPortableNav && window.innerWidth > 900)
+            portableNav = <DesktopPortableNav language={this.props.language} />;
 
         return (
             <Fragment>
                 <div className={`navbar ${stickedClass}`}>
                     <Logo />
-                    <DesktopNav />
-                    <Language />
+                    <DesktopNav language={this.props.language} />
+                    <Language language={this.props.language} toggleLanguage={this.props.toggleLanguage} />
                     {portableNav}
                     {mobileNav}
                 </div>

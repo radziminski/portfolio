@@ -7,17 +7,30 @@ import getText from '../assets/data/text';
 
 export class Header extends Component {
     state = {
-        greetingMsg: 'Good evening!',
-        text: getText('EN'),
+        greetingMsg: getText(this.props.language).greetings.late,
+        text: getText(this.props.language),
     };
 
     componentDidMount() {
-        let dayTime = new Date().getHours();
-        console.log(dayTime);
+        const dayTime = new Date().getHours();
         if (dayTime < 12 && dayTime > 4) {
-            this.setState({ greetingMsg: 'Good morning!' });
+            this.setState({ greetingMsg: this.state.text.greetings.early });
         } else if (dayTime < 18 && dayTime > 11) {
-            this.setState({ greetingMsg: 'Good afternoon!' });
+            this.setState({ greetingMsg: this.state.text.greetings.mid });
+        }
+    }
+
+    componentDidUpdate() {
+        const newText = getText(this.props.language);
+        if (newText !== this.state.text) {
+            const dayTime = new Date().getHours();
+            let greetingMsg = newText.greetings.late;
+            if (dayTime < 12 && dayTime > 4) {
+                greetingMsg = newText.greetings.early;
+            } else if (dayTime < 18 && dayTime > 11) {
+                greetingMsg = newText.greetings.mid;
+            }
+            this.setState({ text: newText, greetingMsg });
         }
     }
 

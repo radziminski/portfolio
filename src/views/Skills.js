@@ -6,7 +6,7 @@ import { mainSkills, sideSkills } from '../assets/data/skills';
 import Linker from '../components/Linker';
 import getText from '../assets/data/text';
 
-const Skills = () => {
+const Skills = ({ language }) => {
     const webBars = mainSkills.map((el, i) => {
         if (el.type !== 'web') return null;
         return <ProgressBar key={i} percentage={el.percentage} label={el.name} />;
@@ -38,21 +38,21 @@ const Skills = () => {
         <section className="section-skills section--light" name="section-skills">
             <Linker type="dark" />
             <div className={`section-skills__title ${titleCenteringClass}`}>
-                <SectionTitle type={titleType}>{getText('EN').sectionTitles.skills}</SectionTitle>
+                <SectionTitle type={titleType}>{getText(language).sectionTitles.skills}</SectionTitle>
             </div>
             <div className={parentContainerClass}>
                 <div className={firstChildContainerClass}>
-                    <Subtitle>{getText('EN').sectionTitles.skillsSubFirst}:</Subtitle>
+                    <Subtitle>{getText(language).sectionTitles.skillsSubFirst}:</Subtitle>
                     {webBars}
                 </div>
                 <div className={midChildContainerClass}>
-                    <Subtitle>{getText('EN').sectionTitles.skillsSubSecond}:</Subtitle>
+                    <Subtitle>{getText(language).sectionTitles.skillsSubSecond}:</Subtitle>
                     {otherBars}
                 </div>
             </div>
             <div className={lastChildContainerClass}>
                 <span className="u-color-primary u-normal-wordspacing">
-                    {getText('EN').sectionTitles.skillsSubThird}:{' '}
+                    {getText(language).sectionTitles.skillsSubThird}:{' '}
                 </span>
                 {sideSkills.join(', ')}
             </div>

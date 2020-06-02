@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MobileNavIcon from './MobileNavIcon';
-import navLinks from '../assets/data/navLinks';
+import navLinksEN from '../assets/data/navLinksEN';
+import navLinksPL from '../assets/data/navLinksPL';
 import { Link } from 'react-scroll';
 
 export class DesktopPortableNav extends Component {
@@ -14,6 +15,9 @@ export class DesktopPortableNav extends Component {
 
     render() {
         let nav = null;
+        let navLinks = navLinksEN;
+        if (this.props.language === 'PL') navLinks = navLinksPL;
+
         if (this.state.showNav)
             nav = (
                 <ul className="portable-nav__links">

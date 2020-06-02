@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import projects from '../assets/data/projects';
+import projectsEN from '../assets/data/projectsEN';
+import projectsPL from '../assets/data/projectsPL';
 import TwoSideCard from './TwoSideCard';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { DiCss3, DiJavascript1, DiReact, DiMongodb, DiFirebase } from 'react-icons/di';
@@ -85,6 +86,9 @@ class Projects extends Component {
     };
 
     render() {
+        let projects = projectsEN;
+        if (this.props.language === 'PL') projects = projectsPL;
+
         let filteredProjects = [...projects];
 
         if (this.state.currFilter && this.state.currFilter !== 'all') {

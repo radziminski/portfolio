@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
 import MobileNavIcon from './MobileNavIcon';
 import { Link } from 'react-scroll';
-import navLinks from '../assets/data/navLinks';
+import navLinksEN from '../assets/data/navLinksEN';
+import navLinksPL from '../assets/data/navLinksPL';
 
-const MobileNav = ({ showNav, toggleNav }) => {
+const MobileNav = ({ showNav, toggleNav, language }) => {
+    let navLinks = navLinksEN;
+    if (language === 'PL') navLinks = navLinksPL;
     let nav = null;
     if (showNav) {
         let scrollLinkOffset = 130;

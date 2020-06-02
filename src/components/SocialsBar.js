@@ -15,22 +15,34 @@ const SocialsBar = (props) => {
         <div className="socials-bar">
             <ul className={listClass}>
                 <li className="socials-bar__element">
-                    <ExternalLink linkTo="https://www.facebook.com/jradziminski" label="Facebook">
+                    <ExternalLink
+                        linkTo="https://www.facebook.com/jradziminski"
+                        label="Facebook"
+                        className="socials-bar__link"
+                    >
                         <FaFacebookF />
                     </ExternalLink>
                 </li>
                 <li className="socials-bar__element">
-                    <ExternalLink linkTo="https://www.instagram.com/jradziminski/" label="Instagram">
+                    <ExternalLink
+                        linkTo="https://www.instagram.com/jradziminski/"
+                        label="Instagram"
+                        className="socials-bar__link"
+                    >
                         <FiInstagram />
                     </ExternalLink>
                 </li>
                 <li className="socials-bar__element">
-                    <ExternalLink linkTo="https://www.linkedin.com/in/jan-radzimi%C5%84ski-860707162/" label="Linkedin">
+                    <ExternalLink
+                        linkTo="https://www.linkedin.com/in/jan-radzimi%C5%84ski-860707162/"
+                        label="Linkedin"
+                        className="socials-bar__link"
+                    >
                         <AiOutlineLinkedin />
                     </ExternalLink>
                 </li>
                 <li className="socials-bar__element">
-                    <ExternalLink linkTo="https://github.com/radziminski" label="Github">
+                    <ExternalLink linkTo="https://github.com/radziminski" label="Github" className="socials-bar__link">
                         <AiFillGithub />
                     </ExternalLink>
                 </li>
