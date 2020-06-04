@@ -1,6 +1,6 @@
 export const about = `
 Jestem studentem trzeciego roku Informatyki. Programować zacząłem już w szkole podstawowej i od tego czasu jest to moja nieodłączna pasja.
-Od dwóch lat zajmuję się tworzeniem tworzeniem aplikacji internetowych. Specjalizuję się w bilbiotekach React.js oraz Node.js.
+Specjalizuję się w tworzeniem aplikacji internetowych. Pracowałem z wieloma różnymi technologiami, jednak najpewniej czuję się w bibliotekach React.js oraz Node.js.
 W wolnym czasie pracuję jako producent muzyczny (tworząć głównie gatunki elektroniczne) na platormie ,,House of Tracks" (houseoftracks.com). Należę również do sekcji narciarskiej Politechniki Warszawskiej i biorę aktywny udział w ogólnopolskich zawodach akademickich.
 `;
 
