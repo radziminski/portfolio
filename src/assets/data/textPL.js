@@ -1,6 +1,6 @@
 export const about = `
-Jestem studentem trzeciego roku Informatyki. Programować zacząłem już w szkole podstawowej i od tego czasu tworzenie aplikacji jest moją nieodłączną pasją.
-W ciągu ostatnich lat szlifuję umiejętności związane z tworzeniem aplikacji internetowych. Uwielbiam je projektować i implementować - satysfakcja towarzysząca ukończeniu projektu jest niezastąpiona.
+Jestem studentem trzeciego roku Informatyki. Programować zacząłem już w szkole podstawowej i od tego czasu jest to moja nieodłączna pasja.
+Od dwóch lat zajmuję się tworzeniem tworzeniem aplikacji internetowych. Specjalizuję się w bilbiotekach React.js oraz Node.js.
 W wolnym czasie pracuję jako producent muzyczny (tworząć głównie gatunki elektroniczne) na platormie ,,House of Tracks" (houseoftracks.com). Należę również do sekcji narciarskiej Politechniki Warszawskiej i biorę aktywny udział w ogólnopolskich zawodach akademickich.
 `;
 
@@ -12,7 +12,7 @@ export const greetings = {
 
 export const headerTitle = `Nazywam się`;
 
-export const headerSubtitle = `Jestem deweloperem aplikacji internetowych i producentem muzycznym. Studiuję informatykę na Wydziale Elektroniki i Technik Informacyjnych na Politechnice Warszawskiej.`;
+export const headerSubtitle = `Jestem deweloperem aplikacji internetowych i producentem muzycznym. Studiuję informatykę na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej.`;
 
 export const sectionTitles = {
     about: 'O Mnie',

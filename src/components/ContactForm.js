@@ -14,6 +14,7 @@ class ContactForm extends Component {
         showInfo: false,
         sentSuccess: false,
     };
+    className={events ? (events.length > 0 ? "day-item occupied" : "day-item") : "day-item"}
 
     onChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
