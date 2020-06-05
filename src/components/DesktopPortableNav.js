@@ -16,12 +16,16 @@ export class DesktopPortableNav extends Component {
     render() {
         let nav = null;
         let navLinks = navLinksEN;
-        if (this.props.language === 'PL') navLinks = navLinksPL;
+        let linksToCut = 0; // displaying home in en
+        if (this.props.language === 'PL') {
+            navLinks = navLinksPL;
+            linksToCut = 1; // Hiding Strona Główna in PL
+        }
 
         if (this.state.showNav)
             nav = (
                 <ul className="portable-nav__links">
-                    {navLinks.map((el, id) => (
+                    {navLinks.slice(linksToCut).map((el, id) => (
                         <li key={id} className="portable-nav__element">
                             <Link
                                 className="portable-nav__link"

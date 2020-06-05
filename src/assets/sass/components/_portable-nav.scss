@@ -1,7 +1,7 @@
 .portable-nav {
     display: block;
     position: fixed;
-    right: 5%;
+    right: 7%;
     top: 8rem;
     width: 10rem;
     height: 10rem;
@@ -24,6 +24,13 @@
         margin-top: -1.2rem;
         margin-right: 3rem;
         animation: move-in-left 0.2s ease-out;
+    }
+
+    &__language {
+        position: absolute;
+        top: 0;
+        left: 70%;
+        animation: move-in-right 0.2s ease-out;
     }
 
     &__element {

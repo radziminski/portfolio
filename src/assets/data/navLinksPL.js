@@ -1,5 +1,9 @@
 const navLinks = [
     {
+        name: 'Strona główna',
+        linkTo: 'header',
+    },
+    {
         name: 'O Mnie',
         linkTo: 'section-about',
     },

@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Language = ({ language, toggleLanguage, type }) => {
+const Language = ({ language, toggleLanguage, type = null }) => {
     let className = type || 'language';
-    if (type === 'mobile') {
-    }
+
     if (language === 'EN')
         return (
             <div className={className}>
-                <button className={`${className}__btn ${className}__btn--selected`}>EN</button> |{' '}
+                <button className={`${className}__btn ${className}__btn--selected`}>EN</button> {type ? '' : '|'}{' '}
                 <button className={`${className}__btn`} onClick={toggleLanguage}>
                     PL
                 </button>
@@ -18,7 +17,7 @@ const Language = ({ language, toggleLanguage, type }) => {
             <button className={`${className}__btn`} onClick={toggleLanguage}>
                 EN
             </button>{' '}
-            | <button className={`${className}__btn ${className}__btn--selected`}>PL</button>
+            {type ? '' : '|'} <button className={`${className}__btn ${className}__btn--selected`}>PL</button>
         </div>
     );
 };

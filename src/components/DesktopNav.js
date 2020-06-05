@@ -9,7 +9,7 @@ const DesktopNav = ({ language }) => {
 
     return (
         <ul className="desktop-nav">
-            {navLinks.map((el, id) => (
+            {navLinks.slice(1).map((el, id) => (
                 <li key={id} className="desktop-nav__item">
                     <Link
                         className="desktop-nav__link"

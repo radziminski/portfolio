@@ -3,8 +3,9 @@ import MobileNavIcon from './MobileNavIcon';
 import { Link } from 'react-scroll';
 import navLinksEN from '../assets/data/navLinksEN';
 import navLinksPL from '../assets/data/navLinksPL';
+import Language from './Language';
 
-const MobileNav = ({ showNav, toggleNav, language }) => {
+const MobileNav = ({ showNav, toggleNav, language, toggleLanguage }) => {
     let navLinks = navLinksEN;
     if (language === 'PL') navLinks = navLinksPL;
     let nav = null;
@@ -31,6 +32,9 @@ const MobileNav = ({ showNav, toggleNav, language }) => {
                             </Link>
                         </li>
                     ))}
+                    <li className="mobile-nav__language">
+                        <Language language={language} type="language-mobile" toggleLanguage={toggleLanguage} />
+                    </li>
                 </ul>
             </Fragment>
         );
