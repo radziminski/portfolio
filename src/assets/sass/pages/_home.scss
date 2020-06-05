@@ -154,8 +154,9 @@
     }
 
     &--hidden {
-        animation: fade-out 0.2s ease-in-out;
-        animation-fill-mode: forwards;
+        //animation: fade-out 0.2s ease-in-out;
+        //animation-fill-mode: forwards;
+        display: none;
     }
 }
 

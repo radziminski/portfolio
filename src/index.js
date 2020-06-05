@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import initLoader from './fouc-loader';
 
-initLoader(true);
+initLoader(false);
 
 ReactDOM.render(
     <React.StrictMode>

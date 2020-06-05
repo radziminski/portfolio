@@ -39,3 +39,45 @@
 
     user-select: none;
 }
+
+.language-nav {
+    color: $color-grey-light;
+    transform: translateY(0.5rem);
+    z-index: 150;
+    margin-left: 2rem;
+
+    @include respond(tab-port) {
+        display: none;
+    }
+
+    &__btn {
+        &--selected {
+            color: $color-primary;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        font-weight: 300;
+        font-size: 1.8rem;
+        cursor: pointer;
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $color-grey-light;
+            transition: all 0.2s;
+            opacity: 0;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        transition: all 0.2s;
+    }
+
+    user-select: none;
+}
