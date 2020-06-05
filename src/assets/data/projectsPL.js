@@ -29,7 +29,7 @@ const projects = [
     Project(
         'OFF Museum',
         'Strona muzeum sztuki',
-        'Stronga główna muzeum sztuki nowoczesnej zrobiona w HTML, CSS i odrobiną javascript.',
+        'Stronga muzeum sztuki nowoczesnej zrobiona w HTML, CSS i odrobiną javascript.',
         'https://github.com/radziminski/off-museum',
         'https://radziminski.github.io/off-museum',
         ['html', 'css']
