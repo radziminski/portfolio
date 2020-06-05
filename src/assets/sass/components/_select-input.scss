@@ -3,6 +3,7 @@
     width: 90%;
     max-width: 28rem;
     cursor: pointer;
+    z-index: 100;
 
     &__header {
         width: 100%;
@@ -24,9 +25,10 @@
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 100;
+        z-index: 99;
         border: 1px solid $color-primary;
         border-top: none;
+        animation: move-in-down 0.2s ease-out;
     }
 
     &__element {
