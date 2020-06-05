@@ -19,7 +19,7 @@ export const sectionTitles = {
     skills: 'Umiejętności',
     skillsSubFirst: 'Technologie Webowe:',
     skillsSubSecond: 'Inne Technologie',
-    skillsSubThird: 'Pracowałem również z:',
+    skillsSubThird: 'Pracowałem również z',
     projects: 'Projekty',
     experience: 'Doświadczenie',
     education: 'Edukacja',
