@@ -7,6 +7,16 @@
     }
 }
 
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
 @keyframes fade-in-fade-out {
     0% {
         opacity: 0;

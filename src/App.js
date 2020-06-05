@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './assets/sass/main.scss';
 import Header from './views/Header';
 import About from './views/About';
@@ -10,6 +10,16 @@ import Experience from './views/Experience';
 import NavBar from './components/NavBar';
 function App() {
     const [language, setLanguage] = useState(localStorage.getItem('language') || 'EN');
+
+    useEffect(() => {
+        setTimeout(() => {
+            const loader = document.querySelector('.loader');
+            loader.classList.add('loader--hidden');
+
+            const app = document.querySelector('.App');
+            app.classList.add('App--show');
+        }, 50);
+    }, []);
 
     const toggleLanguage = () => {
         if (language === 'EN') {
