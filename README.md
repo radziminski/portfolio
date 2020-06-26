@@ -4,8 +4,8 @@ This is the website used as my portfolio, presenting my skills and projects.
 ## Installation
 This project was built with usage of [npm](https://www.npmjs.com/). To install do
 ```bash
-git clone https://github.com/radziminski/baza-pytan-react
-cd ./baza-pytan-react
+git clone https://github.com/radziminski/portfolio
+cd ./portfolio
 npm install
 ```
 ## Usage
