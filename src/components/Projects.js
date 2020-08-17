@@ -8,6 +8,29 @@ import { FaNode } from 'react-icons/fa';
 import Btn from './Btn';
 import SelectInput from './SelectInput';
 
+const getTechIcon = (tech) => {
+    switch (tech) {
+        case 'html':
+            return <AiFillHtml5 />;
+        case 'css':
+            return <DiCss3 />;
+        case 'js':
+            return <DiJavascript1 />;
+        case 'react':
+            return <DiReact />;
+        case 'redux':
+            return null;
+        case 'nodejs':
+            return <FaNode />;
+        case 'mongodb':
+            return <DiMongodb />;
+        case 'firebase':
+            return <DiFirebase />;
+        default:
+            return null;
+    }
+};
+
 const filterOptions = [
     {
         id: 'all',
@@ -47,29 +70,6 @@ class Projects extends Component {
         currFilter: 'all',
     };
 
-    getTechIcon = (tech) => {
-        switch (tech) {
-            case 'html':
-                return <AiFillHtml5 />;
-            case 'css':
-                return <DiCss3 />;
-            case 'js':
-                return <DiJavascript1 />;
-            case 'react':
-                return <DiReact />;
-            case 'redux':
-                return null;
-            case 'nodejs':
-                return <FaNode />;
-            case 'mongodb':
-                return <DiMongodb />;
-            case 'firebase':
-                return <DiFirebase />;
-            default:
-                return null;
-        }
-    };
-
     filter = (e) => {
         if (!e.target.id) return;
         if (e.target.id === this.state.currFilter) this.setState({ currFilter: 'all' });
@@ -107,7 +107,7 @@ class Projects extends Component {
                     description={el.description}
                     githubLink={el.githubLink}
                     liveLink={el.liveLink}
-                    icons={el.stack.map((el) => this.getTechIcon(el))}
+                    icons={el.stack.map((el) => getTechIcon(el))}
                 />
             );
         });

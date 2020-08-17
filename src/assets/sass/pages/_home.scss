@@ -111,6 +111,22 @@
             max-width: 70rem;
         }
     }
+
+    &__container {
+        margin-top: 2rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__icon {
+        font-size: 6rem;
+        color: white;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
 }
 
 .section-contact {
