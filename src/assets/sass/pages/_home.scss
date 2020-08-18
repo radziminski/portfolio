@@ -17,10 +17,12 @@
                 $gutter-horizontal-small;
         }
         @include respond(tab-land) {
-            padding: $gutter-section-start-tab $gutter-horizontal-tab $gutter-section-end-tab $gutter-horizontal-tab;
+            padding: $gutter-section-start-tab $gutter-horizontal-tab $gutter-section-end-tab
+                $gutter-horizontal-tab;
         }
         @include respond(tab-port) {
-            padding: $gutter-section-start-min $gutter-horizontal-min $gutter-section-end-min $gutter-horizontal-min;
+            padding: $gutter-section-start-min $gutter-horizontal-min $gutter-section-end-min
+                $gutter-horizontal-min;
         }
         @include respond(small-phone) {
             padding: $gutter-section-start-micro $gutter-horizontal-micro $gutter-section-end-micro
@@ -114,14 +116,17 @@
 
     &__container {
         margin-top: 2rem;
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        overflow: hidden;
     }
 
     &__icon {
         font-size: 6rem;
         color: white;
+        margin: 1rem;
 
         &:hover {
             color: $color-primary;
