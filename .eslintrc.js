@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-unused-vars': 1,
     'react/display-name': 0,
+    'react/prop-types': 0,
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: [2, 'always'],

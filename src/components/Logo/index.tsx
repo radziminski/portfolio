@@ -7,7 +7,7 @@ export const LOGO_TEXT = 'RADZIMIŃSKI';
 const Logo: React.FC = () => {
   return (
     <FlexBox
-      height={40}
+      height={46}
       justifyContent='center'
       alignItems='center'
       background='white'

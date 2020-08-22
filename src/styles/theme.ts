@@ -10,7 +10,6 @@ export const COLORS = {
   white: '#fff',
   primary100: '#ffcc73',
   primary50: '#a0814c',
-  dark20: '#040f2b',
   dark50: '#191d28',
   dark80: '#161922',
   dark100: '#0f1118',
@@ -26,7 +25,7 @@ export const RADII = {
   fullCircle: '100%'
 };
 
-export const FONT_SIZES = [0, 12, 14, 16, 18, 20, 22, 24, 28, 32];
+export const FONT_SIZES = [0, 12, 14, 16, 18, 20, 24, 30, 34, 55];
 
 export const FONT_WEIGHTS = {
   thin: 100,

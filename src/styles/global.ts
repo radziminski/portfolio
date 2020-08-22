@@ -6,7 +6,7 @@ const baseFontFamily = 'Poppins';
 const globalStyles = css`
   html {
     font-size: 100%;
-    background-color: ${({ theme }) => theme.colors.dark20};
+    background-color: ${({ theme }) => theme.colors.dark50};
   }
 
   html,
@@ -23,7 +23,7 @@ const globalStyles = css`
     font-weight: 300;
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.dark20};
+    background-color: ${({ theme }) => theme.colors.dark50};
   }
 
   *,

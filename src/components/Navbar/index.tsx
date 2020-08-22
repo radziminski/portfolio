@@ -4,8 +4,13 @@ import Logo from 'components/Logo';
 
 const Navbar = () => {
   return (
-    <FlexBox marginX={220} marginTop={50}>
-      <Logo />
+    <FlexBox
+      width='100%'
+      paddingX={220}
+      marginTop={50}
+      justifyContent='space-between'
+    >
+      <Logo /> <Logo />
     </FlexBox>
   );
 };
