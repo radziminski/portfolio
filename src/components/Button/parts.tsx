@@ -4,7 +4,7 @@ export const FullButton = styled.button(({ theme }) => ({
   backgroundColor: theme.colors.primary100,
   fontSize: '20px',
   color: theme.colors.dark50,
-  padding: '14px 20px',
+  padding: '16px 26px',
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -16,7 +16,7 @@ export const FullButton = styled.button(({ theme }) => ({
     transform: 'scale(1.1)'
   },
   '&:active:not(:disabled)': {
-    transform: 'translateY(2px)'
+    transform: 'scale(1)'
   }
 }));
 
@@ -24,7 +24,7 @@ export const GhostButton = styled.button(({ theme }) => ({
   backgroundColor: theme.colors.transparent,
   fontSize: '20px',
   color: theme.colors.primary100,
-  padding: '12px 18px',
+  padding: '14px 24px',
   display: 'inline-flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -36,6 +36,6 @@ export const GhostButton = styled.button(({ theme }) => ({
     transform: 'scale(1.1)'
   },
   '&:active:not(:disabled)': {
-    transform: 'translateY(2px)'
+    transform: 'scale(1)'
   }
 }));

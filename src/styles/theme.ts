@@ -50,20 +50,20 @@ export const TEXT_VARIANTS = {};
 export const Z_INDICES = [0, 1, 5, 10, 50, 100, 500, 1000];
 
 export const BUTTON_VARIANTS = {
-    primary: {
-      backgroundColor: COLORS.primary100,
-      color: COLORS.white,
-      ':hover:not(:disabled)': {
-        transform: 'scale(1.1)'
-      },
-      ':active:not(:disabled)': {
-        transform: 'translateY(2px)'
-      },
-      ':disabled': {
-        backgroundColor: COLORS.primary50,
-        cursor: 'not-allowed'
-      }
+  primary: {
+    backgroundColor: COLORS.primary100,
+    color: COLORS.white,
+    ':hover:not(:disabled)': {
+      transform: 'scale(1.1)'
+    },
+    ':active:not(:disabled)': {
+      transform: 'translateY(2px)'
+    },
+    ':disabled': {
+      backgroundColor: COLORS.primary50,
+      cursor: 'not-allowed'
     }
+  }
 };
 
 export const DEFAULTS = {

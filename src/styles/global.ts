@@ -69,11 +69,18 @@ const defaultStylesReset = css`
     &:focus,
     &:active {
       outline: 0;
-    }
+    };
+    text-decoration: none;
+    color: inherit;
   }
 
   figure {
     margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
     padding: 0;
   }
 `;

@@ -1,18 +1,27 @@
 import React from 'react';
-import { FlexBox } from 'components/Box';
 import Navbar from 'components/Navbar';
-import Button from 'components/Button';
+import { HeroBox, ArrowDownWrapper } from './parts';
+import Box from 'components/Box';
+import { FiArrowDownCircle } from 'react-icons/fi';
+import SocialsBar from 'components/SocialsBar';
 
 const HomeView: React.FC = () => {
   return (
-    <>
+    <Box width='100%' height='100vh' position='relative'>
       <Navbar />
-
-      <Button onClick={() => console.log('e')}>Contact Me</Button>
-      <Button variant='ghost' onClick={() => console.log('e')}>
-        About
-      </Button>
-    </>
+      <HeroBox />
+      <ArrowDownWrapper>
+        <FiArrowDownCircle size={42} />
+      </ArrowDownWrapper>
+      <Box
+        position='absolute'
+        top='50%'
+        right='110px'
+        transform='translate(50%, -50%)'
+      >
+        <SocialsBar orientation='vertical' />
+      </Box>
+    </Box>
   );
 };
 

@@ -7,10 +7,12 @@ const Navbar = () => {
     <FlexBox
       width='100%'
       paddingX={220}
-      marginTop={50}
       justifyContent='space-between'
+      position='absolute'
+      top={50}
+      left={0}
     >
-      <Logo /> <Logo />
+      <Logo /> <FlexBox />
     </FlexBox>
   );
 };
