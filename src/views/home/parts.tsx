@@ -43,7 +43,8 @@ export const Description = styled.p(({ theme }) => ({
   fontWeight: theme.fontWeights.light,
   textAlign: 'center',
   lineHeight: '34px',
-  margin: 0
+  margin: 0,
+  marginBottom: '8px'
 }));
 
 export const HeroBox: React.FC = () => {

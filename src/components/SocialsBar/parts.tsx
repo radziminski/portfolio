@@ -4,16 +4,14 @@ import { SocialsBarOrientation } from '.';
 export interface SocialsListProps {
   orientation: SocialsBarOrientation;
 }
-export const SocialsList = styled.ul<SocialsListProps>(
-  ({ theme, orientation }) => ({
-    display: 'flex',
-    flexDirection: orientation === 'vertical' ? 'column' : 'row',
+export const SocialsList = styled.ul<SocialsListProps>(({ orientation }) => ({
+  display: 'flex',
+  flexDirection: orientation === 'vertical' ? 'column' : 'row',
 
-    '&:hover >:not(:hover)': {
-      transform: 'scale(0.86)'
-    }
-  })
-);
+  '&:hover >:not(:hover)': {
+    transform: 'scale(0.86)'
+  }
+}));
 
 export const SocialsItem = styled.li<SocialsListProps>(
   ({ theme, orientation }) => ({

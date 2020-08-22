@@ -69,7 +69,7 @@ const defaultStylesReset = css`
     &:focus,
     &:active {
       outline: 0;
-    };
+    }
     text-decoration: none;
     color: inherit;
   }
