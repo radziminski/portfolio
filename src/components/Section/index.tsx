@@ -1,5 +1,3 @@
-import React from 'react';
-import Box from 'components/Box';
 import styled from 'styled-components';
 
 export type SectionVariant = 'dark' | 'light';
