@@ -99,6 +99,12 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
   bottom: '40px',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  opacity: '50%',
-  color: theme.colors.white
+  opacity: '60%',
+  color: theme.colors.white,
+  transition: 'opacity 0.1s, color 0.1s',
+
+  ':hover': {
+    color: theme.colors.primary100,
+    opacity: '80%',
+  }
 }));

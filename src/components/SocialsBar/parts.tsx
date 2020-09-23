@@ -17,6 +17,7 @@ export const SocialsItem = styled.li<SocialsListProps>(
   ({ theme, orientation }) => ({
     margin: orientation === 'vertical' ? '14px 0' : ' 0 14px',
     transition: 'all 0.15s ease-in-out',
+    color: theme.colors.gray90,
 
     '&:hover': {
       color: theme.colors.primary100,
