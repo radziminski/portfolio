@@ -105,6 +105,6 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
 
   ':hover': {
     color: theme.colors.primary100,
-    opacity: '80%',
+    opacity: '80%'
   }
 }));
