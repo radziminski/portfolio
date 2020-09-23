@@ -44,7 +44,7 @@ export const NavItem = styled.li(({ theme }) => ({
     color: theme.colors.primary100,
 
     '&:after': {
-      width: '60%',
+      width: '40%',
       opacity: 1
     }
   }
