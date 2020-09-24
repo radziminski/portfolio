@@ -5,7 +5,15 @@ import DesktopNav from 'components/Nav/DesktopHomeNav';
 import Dropdown from 'components/Dropdown';
 
 export const LanguageDropdown: React.FC = () => {
-  return <Dropdown></Dropdown>;
+  return (
+    <Dropdown
+      options={['English', 'Polish']}
+      value='English'
+      onChange={() => {
+        console.log('will change language');
+      }}
+    />
+  );
 };
 
 const Navbar = () => {
