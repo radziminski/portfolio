@@ -25,7 +25,7 @@ export const RADII = {
   fullCircle: '100%'
 };
 
-export const FONT_SIZES = [0, 12, 14, 16, 18, 20, 24, 30, 34, 55];
+export const FONT_SIZES = [0, 12, 14, 16, 18, 20, 24, 30, 36, 55];
 
 export const FONT_WEIGHTS = {
   thin: 100,
