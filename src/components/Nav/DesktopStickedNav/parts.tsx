@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div(({ theme }) => ({
+export const MainContainer = styled.div({
   display: 'block',
   position: 'fixed',
   right: '7%',
@@ -9,9 +9,9 @@ export const MainContainer = styled.div(({ theme }) => ({
   height: '100px',
   zIndex: 200,
   animation: 'fade-in 0.3s ease-out'
-}));
+});
 
-export const ListContainer = styled.ul(({ theme }) => ({
+export const ListContainer = styled.ul({
   position: 'absolute',
   top: 0,
   right: '100%',
@@ -20,15 +20,15 @@ export const ListContainer = styled.ul(({ theme }) => ({
   justifyContent: 'flex-start',
   boxShadow: '0 12px 30px rgba(0, 0, 0, 0.3)',
 
-  marginTop: '-12px',
+  marginTop: '-8px',
   marginRight: '30px',
   animation: 'move-in-left 0.2s ease-out'
-}));
+});
 
 export const ListElement = styled.li(({ theme }) => ({
   fontSize: '20px',
 
-  color: theme.colors.primary100,
+  color: theme.colors.gray90,
   backgroundColor: theme.colors.dark50,
   backfaceVisibility: 'hidden',
   cursor: 'pointer',

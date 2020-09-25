@@ -1,3 +1,4 @@
+import { animations } from './animations';
 import { createGlobalStyle, css } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
@@ -90,4 +91,5 @@ export const GlobalStyles = createGlobalStyle`
   ${normalize}
   ${globalStyles}
   ${defaultStylesReset}
+  ${animations}
 `;

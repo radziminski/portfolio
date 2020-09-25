@@ -45,7 +45,7 @@ const DesktopStickedNav = () => {
         onClick={() => setShowNav((prevVal) => !prevVal)}
         active={showNav}
       />
-      {nav}
+      {showNav && nav}
     </MainContainer>
   );
 };
