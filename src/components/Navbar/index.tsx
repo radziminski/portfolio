@@ -3,6 +3,7 @@ import { FlexBox } from 'components/Box';
 import Logo from 'components/Logo';
 import DesktopNav from 'components/Nav/DesktopHomeNav';
 import Dropdown from 'components/Dropdown';
+import DesktopStickedNav from 'components/Nav/DesktopStickedNav';
 
 export const LanguageDropdown: React.FC = () => {
   return (
@@ -30,6 +31,7 @@ const Navbar = () => {
       <Logo />
       <DesktopNav language='EN' />
       <LanguageDropdown />
+      <DesktopStickedNav />
     </FlexBox>
   );
 };
