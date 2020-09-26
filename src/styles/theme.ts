@@ -6,6 +6,7 @@ export const SPACE = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88];
 
 export const COLORS = {
   black: '#000',
+  blackRgb: '0,0,0',
   transparent: 'transparent',
   white: '#fff',
   primary100: '#ffcc73',

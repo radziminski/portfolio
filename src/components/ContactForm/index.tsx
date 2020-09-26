@@ -4,14 +4,12 @@ import { contactFormFields } from './form-fields';
 
 const ContactForm: React.FC = () => {
   return (
-    <div>
-      <Form
-        inputs={contactFormFields}
-        onSubmit={() => {
-          console.log('submit');
-        }}
-      />
-    </div>
+    <Form
+      inputs={contactFormFields}
+      onSubmit={() => {
+        console.log('submit');
+      }}
+    />
   );
 };
 

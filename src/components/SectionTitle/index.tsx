@@ -8,6 +8,7 @@ export const SectionTitle = styled.h2<Props>(({ theme, type = 'left' }) => ({
   fontSize: theme.fontSizes[8],
   paddingLeft: type === 'left' ? '55px' : type === 'center' ? '45px' : 0,
   paddingRight: type === 'right' ? '55px' : type === 'center' ? '45px' : 0,
+  margin: 0,
   textAlign: type,
   position: 'relative',
   fontWeight: 500,

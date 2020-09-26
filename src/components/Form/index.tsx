@@ -64,8 +64,15 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
   return (
     <Container>
       {renderedInputs}
-      <FlexBox justifyContent='space-between'>
-        <div></div>
+      <FlexBox justifyContent='space-between' alignItems='center'>
+        <FlexBox
+          color='primary100'
+          maxWidth='300px'
+          opacity={0}
+          transition='all 0.2s'
+        >
+          Sample message will be here
+        </FlexBox>
         <Button
           onClick={() => {
             console.log('onClick');
