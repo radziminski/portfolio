@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FlexBox } from 'components/Box';
 import Logo from 'components/Logo';
 import DesktopNav from 'components/Nav/DesktopHomeNav';
 import Dropdown from 'components/Dropdown';
 import DesktopStickedNav from 'components/Nav/DesktopStickedNav';
-
-const SHOW_STICKED_NAV_OFFSET = window.innerHeight - 300;
+import { useToggleStickedNav } from './hooks';
 
 export const LanguageDropdown: React.FC = () => {
   return (
@@ -20,21 +19,7 @@ export const LanguageDropdown: React.FC = () => {
 };
 
 const Navbar = () => {
-  const [showStickedNav, setShowStickedNav] = useState(false);
-
-  useEffect(() => {
-    // TODO: Probably can be better with intersection observer
-    const checkIfShowStickedNav = () => {
-      if (window.scrollY > SHOW_STICKED_NAV_OFFSET && !showStickedNav)
-        setShowStickedNav(true);
-      else if (window.scrollY <= SHOW_STICKED_NAV_OFFSET && showStickedNav)
-        setShowStickedNav(false);
-    };
-
-    window.addEventListener('scroll', checkIfShowStickedNav);
-
-    return () => window.removeEventListener('scroll', checkIfShowStickedNav);
-  }, [showStickedNav, setShowStickedNav]);
+  const showStickedNav = useToggleStickedNav();
 
   return (
     <FlexBox

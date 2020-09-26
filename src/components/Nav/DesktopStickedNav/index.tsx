@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import navLinksEN from 'assets/data/navLinksEN';
-import navLinksPL from 'assets/data/navLinksPL';
+// import navLinksPL from 'assets/data/navLinksPL';
 import MobileNavIcon from 'components/Nav/MobileNavIcon';
 import { MainContainer, ListContainer, ListElement } from './parts';
 
 // Todo: Language - to be updates
-const language = 'EN';
+// const language = 'EN';
 
 const DesktopStickedNav = () => {
   const [showNav, setShowNav] = useState(false);
