@@ -4,10 +4,11 @@ import { FullButton, GhostButton } from './parts';
 export type ButtonVariant = 'ghost' | 'full';
 
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
   variant?: ButtonVariant;
   margin?: string | number;
   padding?: string | number;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: React.FC<Props> = ({
@@ -15,13 +16,22 @@ const Button: React.FC<Props> = ({
   onClick,
   padding,
   margin,
-  variant
+  variant,
+  type
 }) => {
   const buttonProps = { onClick, margin, padding };
   if (variant === 'ghost')
-    return <GhostButton {...buttonProps}>{children}</GhostButton>;
+    return (
+      <GhostButton {...buttonProps} type={type || 'button'}>
+        {children}
+      </GhostButton>
+    );
 
-  return <FullButton {...buttonProps}>{children}</FullButton>;
+  return (
+    <FullButton {...buttonProps} type={type || 'button'}>
+      {children}
+    </FullButton>
+  );
 };
 
 export default Button;
