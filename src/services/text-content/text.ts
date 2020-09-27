@@ -1,7 +1,31 @@
 import * as textPL from 'assets/data/textPL';
 import * as textEN from 'assets/data/textEN';
-import { TextContent } from './textType';
 import { Languages } from 'services/text-content';
+
+export interface TextContent {
+  about: string;
+  greetings: {
+    early: string;
+    mid: string;
+    late: string;
+  };
+  headerTitle: string;
+  headerSubtitle: string;
+  sectionTitles: Record<string, string>;
+  contactMsg: string;
+  tel: string;
+  btns: {
+    contact: string;
+    about: string;
+    send: string;
+  };
+  form: {
+    subject: string;
+    message: string;
+    messageSuccess: string;
+    messageFail: string;
+  };
+}
 
 export default function getText(language: Languages): TextContent {
   if (language === 'PL') return textPL;

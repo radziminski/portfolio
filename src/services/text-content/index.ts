@@ -1,12 +1,9 @@
 import React, { createContext } from 'react';
 
-import { TextContent } from 'services/text-content/textType';
-import { NavLink } from 'services/text-content/navLinks';
-import getText from 'services/text-content/text';
-import { Experience } from './eduAndExp';
-import getNavLinks from './navLinks';
-import getProjects from './projects';
-import getEduAndExp from './eduAndExp';
+import getText, { TextContent } from 'services/text-content/text';
+import getNavLinks, { NavLink } from './navLinks';
+import getProjects, { Project } from './projects';
+import getEduAndExp, { Experience } from './eduAndExp';
 
 const DEFAULT_LANGUAGE = 'EN';
 export type Languages = 'EN' | 'PL';
@@ -15,7 +12,7 @@ interface TextContentContext {
   text: TextContent;
   navLinks: NavLink[];
   eduAndExp: Experience[];
-  projects: any;
+  projects: Project[];
   setLanguage: null | React.Dispatch<React.SetStateAction<Languages>>;
 }
 
