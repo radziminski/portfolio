@@ -3,7 +3,7 @@ import { FormInput } from 'components/Form';
 export const contactFormFields: FormInput[] = [
   {
     label: 'Email',
-    type: 'text',
+    type: 'email',
     required: true
   },
   {

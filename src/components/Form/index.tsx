@@ -6,11 +6,12 @@ import Button from 'components/Button';
 import { FlexBox } from 'components/Box';
 import Loader from 'components/Loader';
 
-const INFO_MESSAGE_APPEARANCE_DURATION_MS = 4000;
+const INFO_MESSAGE_APPEARANCE_DURATION_MS = 3500;
+const INFO_MESSAGE_DISAPPEAR_DURATION_MS = 300;
 
 export interface FormInput {
   label: string;
-  type: 'text' | 'textarea';
+  type: 'text' | 'textarea' | 'email';
   required?: boolean;
 }
 
@@ -31,7 +32,7 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
     setShowMessage(true);
     setTimeout(
       () => setShowMessage(false),
-      INFO_MESSAGE_APPEARANCE_DURATION_MS - 2000
+      INFO_MESSAGE_APPEARANCE_DURATION_MS - INFO_MESSAGE_DISAPPEAR_DURATION_MS
     );
     setTimeout(() => setMessage(''), INFO_MESSAGE_APPEARANCE_DURATION_MS);
   };
@@ -68,8 +69,9 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
   const renderedInputs = useMemo(
     () =>
       inputs.map((input) =>
-        input.type === 'text' ? (
+        input.type === 'text' || input.type === 'email' ? (
           <TextInput
+            type={input.type}
             key={input.label}
             label={input.label}
             required={!!input.required}
@@ -109,7 +111,7 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
           color='primary100'
           maxWidth='180px'
           opacity={showMessage ? 1 : 0}
-          transition='all 0.3s'
+          transition={`all ${INFO_MESSAGE_DISAPPEAR_DURATION_MS / 1000}s`}
           style={{ wordWrap: 'break-word' }}
         >
           {messageBoxContent}

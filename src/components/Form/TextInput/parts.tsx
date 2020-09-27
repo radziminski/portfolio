@@ -19,7 +19,7 @@ export const Input = styled.input(({ theme }) => ({
   fontSize: theme.fontSizes[5],
   outline: 'none',
   borderBottom: '2px solid',
-  borderColor: theme.colors.gray50,
+  borderColor: theme.colors.gray10,
   color: theme.colors.gray90,
   position: 'absolute',
   top: 0,
@@ -44,7 +44,7 @@ export const Label = styled.label<{ selected: boolean }>(
     color: selected ? theme.colors.primary100 : theme.colors.gray50,
     zIndex: 0,
     userSelect: 'none',
-    transform: selected ? ' translateY(-32px)' : 'translateY(0)',
+    transform: selected ? ' translateY(-34px)' : 'translateY(-4px)',
     transition: 'all 0.2s'
   })
 );

@@ -9,18 +9,18 @@ export const IconBar = styled.div<{ active: boolean }>(({ theme, active }) => ({
   opacity: 1,
 
   ':not(:last-child)': {
-    marginBottom: '8px'
+    marginBottom: '7px'
   },
 
   ':first-child': {
-    transform: active ? 'translateY(13px) rotate(45deg)' : undefined
+    transform: active ? 'translateY(12px) rotate(45deg)' : undefined
   },
 
   ':nth-child(2)': {
     opacity: active ? 0 : undefined
   },
   ':last-child': {
-    transform: active ? 'translateY(-13px) rotate(-45deg)' : undefined
+    transform: active ? 'translateY(-12px) rotate(-45deg)' : undefined
   }
 
   // TODO: Update responsiveness (see old repo)
@@ -28,8 +28,8 @@ export const IconBar = styled.div<{ active: boolean }>(({ theme, active }) => ({
 
 export const Container = styled.div(() => ({
   display: 'block',
-  width: '48px',
-  height: '38px',
+  width: '44px',
+  height: '35px',
   cursor: 'pointer',
   zIndex: 180
 }));

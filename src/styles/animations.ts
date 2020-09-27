@@ -46,7 +46,7 @@ export const animations = `
 @keyframes move-in-down {
     0% {
         opacity: 0;
-        transform: translateY(-4rem);
+        transform: translateY(-40px);
     }
 
     100% {
@@ -57,7 +57,7 @@ export const animations = `
 @keyframes move-in-left {
     0% {
         opacity: 0;
-        transform: translateX(4rem);
+        transform: translateX(40px);
     }
 
     100% {
@@ -68,7 +68,7 @@ export const animations = `
 @keyframes move-in-right {
     0% {
         opacity: 0;
-        transform: translateX(-2rem);
+        transform: translateX(-20px);
     }
 
     100% {

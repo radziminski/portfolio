@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Box, { FlexBox } from 'components/Box';
 import styled from 'styled-components';
 import Button from 'components/Button';
+import TextContentContext from 'services/text-content';
 
 export const Subtitle = styled.div(({ theme }) => ({
   fontSize: '20px',
@@ -48,6 +49,15 @@ export const Description = styled.p(({ theme }) => ({
 }));
 
 export const HeroBox: React.FC = () => {
+  const { text } = useContext(TextContentContext);
+  let greetingMessage = text && text.greetings.late;
+  const dayTime = new Date().getHours();
+  if (dayTime < 12 && dayTime > 4) {
+    greetingMessage = text && text.greetings.early;
+  } else if (dayTime < 18 && dayTime > 11) {
+    greetingMessage = text && text.greetings.mid;
+  }
+
   return (
     <FlexBox
       position='absolute'
@@ -58,7 +68,7 @@ export const HeroBox: React.FC = () => {
       alignItems='center'
       width='700px'
     >
-      <Subtitle>GOOD MORNING!</Subtitle>
+      <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
       <Title>
         I&apos;m{' '}
         <Box display='inline-flex' color='primary100'>
@@ -66,11 +76,7 @@ export const HeroBox: React.FC = () => {
         </Box>{' '}
         Radzimiński
       </Title>
-      <Description>
-        Full-stack web developer, computer scientist and music producer. Student
-        of bachelor studies at Faculty of Electronics and Information Technology
-        at Warsaw University of Technology.
-      </Description>
+      <Description>{text && text.headerSubtitle}</Description>
       <FlexBox marginTop='28px'>
         <Button
           variant='full'
@@ -78,7 +84,7 @@ export const HeroBox: React.FC = () => {
             /** todo */
           }}
         >
-          Contact Me
+          {text && text.btns.contact}
         </Button>
         <FlexBox marginX='30px' />
         <Button
@@ -87,7 +93,7 @@ export const HeroBox: React.FC = () => {
             /** todo */
           }}
         >
-          About
+          {text && text.btns.about}
         </Button>
       </FlexBox>
     </FlexBox>

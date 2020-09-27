@@ -1,21 +1,27 @@
 import styled from 'styled-components';
 import { SocialsBarOrientation } from '.';
 
+const DEFAULT_ELEMENT_DISTANCE = 14;
+
 export interface SocialsListProps {
   orientation: SocialsBarOrientation;
+  elementDistance?: number;
 }
 export const SocialsList = styled.ul<SocialsListProps>(({ orientation }) => ({
   display: 'flex',
   flexDirection: orientation === 'vertical' ? 'column' : 'row',
 
-  '&:hover >:not(:hover)': {
+  '&:hover > :not(:hover)': {
     transform: 'scale(0.86)'
   }
 }));
 
 export const SocialsItem = styled.li<SocialsListProps>(
-  ({ theme, orientation }) => ({
-    margin: orientation === 'vertical' ? '14px 0' : ' 0 14px',
+  ({ theme, orientation, elementDistance }) => ({
+    margin:
+      orientation === 'vertical'
+        ? `${elementDistance || DEFAULT_ELEMENT_DISTANCE}px 0`
+        : ` 0 ${elementDistance || DEFAULT_ELEMENT_DISTANCE}px`,
     transition: 'all 0.15s ease-in-out',
     color: theme.colors.gray90,
 

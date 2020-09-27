@@ -16,10 +16,10 @@ export const Textarea = styled.textarea(({ theme }) => ({
   textDecoration: 'none',
   backgroundColor: 'transparent',
   font: 'inherit',
-  fontSize: theme.fontSizes[6],
+  fontSize: theme.fontSizes[5],
   outline: 'none',
   borderBottom: '2px solid',
-  borderColor: theme.colors.gray50,
+  borderColor: theme.colors.gray10,
   color: theme.colors.gray90,
   position: 'absolute',
   top: 0,
@@ -44,7 +44,7 @@ export const Label = styled.label<{ selected: boolean }>(
     color: selected ? theme.colors.primary100 : theme.colors.gray50,
     zIndex: 0,
     userSelect: 'none',
-    transform: selected ? ' translateY(-96px)' : 'translateY(0)',
+    transform: selected ? ' translateY(-100px)' : 'translateY(-4px)',
     transition: 'all 0.2s'
   })
 );

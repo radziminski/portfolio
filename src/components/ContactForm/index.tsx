@@ -1,7 +1,7 @@
-import Form from 'components/Form';
-import { database as db } from 'services/firebase';
 import React from 'react';
+import { database as db } from 'services/firebase';
 import { contactFormFields } from './form-fields';
+import Form from 'components/Form';
 
 const SUCCESS_MESSAGE = 'Message sent successfully.';
 const ERROR_MESSAGE =

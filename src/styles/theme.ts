@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 export const BREAKPOINTS = ['480px', '769px', '993px', '1201px', '1481px'];
 
-export const SPACE = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88];
+export const SPACE = [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88];
 
 export const COLORS = {
   black: '#000',

@@ -6,15 +6,22 @@ interface Props {
   value: string;
   onChange: (value: string) => void;
   required: boolean;
+  type?: 'text' | 'email';
 }
 
-const TextInput: React.FC<Props> = ({ label, value, onChange, required }) => {
+const TextInput: React.FC<Props> = ({
+  label,
+  value,
+  onChange,
+  required,
+  type = 'text'
+}) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <Container>
       <Input
-        type='text'
+        type={type}
         id={label}
         value={value}
         onChange={(e) => onChange(e.target.value)}
