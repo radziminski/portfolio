@@ -120,7 +120,7 @@ const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
           {messageBoxContent}
         </FlexBox>
         <Button type='submit' padding='10px 30px'>
-          {sendBtnText || 'Send' + '!'}
+          {`${sendBtnText || 'Send'}!`}
         </Button>
       </FlexBox>
     </Container>
