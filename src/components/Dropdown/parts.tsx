@@ -5,14 +5,17 @@ export const DropdownContainer = styled.div(({ theme }) => ({
   position: 'relative'
 }));
 
-export const SelectedOptionContainer = styled.div(({ theme }) => ({
-  border: '1px solid',
-  borderColor: theme.colors.gray90,
-  padding: '8px 12px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  color: theme.colors.gray90
-}));
+export const SelectedOptionContainer = styled.div<{ width?: number }>(
+  ({ theme, width }) => ({
+    border: '1px solid',
+    borderColor: theme.colors.gray90,
+    padding: '8px 12px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    color: theme.colors.gray90,
+    width: width ? `${width}px` : 'auto'
+  })
+);
 
 export const SelectedOptionText = styled.div(({ theme }) => ({
   fontSize: theme.fontSizes[3]

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-scroll';
-import navLinksEN from 'assets/data/navLinksEN';
-// import navLinksPL from 'assets/data/navLinksPL';
 import MobileNavIcon from 'components/Nav/MobileNavIcon';
 import { MainContainer, ListContainer, ListElement } from './parts';
+import TextContentContext from 'services/text-content';
 
 // Todo: Language - to be updates
 // const language = 'EN';
@@ -11,13 +10,12 @@ import { MainContainer, ListContainer, ListElement } from './parts';
 const DesktopStickedNav = () => {
   const [showNav, setShowNav] = useState(false);
 
-  const navLinks = navLinksEN;
-  const linksToCut = 0; // displaying home in en
+  const { navLinks, language } = useContext(TextContentContext);
+  let linksToCut = 0; // displaying home in en
 
-  // if (language === 'PL') {
-  //   navLinks = navLinksPL;
-  //   linksToCut = 1; // Hiding Strona Główna in PL
-  // }
+  if (language === 'PL') {
+    linksToCut = 1;
+  }
 
   const nav = (
     <ListContainer>

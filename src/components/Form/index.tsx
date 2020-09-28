@@ -18,9 +18,10 @@ export interface FormInput {
 export interface Props {
   inputs: FormInput[];
   onSubmit: (values: Record<string, string>) => Promise<string>;
+  sendBtnText?: string;
 }
 
-const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
+const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
   const [values, setValues] = useState<Record<string, string>>({});
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -32,7 +33,9 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
     setShowMessage(true);
     setTimeout(
       () => setShowMessage(false),
-      INFO_MESSAGE_APPEARANCE_DURATION_MS - INFO_MESSAGE_DISAPPEAR_DURATION_MS
+      INFO_MESSAGE_APPEARANCE_DURATION_MS -
+        INFO_MESSAGE_DISAPPEAR_DURATION_MS +
+        50
     );
     setTimeout(() => setMessage(''), INFO_MESSAGE_APPEARANCE_DURATION_MS);
   };
@@ -117,7 +120,7 @@ const Form: React.FC<Props> = ({ inputs, onSubmit }) => {
           {messageBoxContent}
         </FlexBox>
         <Button type='submit' padding='10px 30px'>
-          Send!
+          {sendBtnText || 'Send' + '!'}
         </Button>
       </FlexBox>
     </Container>

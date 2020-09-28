@@ -19,7 +19,8 @@ const App: React.FC = () => {
       navLinks: getNavLinks(language),
       eduAndExp: getEduAndExp(language),
       projects: getProjects(language),
-      setLanguage
+      setLanguage,
+      language
     }),
     [language, setLanguage]
   );

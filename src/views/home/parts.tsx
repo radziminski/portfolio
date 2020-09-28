@@ -31,12 +31,14 @@ export const Subtitle = styled.div(({ theme }) => ({
   }
 }));
 
-export const Title = styled.h1(({ theme }) => ({
-  fontSize: '55px',
-  color: theme.colors.white,
-  fontWeight: theme.fontWeights.semiBold,
-  margin: '22px 0'
-}));
+export const Title = styled.h1<{ fontSize?: number }>(
+  ({ theme, fontSize = 55 }) => ({
+    fontSize: `${fontSize}px`,
+    color: theme.colors.white,
+    fontWeight: theme.fontWeights.semiBold,
+    margin: '22px 0'
+  })
+);
 
 export const Description = styled.p(({ theme }) => ({
   fontSize: '20px',
@@ -50,12 +52,12 @@ export const Description = styled.p(({ theme }) => ({
 
 export const HeroBox: React.FC = () => {
   const { text } = useContext(TextContentContext);
-  let greetingMessage = text && text.greetings.late;
+  let greetingMessage = text.greetings.late;
   const dayTime = new Date().getHours();
   if (dayTime < 12 && dayTime > 4) {
-    greetingMessage = text && text.greetings.early;
+    greetingMessage = text.greetings.early;
   } else if (dayTime < 18 && dayTime > 11) {
-    greetingMessage = text && text.greetings.mid;
+    greetingMessage = text.greetings.mid;
   }
 
   return (
@@ -69,14 +71,14 @@ export const HeroBox: React.FC = () => {
       width='700px'
     >
       <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
-      <Title>
-        I&apos;m{' '}
+      <Title fontSize={text.headerTitle.length > 5 ? 45 : undefined}>
+        {text.headerTitle}{' '}
         <Box display='inline-flex' color='primary100'>
           Jan
         </Box>{' '}
         Radzimiński
       </Title>
-      <Description>{text && text.headerSubtitle}</Description>
+      <Description>{text.headerSubtitle}</Description>
       <FlexBox marginTop='28px'>
         <Button
           variant='full'
@@ -84,7 +86,7 @@ export const HeroBox: React.FC = () => {
             /** todo */
           }}
         >
-          {text && text.btns.contact}
+          {text.btns.contact}
         </Button>
         <FlexBox marginX='30px' />
         <Button
@@ -93,7 +95,7 @@ export const HeroBox: React.FC = () => {
             /** todo */
           }}
         >
-          {text && text.btns.about}
+          {text.btns.about}
         </Button>
       </FlexBox>
     </FlexBox>

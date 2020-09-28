@@ -14,6 +14,7 @@ interface TextContentContext {
   eduAndExp: Experience[];
   projects: Project[];
   setLanguage: null | React.Dispatch<React.SetStateAction<Languages>>;
+  language: Languages;
 }
 
 const TextContentContext = createContext<TextContentContext>({
@@ -21,7 +22,8 @@ const TextContentContext = createContext<TextContentContext>({
   setLanguage: null,
   navLinks: getNavLinks(DEFAULT_LANGUAGE),
   eduAndExp: getEduAndExp(DEFAULT_LANGUAGE),
-  projects: getProjects(DEFAULT_LANGUAGE)
+  projects: getProjects(DEFAULT_LANGUAGE),
+  language: DEFAULT_LANGUAGE
 });
 
 export default TextContentContext;

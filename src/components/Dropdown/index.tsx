@@ -13,9 +13,15 @@ interface Props {
   options: string[];
   value: string;
   onChange: (option: string) => void;
+  width?: number;
 }
 
-export const Dropdown: React.FC<Props> = ({ options, value, onChange }) => {
+export const Dropdown: React.FC<Props> = ({
+  options,
+  value,
+  onChange,
+  width
+}) => {
   const [isOpened, setIsOpened] = useState(false);
   const dropdownRef = useRef(null);
   const renderedOptions = useMemo(
@@ -35,7 +41,7 @@ export const Dropdown: React.FC<Props> = ({ options, value, onChange }) => {
       onClick={() => setIsOpened((prevState) => !prevState)}
       ref={dropdownRef}
     >
-      <SelectedOptionContainer>
+      <SelectedOptionContainer width={width}>
         <SelectedOptionText>{value} </SelectedOptionText>
         <AiFillCaretDown
           style={{
