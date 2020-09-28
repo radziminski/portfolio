@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 
-export const Paragraph = styled.p(({ theme }) => ({
-  display: 'block',
-  margin: '15px 0',
-  fontSize: theme.fontSizes[4],
-  textAlign: 'left',
-  color: theme.colors.gray90
-}));
+interface Props {
+  fontSize?: number;
+  lineHeight?: number;
+  color?: string;
+}
+
+export const Paragraph = styled.p<Props>(
+  ({ theme, fontSize, lineHeight, color }) => ({
+    display: 'block',
+    margin: '15px 0',
+    lineHeight,
+    fontSize: fontSize || theme.fontSizes[4],
+    textAlign: 'left',
+    color: (color && theme.colors[color]) || theme.colors.gray90
+  })
+);
 
 export default Paragraph;
