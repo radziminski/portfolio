@@ -7,7 +7,6 @@ import ContactForm from 'components/ContactForm';
 import Box, { FlexBox } from 'components/Box';
 import SocialsBar from 'components/SocialsBar';
 import Paragraph from 'components/Paragraph';
-import { defaultTheme } from 'styles/theme';
 import Text from 'components/Text';
 
 const ICON_STYLE = {
@@ -62,7 +61,7 @@ const ContactView: React.FC = () => {
             </FlexBox>
           ))}
 
-          <Box position='absolute' bottom={0} left={0}>
+          <Box position='absolute' bottom={0} left={-18}>
             <SocialsBar
               orientation='horizontal'
               elementDistance={20}
