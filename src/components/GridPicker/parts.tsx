@@ -16,5 +16,6 @@ export const Grid = styled.div(({ theme }) => ({
   width: '100%',
   gridTemplateColumns: 'repeat(4, 1fr)',
   gridGap: '30px',
-  gridTemplateRows: 'auto'
+  gridTemplateRows: 'auto',
+  color: theme.colors.gray90
 }));

@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "dependencies": {
+    "@iconify/icons-fa-brands": "^1.0.16",
+    "@iconify/icons-ion": "^1.0.15",
+    "@iconify/react": "^1.1.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -15,7 +18,7 @@
     "@types/styled-system": "^5.1.10",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
-    "firebase": "^7.21.1",
+    "firebase": "^7.22.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",

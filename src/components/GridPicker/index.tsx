@@ -1,24 +1,27 @@
 import Box, { FlexBox } from 'components/Box';
+import Paragraph from 'components/Paragraph';
 import React from 'react';
 import { ColumnTitle, Container, Grid } from './parts';
+import { Icon } from '@iconify/react';
+import reactIcon from '@iconify/icons-fa-brands/react';
+import logoJavascript from '@iconify/icons-ion/logo-javascript';
 
 const GridPicker = () => {
   return (
     <Container>
       <FlexBox
-        paddingX={150}
+        paddingX={110}
         marginBottom={50}
         justifyContent='space-around'
         alignItems='center'
       >
-        <Box
-          height={100}
-          width={100}
-          style={{ backgroundColor: 'white' }}
-          marginRight={50}
-        ></Box>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut molestias
-        obcaecati atque. Sit accusamus eligendi culpa modi vero placeat.
+        <Box marginRight={50}>
+          <Icon icon={reactIcon} style={{ fontSize: 90 }} />
+        </Box>
+        <Paragraph color='gray90'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut molestias
+          obcaecati atque. Sit accusamus eligendi culpa modi vero placeat.
+        </Paragraph>
       </FlexBox>
       <FlexBox justifyContent='space-between' width='100%'>
         <FlexBox
@@ -29,61 +32,22 @@ const GridPicker = () => {
         >
           <ColumnTitle>Web Technologies:</ColumnTitle>
           <Grid>
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
+            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
+            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
+            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
           </Grid>
         </FlexBox>
         <FlexBox flexDirection='column' alignItems='center' width='43%'>
           <ColumnTitle>Other Technologies:</ColumnTitle>
           <Grid>
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
-            <Box
-              height={80}
-              width={'100%'}
-              style={{ backgroundColor: 'white' }}
-            />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
+            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
+            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
           </Grid>
         </FlexBox>
       </FlexBox>
