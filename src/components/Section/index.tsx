@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Linker from 'components/Linker';
 
+const SIDE_PADDING = 400;
+
 export type SectionVariant = 'dark' | 'light';
 
 export interface Props {
@@ -11,7 +13,7 @@ export interface Props {
 }
 
 const SectionContainer = styled.div<Props>(({ theme, variant }) => ({
-  padding: '80px 400px 110px 400px',
+  padding: `80px ${SIDE_PADDING}px 110px ${SIDE_PADDING}px`,
   backgroundColor:
     variant === 'light' ? theme.colors.dark50 : theme.colors.dark80,
   position: 'relative'

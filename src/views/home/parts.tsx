@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import TextContentContext from 'services/text-content';
 
+const STRIPS_WIDTH = 70;
+
 export const Subtitle = styled.div(({ theme }) => ({
   fontSize: '20px',
   color: theme.colors.primary100,
@@ -14,7 +16,7 @@ export const Subtitle = styled.div(({ theme }) => ({
     // eslint-disable-next-line quotes
     content: `''`,
     display: 'block',
-    width: '60px',
+    width: `${STRIPS_WIDTH}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
     marginLeft: '20px'
@@ -24,7 +26,7 @@ export const Subtitle = styled.div(({ theme }) => ({
     // eslint-disable-next-line quotes
     content: `''`,
     display: 'block',
-    width: '60px',
+    width: `${STRIPS_WIDTH}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
     marginRight: '20px'

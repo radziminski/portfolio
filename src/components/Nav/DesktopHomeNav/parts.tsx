@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const HOVER_UNDERLINE_WIDTH = 15;
+
 export const NavList = styled.ul(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-around',
@@ -44,7 +46,7 @@ export const NavItem = styled.li(({ theme }) => ({
     color: theme.colors.primary100,
 
     '&:after': {
-      width: '40%',
+      width: `${HOVER_UNDERLINE_WIDTH}%`,
       opacity: 1
     }
   }
