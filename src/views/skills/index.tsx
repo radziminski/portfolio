@@ -7,9 +7,12 @@ import GridPicker from 'components/GridPicker';
 
 const LEFT_PADDING = 150;
 
+const columns = ['Web Technologies:', 'Other Technologies:'];
+
 const SkillsView: React.FC = () => {
   const {
-    text: { sectionTitles }
+    text: { sectionTitles },
+    skills
   } = useContext(TextContentContext);
 
   return (
@@ -23,7 +26,13 @@ const SkillsView: React.FC = () => {
         >
           <SectionTitle type='left'>{sectionTitles.skills}</SectionTitle>
         </Box>
-        <GridPicker />
+        <GridPicker
+          columns={columns}
+          gridItems={skills.main.map((skill) => ({
+            ...skill,
+            column: skill.type === 'web' ? columns[0] : columns[1]
+          }))}
+        />
       </Box>
     </Section>
   );

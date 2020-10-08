@@ -1,12 +1,25 @@
 import Box, { FlexBox } from 'components/Box';
 import Paragraph from 'components/Paragraph';
-import React from 'react';
-import { ColumnTitle, Container, Grid } from './parts';
-import { Icon } from '@iconify/react';
-import reactIcon from '@iconify/icons-fa-brands/react';
-import logoJavascript from '@iconify/icons-ion/logo-javascript';
+import React, { useState } from 'react';
+import { ColumnTitle, Container, Grid, IconWrapper } from './parts';
+import { Icon, IconifyIcon } from '@iconify/react';
 
-const GridPicker = () => {
+interface GridItem {
+  icon: IconifyIcon;
+  title: string;
+  description: string;
+  iconScaleFactor?: number;
+  column: string;
+}
+
+interface Props {
+  columns: string[];
+  gridItems: GridItem[];
+}
+
+const GridPicker: React.FC<Props> = ({ columns, gridItems }) => {
+  const [chosenItem, setChosenItem] = useState(gridItems[0]);
+
   return (
     <Container>
       <FlexBox
@@ -15,41 +28,44 @@ const GridPicker = () => {
         justifyContent='space-around'
         alignItems='center'
       >
-        <Box marginRight={50}>
-          <Icon icon={reactIcon} style={{ fontSize: 90 }} />
+        <Box marginRight={50} width={100} overflow='hidden'>
+          <Icon
+            icon={chosenItem.icon}
+            style={{
+              fontSize: 84,
+              transform: `scale(${chosenItem.iconScaleFactor || 1.0})`
+            }}
+          />
         </Box>
-        <Paragraph color='gray90'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut molestias
-          obcaecati atque. Sit accusamus eligendi culpa modi vero placeat.
-        </Paragraph>
+        <Paragraph color='gray90'>{chosenItem.description}</Paragraph>
       </FlexBox>
+
       <FlexBox justifyContent='space-between' width='100%'>
-        <FlexBox
-          flexDirection='column'
-          alignItems='center'
-          width='43%'
-          marginLeft='50px'
-        >
-          <ColumnTitle>Web Technologies:</ColumnTitle>
-          <Grid>
-            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-          </Grid>
-        </FlexBox>
-        <FlexBox flexDirection='column' alignItems='center' width='43%'>
-          <ColumnTitle>Other Technologies:</ColumnTitle>
-          <Grid>
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-            <Icon icon={reactIcon} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-            <Icon icon={logoJavascript} style={{ fontSize: 75 }} />
-          </Grid>
-        </FlexBox>
+        {columns.map((columnTitle, columnNumber) => (
+          <FlexBox
+            key={columnTitle}
+            flexDirection='column'
+            alignItems='center'
+            width={`${86 / columns.length}%`}
+            marginLeft={columnNumber === 0 ? '50px' : undefined}
+          >
+            <ColumnTitle>{columnTitle}</ColumnTitle>
+            <Grid>
+              {gridItems
+                ?.filter((item) => item.column === columnTitle)
+                .map((item, index) => (
+                  <IconWrapper key={index} onClick={() => setChosenItem(item)}>
+                    <Icon
+                      icon={item.icon}
+                      style={{
+                        transform: `scale(${item.iconScaleFactor || 1.0})`
+                      }}
+                    />
+                  </IconWrapper>
+                ))}
+            </Grid>
+          </FlexBox>
+        ))}
       </FlexBox>
     </Container>
   );

@@ -9,6 +9,7 @@ import LandingPage from 'views/landing';
 import getNavLinks from 'services/text-content/navLinks';
 import getEduAndExp from 'services/text-content/eduAndExp';
 import getProjects from 'services/text-content/projects';
+import getSkills from 'services/text-content/skills';
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Languages>('EN');
@@ -19,6 +20,7 @@ const App: React.FC = () => {
       navLinks: getNavLinks(language),
       eduAndExp: getEduAndExp(language),
       projects: getProjects(language),
+      skills: getSkills(language),
       setLanguage,
       language
     }),

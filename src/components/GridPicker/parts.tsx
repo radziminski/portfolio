@@ -15,7 +15,20 @@ export const Grid = styled.div(({ theme }) => ({
   display: 'grid',
   width: '100%',
   gridTemplateColumns: 'repeat(4, 1fr)',
-  gridGap: '30px',
-  gridTemplateRows: 'auto',
-  color: theme.colors.gray90
+  gridGap: '18px',
+  gridTemplateRows: 'auto'
+}));
+
+export const IconWrapper = styled.div(({ theme }) => ({
+  color: theme.colors.gray90,
+  fontSize: 62,
+  cursor: 'pointer',
+  transition: 'all 0.2s',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  ':hover': {
+    color: theme.colors.white
+  }
 }));
