@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div(({ theme }) => ({}));
+export const Container = styled.div(() => ({}));
 
 export const ColumnTitle = styled.h3(({ theme }) => ({
   display: 'flex',
@@ -11,7 +11,14 @@ export const ColumnTitle = styled.h3(({ theme }) => ({
   marginBottom: '30px'
 }));
 
-export const Grid = styled.div(({ theme }) => ({
+export const Title = styled.h3(({ theme }) => ({
+  fontSize: theme.fontSizes[4],
+  color: theme.colors.primary100,
+  fontWeight: 400,
+  margin: 0
+}));
+
+export const Grid = styled.div(() => ({
   display: 'grid',
   width: '100%',
   gridTemplateColumns: 'repeat(4, 1fr)',
@@ -21,7 +28,7 @@ export const Grid = styled.div(({ theme }) => ({
 
 export const IconWrapper = styled.div(({ theme }) => ({
   color: theme.colors.gray90,
-  fontSize: 62,
+  fontSize: 60,
   cursor: 'pointer',
   transition: 'all 0.2s',
   display: 'flex',

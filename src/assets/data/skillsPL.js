@@ -1,13 +1,14 @@
 import reactIcon from '@iconify/icons-fa-brands/react';
-import javascriptIcon from '@iconify/icons-ion/logo-javascript';
-import html5Icon from '@iconify/icons-fa-brands/html5';
-import css3Icon from '@iconify/icons-simple-icons/css3';
+import javascriptIcon from '@iconify/icons-simple-icons/javascript';
+import css3Icon from '@iconify/icons-simple-icons/html5';
+import html5Icon from '@iconify/icons-simple-icons/css3';
 import sassIcon from '@iconify/icons-fa-brands/sass';
 import nodejsIcon from '@iconify/icons-fa-brands/node';
 import mongodbIcon from '@iconify/icons-simple-icons/mongodb';
 import firebaseIcon from '@iconify/icons-simple-icons/firebase';
 import reduxIcon from '@iconify/icons-simple-icons/redux';
 import postgresIcon from '@iconify/icons-simple-icons/postgresql';
+import typescriptIcon from '@iconify/icons-simple-icons/typescript';
 import cIcon from '@iconify/icons-file-icons/c';
 import assemblyIcon from '@iconify/icons-file-icons/assembly-intel';
 import pythonIcon from '@iconify/icons-fa-brands/python';
@@ -49,7 +50,14 @@ export const main = [
     true
   ),
   Skill(
-    'CSS + SCSS',
+    'Typescript',
+    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'web',
+    typescriptIcon,
+    true
+  ),
+  Skill(
+    'SCSS',
     'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
     'web',
     sassIcon,

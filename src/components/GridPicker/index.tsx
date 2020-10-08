@@ -1,7 +1,7 @@
 import Box, { FlexBox } from 'components/Box';
 import Paragraph from 'components/Paragraph';
 import React, { useState } from 'react';
-import { ColumnTitle, Container, Grid, IconWrapper } from './parts';
+import { ColumnTitle, Container, Grid, IconWrapper, Title } from './parts';
 import { Icon, IconifyIcon } from '@iconify/react';
 
 interface GridItem {
@@ -37,7 +37,12 @@ const GridPicker: React.FC<Props> = ({ columns, gridItems }) => {
             }}
           />
         </Box>
-        <Paragraph color='gray90'>{chosenItem.description}</Paragraph>
+        <Box style={{ width: 600 }}>
+          <Title>{chosenItem.title}</Title>
+          <Paragraph color='gray90' style={{ margin: '4px 0' }}>
+            {chosenItem.description}
+          </Paragraph>
+        </Box>
       </FlexBox>
 
       <FlexBox justifyContent='space-between' width='100%'>
