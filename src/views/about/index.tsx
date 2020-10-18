@@ -4,6 +4,8 @@ import SectionTitle from 'components/SectionTitle';
 import TextContentContext from 'services/text-content';
 import Box, { FlexBox } from 'components/Box';
 import Paragraph from 'components/Paragraph';
+import PortraitPhoto from 'assets/img/photo.jpg';
+import Photo from 'components/Photo';
 
 const AboutView: React.FC = () => {
   const {
@@ -13,7 +15,9 @@ const AboutView: React.FC = () => {
   return (
     <Section variant='dark' withLinker>
       <FlexBox justifyContent='space-between'>
-        <Box width='35%'>photo</Box>
+        <Box width='35%' marginRight={12}>
+          <Photo src={PortraitPhoto} alt='Portrait' />
+        </Box>
         <Box width='65%'>
           <SectionTitle type='left'>{sectionTitles.about}</SectionTitle>
           {about.split('\n').map((paragraph, index) => (

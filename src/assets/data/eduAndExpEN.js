@@ -24,8 +24,8 @@ const expList = [
     'Bachelor in Computer Science at Faculty of Electronics and Information Technology at Warsaw University of Technology'
   ),
   Experience(
-    '2020.07',
-    '2020.08',
+    '07',
+    '08.2020',
     'Frontend developer intern (React) in Swing Development'
   )
 ];

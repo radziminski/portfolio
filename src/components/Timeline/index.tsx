@@ -1,8 +1,8 @@
+import React, { useMemo } from 'react';
 import { FlexBox } from 'components/Box';
-import React from 'react';
+import { TimelineLine, TimelineEntry } from './parts';
 
-interface TimelinePoint {
-  label: string;
+export interface TimelinePointProps {
   start: string | number;
   end: string | number;
   description: string;
@@ -10,11 +10,41 @@ interface TimelinePoint {
 }
 
 interface Props {
-  points: TimelinePoint[];
+  points: TimelinePointProps[];
 }
 
-const Timeline: React.FC<Props> = () => {
-  return <FlexBox justifyContent='center'></FlexBox>;
+const Timeline: React.FC<Props> = ({ points }) => {
+  const pointsRender = useMemo(
+    () =>
+      points.map((point, index) => (
+        <FlexBox
+          key={index}
+          flexDirection='column'
+          alignItems='center'
+          width='100%'
+        >
+          <FlexBox
+            width='100%'
+            justifyContent='center'
+            alignItems='center'
+            position='relative'
+          >
+            <TimelineEntry
+              timelineSide={index % 2 === 1 ? 'left' : 'right'}
+              {...point}
+            />
+          </FlexBox>
+
+          {index !== points.length - 1 && <TimelineLine />}
+        </FlexBox>
+      )),
+    [points]
+  );
+  return (
+    <FlexBox alignItems='center' flexDirection='column'>
+      {pointsRender}
+    </FlexBox>
+  );
 };
 
 export default Timeline;

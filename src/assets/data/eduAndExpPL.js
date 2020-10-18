@@ -22,6 +22,11 @@ const expList = [
     'teraz',
     'Infomratyczne studia inżynierskie na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej'
   ),
-  Experience(2019, 'teraz', 'Niezależny deweloper aplikacji internetowych')
+  Experience(
+    '07',
+    '08.2020',
+    'Stażysta Frontend w Swing Dev'
+  ),
+  
 ];
 export default expList;
