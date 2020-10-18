@@ -32,23 +32,17 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
       <>
         <TimelinePoint size={20} />
         <FlexBox
-          width='49%'
-          height={3}
+          width='48%'
+          height={50}
+          left='52%'
           position='absolute'
-          right={0}
           alignItems='center'
           justifyContent='space-between'
         >
-          <Box
-            marginX={10}
-            color='primary100'
-            opacity={0.9}
-            width={100}
-            textAlign='center'
-          >
+          <Box color='primary100' opacity={0.9} width='36%' textAlign='center'>
             {start} - {end}
           </Box>
-          <Box color='gray90' width='75%'>
+          <Box color='gray90' width='64%'>
             <Text lineHeight={1.6}>{description}</Text>
           </Box>
         </FlexBox>
@@ -59,23 +53,23 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
     <>
       <TimelinePoint size={20} />
       <FlexBox
-        width='49%'
-        height={3}
+        width='48%'
+        right='52%'
+        height={50}
         position='absolute'
-        right='58%'
         alignItems='center'
         justifyContent='space-between'
       >
-        <Box color='gray90' width='75%' textAlign='right'>
+        <Box
+          color='gray90'
+          width='64%'
+          textAlign='right'
+          style={{ wordWrap: 'break-word' }}
+          overflow='hidden'
+        >
           <Text lineHeight={1.6}>{description}</Text>
         </Box>
-        <Box
-          marginX={10}
-          color='primary100'
-          opacity={0.95}
-          width={100}
-          textAlign='center'
-        >
+        <Box color='primary100' opacity={0.95} width='36%' textAlign='center'>
           {start} - {end}
         </Box>
       </FlexBox>

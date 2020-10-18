@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Linker from 'components/Linker';
 
-const SIDE_PADDING = 400;
+const SIDE_PADDING = 360;
 
 export type SectionVariant = 'dark' | 'light';
 
