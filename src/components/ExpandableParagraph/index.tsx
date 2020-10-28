@@ -45,8 +45,10 @@ const ExpandableParagraph: React.FC<Props> = ({
       <FlexBox
         ref={titleRef}
         color={isOpen ? 'primary100' : 'gray90'}
-        marginTop={`${isOpen ? 0 : (contentHeight + titleHeight) / 2 + 'px'}`}
-        paddingBottom={1}
+        marginTop={`${
+          isOpen ? 0 : (contentHeight + titleHeight) / 2 + 1 + 'px'
+        }`}
+        paddingBottom={isOpen ? 1 : 0}
         transform={isOpen ? '' : 'translateY(-50%)'}
         transition='all 0.2s'
         textAlign={textAlign || 'left'}
@@ -66,6 +68,7 @@ const ExpandableParagraph: React.FC<Props> = ({
           align-items='center'
           transform={isOpen ? 'rotate(180deg)' : ''}
           transition='all 0.2s'
+          height={20}
         >
           <MdKeyboardArrowDown size={24} />
         </FlexBox>
