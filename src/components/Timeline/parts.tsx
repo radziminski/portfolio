@@ -24,6 +24,7 @@ export const TimelineLine = styled.div(({ theme }) => ({
 export const TimelineEntry: React.FC<TimelinePointProps> = ({
   start,
   end,
+  title,
   description,
   timelineSide
 }) => {
@@ -39,11 +40,19 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
           alignItems='center'
           justifyContent='space-between'
         >
-          <Box color='primary100' opacity={0.9} width='36%' textAlign='center'>
+          <Box color='primary100' opacity={0.9} width='32%' textAlign='center'>
             {start} - {end}
           </Box>
-          <Box color='gray90' width='64%'>
-            <Text lineHeight={1.6}>{description}</Text>
+          <Box color='gray90' width='68%' textAlign='center'>
+            <Box color='primary100' marginBottom={1}>
+              {title}
+            </Box>
+            <Text
+              lineHeight={1.6}
+              textAlign={description.length > 80 ? 'justify' : 'center'}
+            >
+              {description}
+            </Text>
           </Box>
         </FlexBox>
       </>
@@ -62,14 +71,22 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
       >
         <Box
           color='gray90'
-          width='64%'
-          textAlign='right'
+          width='68%'
+          textAlign='center'
           style={{ wordWrap: 'break-word' }}
           overflow='hidden'
         >
-          <Text lineHeight={1.6}>{description}</Text>
+          <Box color='primary100' marginBottom={1}>
+            {title}
+          </Box>
+          <Text
+            lineHeight={1.6}
+            textAlign={description.length > 80 ? 'justify' : 'center'}
+          >
+            {description}
+          </Text>
         </Box>
-        <Box color='primary100' opacity={0.95} width='36%' textAlign='center'>
+        <Box color='primary100' opacity={0.95} width='32%' textAlign='center'>
           {start} - {end}
         </Box>
       </FlexBox>

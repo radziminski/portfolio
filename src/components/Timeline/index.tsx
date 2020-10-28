@@ -6,6 +6,7 @@ export interface TimelinePointProps {
   start: string | number;
   end: string | number;
   description: string;
+  title: string;
   timelineSide?: 'left' | 'right';
 }
 

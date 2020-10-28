@@ -5,6 +5,7 @@ import { Languages } from 'services/text-content';
 export interface Experience {
   start: number;
   end: number;
+  title: string;
   description: string;
 }
 
