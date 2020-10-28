@@ -11,7 +11,7 @@ const expList = [
   Experience(
     2014,
     2017,
-    'I Społeczne Liceum Ogólnokształcące w Warszawie', 
+    'I Społeczne Liceum Ogólnokształcące w Warszawie',
     'Profil matematyczno-informatyczny, matura rozszerzona z matematyki, informatyki i angielskiego.'
   ),
   Experience(
@@ -27,8 +27,12 @@ const expList = [
     `Wydział Elektroniki i Technik Informacyjnych Politechniki Warszawskiej. 
     Stypendium rektora za wybitne osiągnięcia w nauce oraz działalność naukową i sportową.`
   ),
-  Experience('07', '08.2020', 'Stażysta Frontend w Swing Development', 
-  `Współtworzenie frontend'u aplikacji GreenLock służącej do zarządzania certyfikatami SSL. 
-  Serwis tworzony był przy pomocy biblioteki React, w języku Typescript`)
+  Experience(
+    '07',
+    '08.2020',
+    'Stażysta Frontend w Swing Development',
+    `Współtworzenie frontend'u aplikacji GreenLock służącej do zarządzania certyfikatami SSL. 
+  Serwis tworzony był przy pomocy biblioteki React, w języku Typescript`
+  )
 ];
 export default expList;
