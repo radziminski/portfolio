@@ -1,6 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-
-export const BREAKPOINTS = ['480px', '769px', '993px', '1201px', '1481px'];
+import { BREAKPOINTS } from './breakpoints';
 
 export const SPACE = [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88];
 

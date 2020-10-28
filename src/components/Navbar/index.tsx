@@ -9,6 +9,8 @@ import { LanguageDropdown } from './parts';
 const Navbar = () => {
   const showStickedNav = useToggleStickedNav();
 
+  // const paddingHorizontal;
+
   return (
     <FlexBox
       width='100%'
