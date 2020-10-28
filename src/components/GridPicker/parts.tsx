@@ -26,16 +26,18 @@ export const Grid = styled.div(() => ({
   gridTemplateRows: 'auto'
 }));
 
-export const IconWrapper = styled.div(({ theme }) => ({
-  color: theme.colors.gray90,
-  fontSize: 60,
-  cursor: 'pointer',
-  transition: 'all 0.2s',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+export const IconWrapper = styled.div<{ selected?: boolean }>(
+  ({ theme, selected }) => ({
+    color: selected ? theme.colors.primary100 : theme.colors.gray90,
+    fontSize: 60,
+    cursor: 'pointer',
+    transition: 'all 0.2s',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 
-  ':hover': {
-    color: theme.colors.white
-  }
-}));
+    ':hover': {
+      color: theme.colors.white
+    }
+  })
+);

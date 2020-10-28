@@ -1,4 +1,5 @@
 import Box, { FlexBox } from 'components/Box';
+import ExpandableParagraph from 'components/ExpandableParagraph';
 import Text from 'components/Text';
 import React from 'react';
 import styled from 'styled-components';
@@ -43,17 +44,11 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
           <Box color='primary100' opacity={0.9} width='32%' textAlign='center'>
             {start} - {end}
           </Box>
-          <Box color='gray90' width='68%' textAlign='center'>
-            <Box color='primary100' marginBottom={1}>
-              {title}
-            </Box>
-            <Text
-              lineHeight={1.6}
-              textAlign={description.length > 80 ? 'justify' : 'center'}
-            >
-              {description}
-            </Text>
-          </Box>
+          <ExpandableParagraph
+            title={title}
+            content={description}
+            textAlign='left'
+          />
         </FlexBox>
       </>
     );
@@ -69,23 +64,11 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <Box
-          color='gray90'
-          width='68%'
-          textAlign='center'
-          style={{ wordWrap: 'break-word' }}
-          overflow='hidden'
-        >
-          <Box color='primary100' marginBottom={1}>
-            {title}
-          </Box>
-          <Text
-            lineHeight={1.6}
-            textAlign={description.length > 80 ? 'justify' : 'center'}
-          >
-            {description}
-          </Text>
-        </Box>
+        <ExpandableParagraph
+          title={title}
+          content={description}
+          textAlign='right'
+        />
         <Box color='primary100' opacity={0.95} width='32%' textAlign='center'>
           {start} - {end}
         </Box>

@@ -32,6 +32,7 @@ const SkillsView: React.FC = () => {
             ...skill,
             column: skill.type === 'web' ? columns[0] : columns[1]
           }))}
+          initiallySelectedElement={5}
         />
       </Box>
     </Section>

@@ -15,10 +15,17 @@ interface GridItem {
 interface Props {
   columns: string[];
   gridItems: GridItem[];
+  initiallySelectedElement?: number;
 }
 
-const GridPicker: React.FC<Props> = ({ columns, gridItems }) => {
-  const [chosenItem, setChosenItem] = useState(gridItems[0]);
+const GridPicker: React.FC<Props> = ({
+  columns,
+  gridItems,
+  initiallySelectedElement = 0
+}) => {
+  const [chosenItem, setChosenItem] = useState(
+    gridItems[initiallySelectedElement]
+  );
 
   return (
     <Container>
@@ -59,7 +66,11 @@ const GridPicker: React.FC<Props> = ({ columns, gridItems }) => {
               {gridItems
                 ?.filter((item) => item.column === columnTitle)
                 .map((item, index) => (
-                  <IconWrapper key={index} onClick={() => setChosenItem(item)}>
+                  <IconWrapper
+                    key={index}
+                    onClick={() => setChosenItem(item)}
+                    selected={item === chosenItem}
+                  >
                     <Icon
                       icon={item.icon}
                       style={{
