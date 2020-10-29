@@ -7,7 +7,7 @@ import ContactForm from 'components/ContactForm';
 import Box, { FlexBox } from 'components/Box';
 import SocialsBar from 'components/SocialsBar';
 import Paragraph from 'components/Paragraph';
-import Text from 'components/Text';
+import CopyIconField from 'components/CopyIconField';
 
 const ICON_STYLE = {
   transform: 'translateY(3px)'
@@ -40,7 +40,7 @@ const ContactView: React.FC = () => {
           <FlexBox
             flexDirection='column'
             justifyContent='space-between'
-            marginBottom={7}
+            marginBottom={6}
           >
             <Paragraph fontSize={20} lineHeight={1.7}>
               {contactMsg} &rarr;
@@ -48,17 +48,11 @@ const ContactView: React.FC = () => {
           </FlexBox>
 
           {contactMethods.map((method) => (
-            <FlexBox
+            <CopyIconField
               key={method.label}
-              alignItems='center'
-              color='gray90'
-              marginBottom={5}
-            >
-              <Box marginRight={4} color='gray90' opacity={0.7}>
-                <Text fontSize={5}>{method.icon}</Text>
-              </Box>
-              <Text fontSize={5}>{method.value}</Text>
-            </FlexBox>
+              icon={method.icon}
+              text={method.value}
+            />
           ))}
 
           <Box position='absolute' bottom={0} left={-18}>

@@ -28,7 +28,8 @@ export const Grid = styled.div(() => ({
 
 export const IconWrapper = styled.div<{ selected?: boolean }>(
   ({ theme, selected }) => ({
-    color: selected ? theme.colors.primary100 : theme.colors.gray90,
+    color: theme.colors.white,
+    opacity: selected ? 1 : 0.5,
     fontSize: 60,
     cursor: 'pointer',
     transition: 'all 0.2s',
@@ -37,7 +38,8 @@ export const IconWrapper = styled.div<{ selected?: boolean }>(
     justifyContent: 'center',
 
     ':hover': {
-      color: theme.colors.white
+      color: theme.colors.primary100,
+      opacity: 1
     }
   })
 );

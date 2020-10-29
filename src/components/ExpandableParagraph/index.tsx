@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Box, { FlexBox } from 'components/Box';
 import Text from 'components/Text';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { Title } from './parts';
 
 interface Props {
   title: string;
@@ -61,7 +62,7 @@ const ExpandableParagraph: React.FC<Props> = ({
         }
         alignItems='center'
       >
-        {title}
+        <Title isOpen={isOpen}>{title}</Title>
         <FlexBox
           marginLeft={2}
           marginTop={'2px'}

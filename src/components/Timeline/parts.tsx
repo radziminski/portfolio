@@ -1,6 +1,5 @@
 import Box, { FlexBox } from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
-import Text from 'components/Text';
 import React from 'react';
 import styled from 'styled-components';
 import { TimelinePointProps } from '.';
