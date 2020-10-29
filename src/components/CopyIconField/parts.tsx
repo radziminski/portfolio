@@ -6,6 +6,7 @@ export const Container = styled.div(({ theme }) => ({
   color: theme.colors.gray90,
   marginBottom: '30px',
   cursor: 'pointer',
+  userSelect: 'none',
 
   ':hover': {
     color: theme.colors.white
