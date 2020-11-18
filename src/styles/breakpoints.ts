@@ -42,23 +42,21 @@ export interface ValuesForDevices {
   desktopLarge?: number;
 }
 
-const getLargestValueForDevice = (values: ValuesForDevices, device: Device) => {
+const getLargestValueForDevice = (
+  values: Record<Device, number>,
+  device: Device
+) => {
   // if (values[device]) return values[device];
-  // let appeared = false;
+  // const devicePosition = Object.keys(BREAKPOINTS).indexOf(device);
   // Object.keys(BREAKPOINTS)
   //   .reverse()
-  //   .forEach((breakpoint) => {
-  //     if (appeared) {
-  //       if (values[breakpoint]) return values[breakpoint];
-  //     } else {
-  //       if (breakpoint === device) appeared = true;
-  //     }
+  //   .slice(0, devicePosition)
+  //   .forEach((breakpoint: keyof typeof values) => {
+  //     if (values[breakpoint]) return values[breakpoint];
   //   });
 };
 
-export const assignValueDependingOnDevices = (
-  valuesForDevices: ValuesForDevices
-) => {
+export const getValueForDevice = (valuesForDevices: ValuesForDevices) => {
   const deviceWidth = window.innerWidth;
   if (deviceWidth >= BREAKPOINTS.desktopLarge)
     return valuesForDevices.desktopLarge;
