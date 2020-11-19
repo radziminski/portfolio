@@ -3,11 +3,24 @@ import Box, { FlexBox } from 'components/Box';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import TextContentContext from 'services/text-content';
+import { getValueForDevice } from 'styles/breakpoints';
 
-const STRIPS_WIDTH = 70;
+const STRIPS_WIDTH = getValueForDevice({
+  desktopLarge: 70,
+  desktopMedium: 60,
+  desktopSmall: 55,
+  laptopLarge: 50,
+  laptopMedium: 36
+});
 
 export const Subtitle = styled.div(({ theme }) => ({
-  fontSize: '20px',
+  fontSize: getValueForDevice({
+    desktopLarge: 20,
+    desktopMedium: 19,
+    desktopSmall: 18,
+    laptopLarge: 16,
+    laptopMedium: 14
+  }),
   color: theme.colors.primary100,
   display: 'flex',
   alignItems: 'center',
@@ -19,7 +32,12 @@ export const Subtitle = styled.div(({ theme }) => ({
     width: `${STRIPS_WIDTH}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
-    marginLeft: '20px'
+    marginLeft: getValueForDevice({
+      desktopLarge: '20px',
+      desktopSmall: '18px',
+      laptopLarge: '16px',
+      laptopMedium: '14px'
+    })
   },
 
   '&:before': {
@@ -29,7 +47,12 @@ export const Subtitle = styled.div(({ theme }) => ({
     width: `${STRIPS_WIDTH}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
-    marginRight: '20px'
+    marginRight: getValueForDevice({
+      desktopLarge: '20px',
+      desktopSmall: '18px',
+      laptopLarge: '16px',
+      laptopMedium: '14px'
+    })
   }
 }));
 
@@ -38,16 +61,34 @@ export const Title = styled.h1<{ fontSize?: number }>(
     fontSize: `${fontSize}px`,
     color: theme.colors.white,
     fontWeight: theme.fontWeights.semiBold,
-    margin: '22px 0'
+    margin: getValueForDevice({
+      desktopLarge: '22px 0',
+      desktopMedium: '20px 0',
+      desktopSmall: '18px 0',
+      laptopLarge: '14px 0',
+      laptopMedium: '12px 0'
+    })
   })
 );
 
 export const Description = styled.p(({ theme }) => ({
-  fontSize: '20px',
+  fontSize: getValueForDevice({
+    desktopLarge: 20,
+    desktopMedium: 19,
+    desktopSmall: 18,
+    laptopLarge: 17,
+    laptopMedium: 16
+  }),
   color: theme.colors.white,
   fontWeight: theme.fontWeights.light,
   textAlign: 'center',
-  lineHeight: '34px',
+  lineHeight: getValueForDevice({
+    desktopLarge: '34px',
+    desktopMedium: '32px',
+    desktopSmall: '30px',
+    laptopLarge: '28px',
+    laptopMedium: '26px'
+  }),
   margin: 0,
   marginBottom: '8px'
 }));
@@ -62,6 +103,14 @@ export const HeroBox: React.FC = () => {
     greetingMessage = text.greetings.mid;
   }
 
+  const titleFontSize = getValueForDevice({
+    desktopLarge: 55,
+    desktopMedium: 50,
+    desktopSmall: 46,
+    laptopLarge: 40,
+    laptopMedium: 36
+  });
+
   return (
     <FlexBox
       position='absolute'
@@ -73,7 +122,7 @@ export const HeroBox: React.FC = () => {
       width='700px'
     >
       <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
-      <Title fontSize={text.headerTitle.length > 5 ? 45 : undefined}>
+      <Title fontSize={text.headerTitle.length > 5 ? 45 : titleFontSize}>
         {text.headerTitle}{' '}
         <Box display='inline-flex' color='primary100'>
           Jan

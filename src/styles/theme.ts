@@ -1,3 +1,4 @@
+import { getValueForDevice } from 'styles/breakpoints';
 import { DefaultTheme } from 'styled-components';
 import { BREAKPOINTS } from './breakpoints';
 
@@ -25,7 +26,10 @@ export const RADII = {
   fullCircle: '100%'
 };
 
-export const FONT_SIZES = [0, 12, 14, 16, 18, 20, 24, 30, 36, 55];
+export const FONT_SIZES = getValueForDevice({
+  desktopLarge: [0, 12, 14, 16, 18, 20, 24, 30, 36, 55],
+  laptopMedium: [0, 10, 11, 12, 14, 16, 18, 22, 26, 38]
+});
 
 export const FONT_WEIGHTS = {
   thin: 100,

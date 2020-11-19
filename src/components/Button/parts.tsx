@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 interface StyleProps {
   margin?: string | number;
@@ -8,9 +9,23 @@ interface StyleProps {
 export const FullButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.primary100,
-    fontSize: '20px',
+    fontSize: getValueForDevice({
+      desktopLarge: 20,
+      desktopMedium: 19,
+      desktopSmall: 18,
+      laptopLarge: 17,
+      laptopMedium: 16
+    }),
     color: theme.colors.dark50,
-    padding: padding || '16px 26px',
+    padding:
+      padding ||
+      getValueForDevice({
+        desktopLarge: '16px 26px',
+        desktopMedium: '15px 24px',
+        desktopSmall: '14px 22px',
+        laptopLarge: '14px 20px',
+        laptopMedium: '8px 18px'
+      }),
     margin,
     display: 'inline-flex',
     justifyContent: 'center',

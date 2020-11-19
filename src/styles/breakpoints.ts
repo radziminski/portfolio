@@ -28,38 +28,69 @@ export const BREAKPOINTS: Record<Device, number> = {
 };
 
 export interface ValuesForDevices {
-  mobileSmall?: number;
-  mobileMedium?: number;
-  mobileLarge?: number;
-  tabSmall?: number;
-  tabMedium?: number;
-  tabLarge?: number;
-  laptopSmall?: number;
-  laptopMedium?: number;
-  laptopLarge?: number;
-  desktopSmall?: number;
-  desktopMedium?: number;
-  desktopLarge?: number;
+  mobileSmall?: number | string | number[];
+  mobileMedium?: number | string | number[];
+  mobileLarge?: number | string | number[];
+  tabSmall?: number | string | number[];
+  tabMedium?: number | string | number[];
+  tabLarge?: number | string | number[];
+  laptopSmall?: number | string | number[];
+  laptopMedium?: number | string | number[];
+  laptopLarge?: number | string | number[];
+  desktopSmall?: number | string | number[];
+  desktopMedium?: number | string | number[];
+  desktopLarge?: number | string | number[];
 }
 
-const getLargestValueForDevice = (
-  values: Record<Device, number>,
-  device: Device
-) => {
-  // if (values[device]) return values[device];
-  // const devicePosition = Object.keys(BREAKPOINTS).indexOf(device);
-  // Object.keys(BREAKPOINTS)
-  //   .reverse()
-  //   .slice(0, devicePosition)
-  //   .forEach((breakpoint: keyof typeof values) => {
-  //     if (values[breakpoint]) return values[breakpoint];
-  //   });
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getLargestValueForDevice = (values: any, device: Device) => {
+  if (values[device]) return values[device];
+  const devicePosition = Object.keys(BREAKPOINTS).indexOf(device);
+  let returnValue = 0;
+  let gotValue = false;
+
+  Object.keys(BREAKPOINTS)
+    .slice(devicePosition, Object.keys(BREAKPOINTS).length)
+    .forEach((breakpoint) => {
+      if (gotValue) return;
+      if (values[breakpoint]) {
+        returnValue = values[breakpoint];
+        gotValue = true;
+      }
+    });
+
+  if (gotValue) return returnValue;
+
+  Object.keys(BREAKPOINTS)
+    .slice(0, devicePosition)
+    .reverse()
+    .forEach((breakpoint) => {
+      if (values[breakpoint]) return values[breakpoint];
+    });
+
+  return returnValue;
 };
 
-export const getValueForDevice = (valuesForDevices: ValuesForDevices) => {
-  const deviceWidth = window.innerWidth;
-  if (deviceWidth >= BREAKPOINTS.desktopLarge)
-    return valuesForDevices.desktopLarge;
+export const getCurrentDevice = (): Device => {
+  const deviceWidth: number = window.innerWidth;
+  let currDevice: Device | null = null;
+
+  for (const device in BREAKPOINTS) {
+    if (
+      deviceWidth <= BREAKPOINTS[device as Device] &&
+      (currDevice ? deviceWidth > BREAKPOINTS[currDevice] : true)
+    ) {
+      currDevice = device as Device;
+    }
+  }
+
+  return currDevice || 'desktopLarge';
+};
+
+export const getValueForDevice = (
+  valuesForDevices: ValuesForDevices
+): number => {
+  return getLargestValueForDevice(valuesForDevices, getCurrentDevice());
 };
 
 export default BREAKPOINTS;
