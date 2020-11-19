@@ -4,8 +4,15 @@ import { FiInstagram } from 'react-icons/fi';
 import { AiOutlineLinkedin, AiFillGithub } from 'react-icons/ai';
 import ExternalLink from 'components/ExternalLink';
 import { SocialsList, SocialsItem } from './parts';
+import { getValueForDevice } from 'styles/breakpoints';
 
-const ICON_SIZE = 24;
+const ICON_SIZE = getValueForDevice({
+  desktopLarge: 24,
+  desktopMedium: 23,
+  desktopSmall: 22,
+  laptopLarge: 21,
+  laptopMedium: 20
+});
 
 export type SocialsBarOrientation = 'vertical' | 'horizontal';
 

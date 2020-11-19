@@ -1,7 +1,14 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 import { SocialsBarOrientation } from '.';
 
-const DEFAULT_ELEMENT_DISTANCE = 14;
+const DEFAULT_ELEMENT_DISTANCE = getValueForDevice({
+  desktopLarge: 14,
+  desktopMedium: 13,
+  desktopSmall: 12,
+  laptopLarge: 11,
+  laptopMedium: 10
+});
 
 export interface SocialsListProps {
   orientation: SocialsBarOrientation;

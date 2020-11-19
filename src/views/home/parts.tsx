@@ -155,7 +155,13 @@ export const HeroBox: React.FC = () => {
 
 export const ArrowDownWrapper = styled.button(({ theme }) => ({
   position: 'absolute',
-  bottom: '40px',
+  bottom: getValueForDevice({
+    desktopLarge: 40,
+    desktopMedium: 36,
+    desktopSmall: 32,
+    laptopLarge: 28,
+    laptopMedium: 24
+  }),
   left: '50%',
   transform: 'translate(-50%, -50%)',
   opacity: '60%',

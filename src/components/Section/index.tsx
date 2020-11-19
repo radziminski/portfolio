@@ -2,8 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Linker from 'components/Linker';
+import { getValueForDevice } from 'styles/breakpoints';
 
-const SIDE_PADDING = 360;
+const SIDE_PADDING = getValueForDevice({
+  desktopLarge: 360,
+  desktopMedium: 340,
+  desktopSmall: 320,
+  laptopLarge: 280,
+  laptopMedium: 200
+});
 
 export type SectionVariant = 'dark' | 'light';
 

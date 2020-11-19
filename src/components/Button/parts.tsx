@@ -13,8 +13,8 @@ export const FullButton = styled.button<StyleProps>(
       desktopLarge: 20,
       desktopMedium: 19,
       desktopSmall: 18,
-      laptopLarge: 17,
-      laptopMedium: 16
+      laptopLarge: 16,
+      laptopMedium: 14
     }),
     color: theme.colors.dark50,
     padding:
@@ -46,7 +46,13 @@ export const FullButton = styled.button<StyleProps>(
 export const GhostButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.transparent,
-    fontSize: '20px',
+    fontSize: getValueForDevice({
+      desktopLarge: 20,
+      desktopMedium: 19,
+      desktopSmall: 18,
+      laptopLarge: 16,
+      laptopMedium: 14
+    }),
     color: theme.colors.primary100,
     padding: padding || '14px 24px',
     margin,
