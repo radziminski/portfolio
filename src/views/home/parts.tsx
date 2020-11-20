@@ -10,7 +10,8 @@ const STRIPS_WIDTH = getValueForDevice({
   desktopMedium: 60,
   desktopSmall: 55,
   laptopLarge: 50,
-  laptopMedium: 36
+  laptopMedium: 36,
+  tabLarge: 32
 });
 
 export const Subtitle = styled.div(({ theme }) => ({
@@ -19,7 +20,8 @@ export const Subtitle = styled.div(({ theme }) => ({
     desktopMedium: 19,
     desktopSmall: 18,
     laptopLarge: 16,
-    laptopMedium: 14
+    laptopMedium: 14,
+    tabLarge: 12
   }),
   color: theme.colors.primary100,
   display: 'flex',
@@ -77,7 +79,8 @@ export const Description = styled.p(({ theme }) => ({
     desktopMedium: 19,
     desktopSmall: 18,
     laptopLarge: 17,
-    laptopMedium: 16
+    laptopMedium: 16,
+    tabLarge: 14
   }),
   color: theme.colors.white,
   fontWeight: theme.fontWeights.light,
@@ -108,7 +111,8 @@ export const HeroBox: React.FC = () => {
     desktopMedium: 50,
     desktopSmall: 46,
     laptopLarge: 40,
-    laptopMedium: 36
+    laptopMedium: 36,
+    tabLarge: 32
   });
 
   const longTtitleFontSize = getValueForDevice({
@@ -116,7 +120,8 @@ export const HeroBox: React.FC = () => {
     desktopMedium: 42,
     desktopSmall: 38,
     laptopLarge: 38,
-    laptopMedium: 33
+    laptopMedium: 33,
+    tabLarge: 30
   });
 
   const width = getValueForDevice({

@@ -53,7 +53,7 @@ const getLargestValueForDevice = (values: any, device: Device) => {
     .slice(devicePosition, Object.keys(BREAKPOINTS).length)
     .forEach((breakpoint) => {
       if (gotValue) return;
-      if (values[breakpoint]) {
+      if (values[breakpoint] !== null && values[breakpoint] !== undefined) {
         returnValue = values[breakpoint];
         gotValue = true;
       }

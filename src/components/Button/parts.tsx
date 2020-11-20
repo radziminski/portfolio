@@ -11,7 +11,8 @@ const DEFAULT_HEIGHT = getValueForDevice({
   desktopMedium: 47,
   desktopSmall: 46,
   laptopLarge: 44,
-  laptopMedium: 42
+  laptopMedium: 42,
+  tabLarge: 38
 });
 
 const DEFAULT_PADDING = getValueForDevice({
@@ -19,7 +20,8 @@ const DEFAULT_PADDING = getValueForDevice({
   desktopMedium: '15px 24px',
   desktopSmall: '14px 22px',
   laptopLarge: '14px 20px',
-  laptopMedium: '8px 20px'
+  laptopMedium: '8px 20px',
+  tabLarge: '8px 17px'
 });
 
 export const FullButton = styled.button<StyleProps>(
@@ -30,7 +32,8 @@ export const FullButton = styled.button<StyleProps>(
       desktopMedium: 19,
       desktopSmall: 18,
       laptopLarge: 16,
-      laptopMedium: 14
+      laptopMedium: 14,
+      tabLarge: 13
     }),
     color: theme.colors.dark50,
     padding: padding || DEFAULT_PADDING,
@@ -60,7 +63,8 @@ export const GhostButton = styled.button<StyleProps>(
       desktopMedium: 19,
       desktopSmall: 18,
       laptopLarge: 16,
-      laptopMedium: 14
+      laptopMedium: 14,
+      tabLarge: 13
     }),
     height: DEFAULT_HEIGHT,
     color: theme.colors.primary100,
