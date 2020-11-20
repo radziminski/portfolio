@@ -11,9 +11,10 @@ const HomeView: React.FC = () => {
     desktopLarge: 42,
     desktopMedium: 38,
     desktopSmall: 34,
-    laptopLarge: 30,
+    laptopLarge: 28,
     laptopMedium: 26
   });
+
   return (
     <Box width='100%' height='100vh' position='relative'>
       <Navbar />

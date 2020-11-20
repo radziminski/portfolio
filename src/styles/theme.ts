@@ -28,7 +28,7 @@ export const RADII = {
 
 export const FONT_SIZES = getValueForDevice({
   desktopLarge: [0, 12, 14, 16, 18, 20, 24, 30, 36, 55],
-  laptopMedium: [0, 10, 11, 12, 14, 16, 18, 22, 26, 38]
+  laptopLarge: [0, 10, 11, 12, 14, 16, 18, 22, 26, 38]
 });
 
 export const FONT_WEIGHTS = {

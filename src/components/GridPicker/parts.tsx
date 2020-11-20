@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 export const Container = styled.div(() => ({}));
 
@@ -30,7 +31,13 @@ export const IconWrapper = styled.div<{ selected?: boolean }>(
   ({ theme, selected }) => ({
     color: theme.colors.white,
     opacity: selected ? 1 : 0.5,
-    fontSize: 60,
+    fontSize: getValueForDevice({
+      desktopLarge: 60,
+      desktopMedium: 58,
+      desktopSmall: 56,
+      laptopLarge: 52,
+      laptopMedium: 50
+    }),
     cursor: 'pointer',
     transition: 'all 0.2s',
     display: 'flex',

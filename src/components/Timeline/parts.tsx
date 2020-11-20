@@ -2,6 +2,7 @@ import Box, { FlexBox } from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
 import React from 'react';
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 import { TimelinePointProps } from '.';
 
 export const TimelinePoint = styled.div<{ size: number }>(
@@ -17,9 +18,28 @@ export const TimelinePoint = styled.div<{ size: number }>(
 export const TimelineLine = styled.div(({ theme }) => ({
   display: 'flex',
   width: '2px',
-  height: '120px',
+  height: getValueForDevice({
+    desktopLarge: 120,
+    desktopMedium: 115,
+    desktopSmall: 110,
+    laptopLarge: 100
+  }),
   backgroundColor: theme.colors.primary100
 }));
+
+export const TimelineTextContainer = styled.div<{ side: 'left' | 'right' }>(
+  ({ theme, side }) => ({
+    width: '48%',
+    display: 'flex',
+    height: 50,
+    left: side === 'right' ? '52%' : 'auto',
+    right: side === 'left' ? '52%' : 'auto',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    fontSize: theme.fontSizes[4]
+  })
+);
 
 export const TimelineEntry: React.FC<TimelinePointProps> = ({
   start,
@@ -32,14 +52,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
     return (
       <>
         <TimelinePoint size={20} />
-        <FlexBox
-          width='48%'
-          height={50}
-          left='52%'
-          position='absolute'
-          alignItems='center'
-          justifyContent='space-between'
-        >
+        <TimelineTextContainer side='right'>
           <Box color='primary100' opacity={0.9} width='32%' textAlign='center'>
             {start} - {end}
           </Box>
@@ -48,21 +61,14 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
             content={description}
             textAlign='left'
           />
-        </FlexBox>
+        </TimelineTextContainer>
       </>
     );
 
   return (
     <>
       <TimelinePoint size={20} />
-      <FlexBox
-        width='48%'
-        right='52%'
-        height={50}
-        position='absolute'
-        alignItems='center'
-        justifyContent='space-between'
-      >
+      <TimelineTextContainer side='left'>
         <ExpandableParagraph
           title={title}
           content={description}
@@ -71,7 +77,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
         <Box color='primary100' opacity={0.95} width='32%' textAlign='center'>
           {start} - {end}
         </Box>
-      </FlexBox>
+      </TimelineTextContainer>
     </>
   );
 };

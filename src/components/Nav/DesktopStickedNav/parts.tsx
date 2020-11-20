@@ -1,10 +1,21 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 export const MainContainer = styled.div({
   display: 'block',
   position: 'fixed',
-  right: '7%',
-  top: '80px',
+  right: getValueForDevice({
+    desktopLarge: '7%',
+    laptopLarge: '5%'
+  }),
+  top: getValueForDevice({
+    desktopLarge: 80,
+    desktopMedium: 76,
+    desktopSmall: 72,
+    laptopLarge: 62,
+    laptopMedium: 58,
+    laptopSmall: 56
+  }),
   width: '100px',
   height: '100px',
   zIndex: 200,
@@ -26,7 +37,7 @@ export const ListContainer = styled.ul({
 });
 
 export const ListElement = styled.li(({ theme }) => ({
-  fontSize: '20px',
+  fontSize: theme.fontSizes[5],
 
   color: theme.colors.gray90,
   backgroundColor: theme.colors.dark50,

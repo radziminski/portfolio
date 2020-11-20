@@ -5,6 +5,7 @@ import TextareaInput from './TextareaInput';
 import Button from 'components/Button';
 import { FlexBox } from 'components/Box';
 import Loader from 'components/Loader';
+import { getValueForDevice } from 'styles/breakpoints';
 
 const INFO_MESSAGE_APPEARANCE_DURATION_MS = 3500;
 const INFO_MESSAGE_DISAPPEAR_DURATION_MS = 300;
@@ -106,6 +107,11 @@ const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
 
   const messageBoxContent = isLoading ? <Loader /> : message || null;
 
+  const buttonPadding = getValueForDevice({
+    desktopLarge: '10px 30px',
+    laptopLarge: '6px 22px'
+  });
+
   return (
     <Container onSubmit={onFormSubmit}>
       {renderedInputs}
@@ -119,7 +125,7 @@ const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
         >
           {messageBoxContent}
         </FlexBox>
-        <Button type='submit' padding='10px 30px'>
+        <Button type='submit' padding={buttonPadding}>
           {`${sendBtnText || 'Send'}!`}
         </Button>
       </FlexBox>

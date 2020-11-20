@@ -111,18 +111,47 @@ export const HeroBox: React.FC = () => {
     laptopMedium: 36
   });
 
+  const longTtitleFontSize = getValueForDevice({
+    desktopLarge: 45,
+    desktopMedium: 42,
+    desktopSmall: 38,
+    laptopLarge: 38,
+    laptopMedium: 33
+  });
+
+  const width = getValueForDevice({
+    desktopLarge: 700,
+    laptopLarge: 600,
+    laptopMedium: 550
+  });
+
+  const buttonsSpace = getValueForDevice({
+    desktopLarge: 30,
+    laptopLarge: 28,
+    laptopMedium: 22
+  });
+
+  const top = getValueForDevice({
+    desktopLarge: '50%',
+    laptopLarge: '52%'
+  });
+
   return (
     <FlexBox
       position='absolute'
-      top='50%'
+      top={top}
       left='50%'
       transform='translate(-50%, -50%)'
       flexDirection='column'
       alignItems='center'
-      width='700px'
+      width={width}
     >
       <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
-      <Title fontSize={text.headerTitle.length > 5 ? 45 : titleFontSize}>
+      <Title
+        fontSize={
+          text.headerTitle.length > 5 ? longTtitleFontSize : titleFontSize
+        }
+      >
         {text.headerTitle}{' '}
         <Box display='inline-flex' color='primary100'>
           Jan
@@ -139,7 +168,7 @@ export const HeroBox: React.FC = () => {
         >
           {text.btns.contact}
         </Button>
-        <FlexBox marginX='30px' />
+        <FlexBox marginX={buttonsSpace} />
         <Button
           variant='ghost'
           onClick={() => {
@@ -159,8 +188,8 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     desktopLarge: 40,
     desktopMedium: 36,
     desktopSmall: 32,
-    laptopLarge: 28,
-    laptopMedium: 24
+    laptopLarge: 26,
+    laptopMedium: 20
   }),
   left: '50%',
   transform: 'translate(-50%, -50%)',

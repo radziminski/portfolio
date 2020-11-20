@@ -8,6 +8,7 @@ import Box, { FlexBox } from 'components/Box';
 import SocialsBar from 'components/SocialsBar';
 import Paragraph from 'components/Paragraph';
 import CopyIconField from 'components/CopyIconField';
+import { getValueForDevice } from 'styles/breakpoints';
 
 const ICON_STYLE = {
   transform: 'translateY(3px)'
@@ -31,6 +32,26 @@ const ContactView: React.FC = () => {
     }
   ];
 
+  const formPadding = getValueForDevice({
+    desktopLarge: '8%',
+    laptopLarge: '4%'
+  });
+
+  const iconSize = getValueForDevice({
+    desktopLarge: 28,
+    desktopMedium: 26,
+    desktopSmall: 24,
+    laptopLarge: 22
+  });
+
+  const iconDistance = getValueForDevice({
+    desktopLarge: 20,
+    desktopMedium: 19,
+    desktopSmall: 17,
+    laptopLarge: 16,
+    laptopMedium: 15
+  });
+
   return (
     <Section variant='dark' withLinker>
       <FlexBox justifyContent='space-between'>
@@ -42,7 +63,7 @@ const ContactView: React.FC = () => {
             justifyContent='space-between'
             marginBottom={6}
           >
-            <Paragraph fontSize={20} lineHeight={1.7}>
+            <Paragraph fontSize={4} lineHeight={1.7}>
               {contactMsg} &rarr;
             </Paragraph>
           </FlexBox>
@@ -58,13 +79,13 @@ const ContactView: React.FC = () => {
           <Box position='absolute' bottom={0} left={-18}>
             <SocialsBar
               orientation='horizontal'
-              elementDistance={20}
-              iconSize={28}
+              elementDistance={iconDistance}
+              iconSize={iconSize}
             />
           </Box>
         </Box>
 
-        <Box width='50%' paddingLeft='8%'>
+        <Box width='50%' paddingLeft={formPadding}>
           <ContactForm />
         </Box>
       </FlexBox>

@@ -1,11 +1,18 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 export const Container = styled.div(({ theme }) => ({
   width: '100%',
   position: 'relative',
   paddingTop: '15px',
   marginBottom: '40px',
-  height: '105px'
+  height: getValueForDevice({
+    desktopLarge: 105,
+    desktopMedium: 95,
+    desktopSmall: 90,
+    laptopLarge: 85,
+    laptopMedium: 80
+  })
 }));
 
 export const Textarea = styled.textarea(({ theme }) => ({
@@ -44,7 +51,15 @@ export const Label = styled.label<{ selected: boolean }>(
     color: selected ? theme.colors.primary100 : theme.colors.gray50,
     zIndex: 0,
     userSelect: 'none',
-    transform: selected ? ' translateY(-100px)' : 'translateY(-4px)',
+    transform: selected
+      ? ` translateY(-${getValueForDevice({
+          desktopLarge: '100px',
+          desktopMedium: '95px',
+          desktopSmall: '90px',
+          laptopLarge: '85px',
+          laptopMedium: '80px'
+        })})`
+      : 'translateY(-4px)',
     transition: 'all 0.2s'
   })
 );

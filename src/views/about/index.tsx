@@ -22,7 +22,7 @@ const AboutView: React.FC = () => {
           <SectionTitle type='left'>{sectionTitles.about}</SectionTitle>
           {about.split('\n').map((paragraph, index) => (
             <Box key={index} margin='15px 0'>
-              <Paragraph fontSize={18} lineHeight={1.8}>
+              <Paragraph fontSize={4} lineHeight={1.8}>
                 {paragraph}
               </Paragraph>
             </Box>

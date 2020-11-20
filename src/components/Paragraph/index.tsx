@@ -11,7 +11,12 @@ export const Paragraph = styled.p<Props>(
     display: 'block',
     margin: '15px 0',
     lineHeight,
-    fontSize: fontSize || theme.fontSizes[4],
+    fontSize:
+      (fontSize &&
+        (fontSize > theme.fontSizes.length
+          ? fontSize
+          : theme.fontSizes[fontSize])) ||
+      theme.fontSizes[4],
     textAlign: 'left',
     color: (color && theme.colors[color]) || theme.colors.gray90
   })

@@ -6,6 +6,22 @@ interface StyleProps {
   padding?: string | number;
 }
 
+const DEFAULT_HEIGHT = getValueForDevice({
+  desktopLarge: 48,
+  desktopMedium: 47,
+  desktopSmall: 46,
+  laptopLarge: 44,
+  laptopMedium: 42
+});
+
+const DEFAULT_PADDING = getValueForDevice({
+  desktopLarge: '16px 26px',
+  desktopMedium: '15px 24px',
+  desktopSmall: '14px 22px',
+  laptopLarge: '14px 20px',
+  laptopMedium: '8px 20px'
+});
+
 export const FullButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.primary100,
@@ -17,15 +33,8 @@ export const FullButton = styled.button<StyleProps>(
       laptopMedium: 14
     }),
     color: theme.colors.dark50,
-    padding:
-      padding ||
-      getValueForDevice({
-        desktopLarge: '16px 26px',
-        desktopMedium: '15px 24px',
-        desktopSmall: '14px 22px',
-        laptopLarge: '14px 20px',
-        laptopMedium: '8px 18px'
-      }),
+    padding: padding || DEFAULT_PADDING,
+    height: DEFAULT_HEIGHT,
     margin,
     display: 'inline-flex',
     justifyContent: 'center',
@@ -53,8 +62,9 @@ export const GhostButton = styled.button<StyleProps>(
       laptopLarge: 16,
       laptopMedium: 14
     }),
+    height: DEFAULT_HEIGHT,
     color: theme.colors.primary100,
-    padding: padding || '14px 24px',
+    padding: padding || DEFAULT_PADDING,
     margin,
     display: 'inline-flex',
     justifyContent: 'center',

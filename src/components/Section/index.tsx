@@ -8,8 +8,24 @@ const SIDE_PADDING = getValueForDevice({
   desktopLarge: 360,
   desktopMedium: 340,
   desktopSmall: 320,
-  laptopLarge: 280,
-  laptopMedium: 200
+  laptopLarge: 220,
+  laptopMedium: 180
+});
+
+const TOP_PADDING = getValueForDevice({
+  desktopLarge: 80,
+  desktopMedium: 78,
+  desktopSmall: 76,
+  laptopLarge: 72,
+  laptopMedium: 70
+});
+
+const BOTTOM_PADDING = getValueForDevice({
+  desktopLarge: 110,
+  desktopMedium: 105,
+  desktopSmall: 100,
+  laptopLarge: 95,
+  laptopMedium: 90
 });
 
 export type SectionVariant = 'dark' | 'light';
@@ -20,7 +36,7 @@ export interface Props {
 }
 
 const SectionContainer = styled.div<Props>(({ theme, variant }) => ({
-  padding: `80px ${SIDE_PADDING}px 110px ${SIDE_PADDING}px`,
+  padding: `${TOP_PADDING}px ${SIDE_PADDING}px ${BOTTOM_PADDING}px ${SIDE_PADDING}px`,
   backgroundColor:
     variant === 'light' ? theme.colors.dark50 : theme.colors.dark80,
   position: 'relative'

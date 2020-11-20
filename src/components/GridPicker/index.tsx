@@ -3,6 +3,7 @@ import Paragraph from 'components/Paragraph';
 import React, { useState } from 'react';
 import { ColumnTitle, Container, Grid, IconWrapper, Title } from './parts';
 import { Icon, IconifyIcon } from '@iconify/react';
+import { getValueForDevice } from 'styles/breakpoints';
 
 interface GridItem {
   icon: IconifyIcon;
@@ -27,19 +28,57 @@ const GridPicker: React.FC<Props> = ({
     gridItems[initiallySelectedElement]
   );
 
+  const iconSize = getValueForDevice({
+    desktopLarge: 84,
+    desktopMedium: 80,
+    desktopSmall: 78,
+    laptopLarge: 74,
+    laptopMedium: 72
+  });
+  const iconMarginRight = getValueForDevice({
+    desktopLarge: 50,
+    desktopMedium: 46,
+    desktopSmall: 42,
+    laptopLarge: 38
+  });
+  const iconBoxWidth = getValueForDevice({
+    desktopLarge: 100,
+    desktopMedium: 90,
+    desktopSmall: 80,
+    laptopLarge: 75
+  });
+
+  const paddingX = getValueForDevice({
+    desktopLarge: 110,
+    laptopLarge: 0
+  });
+  const marginBottom = getValueForDevice({
+    desktopLarge: 50,
+    laptopLarge: 30
+  });
+  const marginLeft = getValueForDevice({
+    desktopLarge: 50,
+    laptopLarge: 30,
+    laptopMedium: 20
+  });
+
   return (
     <Container>
       <FlexBox
-        paddingX={110}
-        marginBottom={50}
+        paddingX={paddingX}
+        marginBottom={marginBottom}
         justifyContent='space-around'
         alignItems='center'
       >
-        <Box marginRight={50} width={100} overflow='hidden'>
+        <Box
+          marginRight={iconMarginRight}
+          width={iconBoxWidth}
+          overflow='hidden'
+        >
           <Icon
             icon={chosenItem.icon}
             style={{
-              fontSize: 84,
+              fontSize: iconSize,
               transform: `scale(${chosenItem.iconScaleFactor || 1.0})`
             }}
           />
@@ -59,7 +98,7 @@ const GridPicker: React.FC<Props> = ({
             flexDirection='column'
             alignItems='center'
             width={`${86 / columns.length}%`}
-            marginLeft={columnNumber === 0 ? '50px' : undefined}
+            marginLeft={columnNumber === 0 ? marginLeft : undefined}
           >
             <ColumnTitle>{columnTitle}</ColumnTitle>
             <Grid>
