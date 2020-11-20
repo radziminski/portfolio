@@ -33,7 +33,8 @@ const GridPicker: React.FC<Props> = ({
     desktopMedium: 80,
     desktopSmall: 78,
     laptopLarge: 74,
-    laptopMedium: 72
+    laptopMedium: 72,
+    laptopSmall: 68
   });
   const iconMarginRight = getValueForDevice({
     desktopLarge: 50,
@@ -62,6 +63,13 @@ const GridPicker: React.FC<Props> = ({
     laptopMedium: 20
   });
 
+  const textWidth = getValueForDevice({
+    desktopLarge: 600,
+    laptopLarge: 500,
+    laptopMedium: 480,
+    laptopSmall: 460
+  });
+
   return (
     <Container>
       <FlexBox
@@ -83,7 +91,7 @@ const GridPicker: React.FC<Props> = ({
             }}
           />
         </Box>
-        <Box style={{ width: 600 }}>
+        <Box style={{ width: textWidth }}>
           <Title>{chosenItem.title}</Title>
           <Paragraph color='gray90' style={{ margin: '4px 0' }}>
             {chosenItem.description}

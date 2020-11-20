@@ -6,7 +6,8 @@ export const MainContainer = styled.div({
   position: 'fixed',
   right: getValueForDevice({
     desktopLarge: '7%',
-    laptopLarge: '5%'
+    laptopLarge: '5%',
+    laptopSmall: '3%'
   }),
   top: getValueForDevice({
     desktopLarge: 80,

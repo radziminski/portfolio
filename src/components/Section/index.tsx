@@ -9,7 +9,8 @@ const SIDE_PADDING = getValueForDevice({
   desktopMedium: 340,
   desktopSmall: 320,
   laptopLarge: 220,
-  laptopMedium: 180
+  laptopMedium: 180,
+  laptopSmall: 140
 });
 
 const TOP_PADDING = getValueForDevice({
