@@ -4,8 +4,13 @@ import Section from 'components/Section';
 import SectionTitle from 'components/SectionTitle';
 import Box from 'components/Box';
 import GridPicker from 'components/GridPicker';
+import { getValueForDevice } from 'styles/breakpoints';
 
-const LEFT_PADDING = 150;
+const LEFT_PADDING = getValueForDevice({
+  desktopLarge: 150,
+  laptopLarge: 125,
+  laptopSmall: 110
+});
 
 const columns = ['Web Technologies:', 'Other Technologies:'];
 

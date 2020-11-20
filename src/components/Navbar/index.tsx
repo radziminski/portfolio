@@ -18,7 +18,7 @@ const Navbar = () => {
     desktopSmall: 160,
     laptopLarge: 140,
     laptopMedium: 130,
-    laptopSmall: 120
+    laptopSmall: 60
   });
 
   const top = getValueForDevice({

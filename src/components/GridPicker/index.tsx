@@ -55,7 +55,7 @@ const GridPicker: React.FC<Props> = ({
   });
   const marginBottom = getValueForDevice({
     desktopLarge: 50,
-    laptopLarge: 30
+    laptopLarge: 35
   });
   const marginLeft = getValueForDevice({
     desktopLarge: 50,

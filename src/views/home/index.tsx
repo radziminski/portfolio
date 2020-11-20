@@ -15,6 +15,12 @@ const HomeView: React.FC = () => {
     laptopMedium: 26
   });
 
+  const socialsBarRight = getValueForDevice({
+    desktopLarge: 110,
+    laptopLarge: 105,
+    laptopSmall: 80
+  });
+
   return (
     <Box width='100%' height='100vh' position='relative'>
       <Navbar />
@@ -25,7 +31,7 @@ const HomeView: React.FC = () => {
       <Box
         position='absolute'
         top='50%'
-        right='110px'
+        right={socialsBarRight}
         transform='translate(50%, -50%)'
       >
         <SocialsBar orientation='vertical' />

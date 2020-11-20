@@ -15,7 +15,8 @@ const DesktopNav: React.FC<Props> = () => {
   const itemPadding = getValueForDevice({
     desktopLarge: '10px 25px',
     laptopLarge: '8px 22px',
-    laptopMedium: '8px 16px'
+    laptopMedium: '8px 16px',
+    laptopSmall: '8px 14px'
   });
 
   return (
