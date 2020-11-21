@@ -140,7 +140,8 @@ export const HeroBox: React.FC = () => {
 
   const top = getValueForDevice({
     desktopLarge: '50%',
-    laptopLarge: '52%'
+    laptopLarge: '52%',
+    tabLarge: '50%'
   });
 
   return (
