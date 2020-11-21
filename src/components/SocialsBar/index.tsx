@@ -11,7 +11,8 @@ const ICON_SIZE = getValueForDevice({
   desktopMedium: 23,
   desktopSmall: 22,
   laptopLarge: 21,
-  laptopMedium: 20
+  laptopMedium: 20,
+  tabLarge: 28
 });
 
 export type SocialsBarOrientation = 'vertical' | 'horizontal';

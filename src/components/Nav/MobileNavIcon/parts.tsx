@@ -51,7 +51,8 @@ export const Container = styled.div(() => ({
   }),
   height: getValueForDevice({
     desktopLarge: 35,
-    laptopLarge: 26
+    laptopLarge: 26,
+    tabLarge: 22
   }),
   cursor: 'pointer',
   zIndex: 180

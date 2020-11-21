@@ -1,4 +1,4 @@
-import Box, { FlexBox } from 'components/Box';
+import Box from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
 import React from 'react';
 import styled from 'styled-components';

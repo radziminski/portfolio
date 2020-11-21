@@ -6,6 +6,15 @@ interface StyleProps {
   padding?: string | number;
 }
 
+const FONT_SIZE = getValueForDevice({
+  desktopLarge: 20,
+  desktopMedium: 19,
+  desktopSmall: 18,
+  laptopLarge: 16,
+  laptopMedium: 14,
+  tabLarge: 14
+});
+
 const DEFAULT_HEIGHT = getValueForDevice({
   desktopLarge: 48,
   desktopMedium: 47,
@@ -27,14 +36,7 @@ const DEFAULT_PADDING = getValueForDevice({
 export const FullButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.primary100,
-    fontSize: getValueForDevice({
-      desktopLarge: 20,
-      desktopMedium: 19,
-      desktopSmall: 18,
-      laptopLarge: 16,
-      laptopMedium: 14,
-      tabLarge: 13
-    }),
+    fontSize: FONT_SIZE,
     color: theme.colors.dark50,
     padding: padding || DEFAULT_PADDING,
     height: DEFAULT_HEIGHT,
@@ -58,14 +60,7 @@ export const FullButton = styled.button<StyleProps>(
 export const GhostButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.transparent,
-    fontSize: getValueForDevice({
-      desktopLarge: 20,
-      desktopMedium: 19,
-      desktopSmall: 18,
-      laptopLarge: 16,
-      laptopMedium: 14,
-      tabLarge: 13
-    }),
+    fontSize: FONT_SIZE,
     height: DEFAULT_HEIGHT,
     color: theme.colors.primary100,
     padding: padding || DEFAULT_PADDING,

@@ -12,6 +12,12 @@ const LEFT_PADDING = getValueForDevice({
   laptopSmall: 110
 });
 
+const TITLE_LEFT = getValueForDevice({
+  desktopLarge: '-60%',
+  laptopSmall: '-60%',
+  tabLarge: '-100%'
+});
+
 const columns = ['Web Technologies:', 'Other Technologies:'];
 
 const SkillsView: React.FC = () => {
@@ -27,7 +33,7 @@ const SkillsView: React.FC = () => {
           position='absolute'
           top='50%'
           left='0'
-          transform='rotate(-90deg) translate(10px, -60%)'
+          transform={`rotate(-90deg) translate(10px, ${TITLE_LEFT})`}
         >
           <SectionTitle type='left'>{sectionTitles.skills}</SectionTitle>
         </Box>

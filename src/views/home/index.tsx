@@ -3,8 +3,8 @@ import Navbar from 'components/Navbar';
 import { HeroBox, ArrowDownWrapper } from './parts';
 import Box from 'components/Box';
 import { FiArrowDownCircle } from 'react-icons/fi';
-import SocialsBar from 'components/SocialsBar';
-import { getValueForDevice } from 'styles/breakpoints';
+import SocialsBar, { SocialsBarOrientation } from 'components/SocialsBar';
+import BREAKPOINTS, { getValueForDevice } from 'styles/breakpoints';
 
 const HomeView: React.FC = () => {
   const iconSize = getValueForDevice({
@@ -12,13 +12,34 @@ const HomeView: React.FC = () => {
     desktopMedium: 38,
     desktopSmall: 34,
     laptopLarge: 28,
-    laptopMedium: 26
+    laptopMedium: 26,
+    tabLarge: 36
   });
 
+  const socialsBarTop = getValueForDevice({
+    desktopLarge: '50%',
+    laptopSmall: '50%',
+    tabLarge: 'auto'
+  });
+  const socialsBarBottom = getValueForDevice({
+    desktopLarge: 'auto',
+    laptopSmall: 'auto',
+    tabLarge: 48
+  });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,
     laptopLarge: 105,
-    laptopSmall: 80
+    laptopSmall: 80,
+    tabLarge: '78%'
+  });
+
+  const socialsBarOrientation: SocialsBarOrientation =
+    window.innerWidth <= BREAKPOINTS.tabLarge ? 'horizontal' : 'vertical';
+
+  const socialsDistance = getValueForDevice({
+    desktopLarge: 14,
+    laptopSmall: 14,
+    tabLarge: 18
   });
 
   return (
@@ -30,11 +51,15 @@ const HomeView: React.FC = () => {
       </ArrowDownWrapper>
       <Box
         position='absolute'
-        top='50%'
+        top={socialsBarTop}
         right={socialsBarRight}
+        bottom={socialsBarBottom}
         transform='translate(50%, -50%)'
       >
-        <SocialsBar orientation='vertical' />
+        <SocialsBar
+          orientation={socialsBarOrientation}
+          elementDistance={socialsDistance}
+        />
       </Box>
     </Box>
   );

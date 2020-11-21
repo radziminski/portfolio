@@ -11,7 +11,7 @@ const STRIPS_WIDTH = getValueForDevice({
   desktopSmall: 55,
   laptopLarge: 50,
   laptopMedium: 36,
-  tabLarge: 32
+  tabLarge: 34
 });
 
 export const Subtitle = styled.div(({ theme }) => ({
@@ -21,7 +21,7 @@ export const Subtitle = styled.div(({ theme }) => ({
     desktopSmall: 18,
     laptopLarge: 16,
     laptopMedium: 14,
-    tabLarge: 12
+    tabLarge: 16
   }),
   color: theme.colors.primary100,
   display: 'flex',
@@ -68,7 +68,8 @@ export const Title = styled.h1<{ fontSize?: number }>(
       desktopMedium: '20px 0',
       desktopSmall: '18px 0',
       laptopLarge: '14px 0',
-      laptopMedium: '12px 0'
+      laptopMedium: '12px 0',
+      tabLarge: '14px 0'
     })
   })
 );
@@ -80,7 +81,7 @@ export const Description = styled.p(({ theme }) => ({
     desktopSmall: 18,
     laptopLarge: 17,
     laptopMedium: 16,
-    tabLarge: 14
+    tabLarge: 18
   }),
   color: theme.colors.white,
   fontWeight: theme.fontWeights.light,
@@ -112,22 +113,23 @@ export const HeroBox: React.FC = () => {
     desktopSmall: 46,
     laptopLarge: 40,
     laptopMedium: 36,
-    tabLarge: 32
+    tabLarge: 38
   });
 
-  const longTtitleFontSize = getValueForDevice({
+  const longTitleFontSize = getValueForDevice({
     desktopLarge: 45,
     desktopMedium: 42,
     desktopSmall: 38,
     laptopLarge: 38,
     laptopMedium: 33,
-    tabLarge: 30
+    tabLarge: 35
   });
 
   const width = getValueForDevice({
     desktopLarge: 700,
     laptopLarge: 600,
-    laptopMedium: 550
+    laptopMedium: 550,
+    tabLarge: 600
   });
 
   const buttonsSpace = getValueForDevice({
@@ -154,7 +156,7 @@ export const HeroBox: React.FC = () => {
       <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
       <Title
         fontSize={
-          text.headerTitle.length > 5 ? longTtitleFontSize : titleFontSize
+          text.headerTitle.length > 5 ? longTitleFontSize : titleFontSize
         }
       >
         {text.headerTitle}{' '}
@@ -194,9 +196,14 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     desktopMedium: 36,
     desktopSmall: 32,
     laptopLarge: 26,
-    laptopMedium: 20
+    laptopMedium: 20,
+    tabLarge: 44
   }),
-  left: '50%',
+  left: getValueForDevice({
+    desktopLarge: '50%',
+    laptopMedium: '50%',
+    tabLarge: '85%'
+  }),
   transform: 'translate(-50%, -50%)',
   opacity: '60%',
   color: theme.colors.white,

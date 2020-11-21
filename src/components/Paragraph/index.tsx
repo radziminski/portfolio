@@ -18,6 +18,7 @@ export const Paragraph = styled.p<Props>(
           : theme.fontSizes[fontSize])) ||
       theme.fontSizes[4],
     textAlign: 'left',
+    wordWrap: 'break-word',
     color: (color && theme.colors[color]) || theme.colors.gray90
   })
 );

@@ -2,7 +2,12 @@ import { getValueForDevice } from 'styles/breakpoints';
 import { DefaultTheme } from 'styled-components';
 import { BREAKPOINTS } from './breakpoints';
 
-export const SPACE = [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88];
+export const SPACE = getValueForDevice({
+  desktopLarge: [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88],
+  laptopLarge: [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88],
+  laptopSmall: [0, 6, 12, 18, 22, 30, 36, 42, 48, 54, 60, 66, 72, 80, 88],
+  tabLarge: [0, 4, 10, 16, 20, 28, 34, 38, 44, 50, 52, 56, 58, 76, 82]
+});
 
 export const COLORS = {
   black: '#000',
@@ -30,8 +35,7 @@ export const FONT_SIZES = getValueForDevice({
   desktopLarge: [0, 12, 14, 16, 18, 20, 24, 30, 36, 55],
   desktopSmall: [0, 11, 13, 15, 17, 19, 23, 28, 34, 52],
   laptopLarge: [0, 10, 11, 12, 14, 16, 18, 22, 26, 38],
-  laptopSmall: [0, 9, 10, 11, 13, 15, 17, 21, 24, 36],
-  tabLarge: [0, 8, 9, 10, 12, 14, 16, 20, 22, 32]
+  laptopSmall: [0, 9, 10, 11, 13, 15, 17, 21, 24, 36]
 });
 
 export const FONT_WEIGHTS = {

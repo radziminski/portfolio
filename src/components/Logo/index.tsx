@@ -9,7 +9,8 @@ const Logo: React.FC = () => {
   const fontSize = getValueForDevice({
     desktopLarge: 30,
     laptopLarge: 26,
-    laptopMedium: 22
+    laptopMedium: 22,
+    tabLarge: 26
   });
 
   const height = getValueForDevice({
