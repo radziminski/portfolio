@@ -16,7 +16,6 @@ const Navbar = () => {
   const theme: any = useTheme();
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
   const [isScrollAtTop, setIsScrollAtTop] = useState(true);
-  console.log(theme);
 
   const MOBILE_NAV_BREAKPOINT = BREAKPOINTS.tabLarge;
 
@@ -27,13 +26,15 @@ const Navbar = () => {
     laptopLarge: 140,
     laptopMedium: 130,
     laptopSmall: 70,
-    tabSmall: 50
+    tabSmall: 50,
+    mobileMedium: 26
   });
   const paddingY = getValueForDevice({
     desktopLarge: 0,
     laptopMedium: 0,
     laptopSmall: 0,
-    tabLarge: 42
+    tabLarge: 42,
+    mobileMedium: 34
   });
 
   const topPosition = getValueForDevice({

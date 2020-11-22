@@ -13,7 +13,8 @@ const HomeView: React.FC = () => {
     desktopSmall: 34,
     laptopLarge: 28,
     laptopMedium: 26,
-    tabLarge: 36
+    tabLarge: 36,
+    mobileMedium: 28
   });
 
   const socialsBarTop = getValueForDevice({
@@ -24,7 +25,9 @@ const HomeView: React.FC = () => {
   const socialsBarBottom = getValueForDevice({
     desktopLarge: 'auto',
     laptopSmall: 'auto',
-    tabLarge: 44
+    tabLarge: 70,
+    tabMedium: 60,
+    tabSmall: 44
   });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,
@@ -36,7 +39,8 @@ const HomeView: React.FC = () => {
     desktopLarge: 'auto',
     laptopLarge: 'auto',
     laptopSmall: 'auto',
-    tabLarge: 30
+    tabLarge: 30,
+    mobileMedium: '20px'
   });
 
   const socialsBarTransform = getValueForDevice({
@@ -52,7 +56,8 @@ const HomeView: React.FC = () => {
   const socialsDistance = getValueForDevice({
     desktopLarge: 14,
     laptopSmall: 14,
-    tabLarge: 18
+    tabLarge: 18,
+    mobileMedium: 10
   });
 
   return (

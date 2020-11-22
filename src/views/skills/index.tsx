@@ -55,7 +55,7 @@ const SkillsView: React.FC = () => {
   );
   const normalTitle = useMemo(
     () => (
-      <Box marginBottom={7}>
+      <Box marginBottom={8}>
         <SectionTitle type='left'>{sectionTitles.skills}</SectionTitle>
       </Box>
     ),

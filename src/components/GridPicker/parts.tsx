@@ -22,7 +22,11 @@ export const Title = styled.h3(({ theme }) => ({
 export const Grid = styled.div(() => ({
   display: 'grid',
   width: '100%',
-  gridTemplateColumns: 'repeat(4, 1fr)',
+  gridTemplateColumns: getValueForDevice({
+    desktopLarge: 'repeat(4, 1fr)',
+    tabSmall: 'repeat(4, 1fr)',
+    mobileLarge: 'repeat(5, 1fr)'
+  }),
   gridGap: '18px',
   gridTemplateRows: 'auto'
 }));
@@ -39,7 +43,10 @@ export const IconWrapper = styled.div<{ selected?: boolean }>(
       laptopMedium: 50,
       laptopSmall: 46,
       tabLarge: 44,
-      tabMedium: 42
+      tabMedium: 42,
+      mobileLarge: 44,
+      mobileMedium: 36,
+      mobileSmall: 28
     }),
     cursor: 'pointer',
     transition: 'all 0.2s',

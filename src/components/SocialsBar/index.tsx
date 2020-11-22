@@ -25,7 +25,8 @@ const SocialsBar: React.FC<Props> = ({
     desktopSmall: 22,
     laptopLarge: 21,
     laptopMedium: 20,
-    tabLarge: 28
+    tabLarge: 28,
+    mobileMedium: 24
   });
   const renderIconSize = iconSize || defaultIconSize;
   const socialLinks = useMemo(

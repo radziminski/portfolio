@@ -11,7 +11,9 @@ const STRIPS_WIDTH = getValueForDevice({
   desktopSmall: 55,
   laptopLarge: 50,
   laptopMedium: 36,
-  tabLarge: 34
+  tabLarge: 34,
+  mobileLarge: 30,
+  mobileMedium: 26
 });
 
 export const Subtitle = styled.div(({ theme }) => ({
@@ -21,7 +23,8 @@ export const Subtitle = styled.div(({ theme }) => ({
     desktopSmall: 18,
     laptopLarge: 16,
     laptopMedium: 14,
-    tabLarge: 16
+    tabLarge: 16,
+    mobileMedium: 12
   }),
   color: theme.colors.primary100,
   display: 'flex',
@@ -30,7 +33,11 @@ export const Subtitle = styled.div(({ theme }) => ({
   '&:after': {
     // eslint-disable-next-line quotes
     content: `''`,
-    display: 'block',
+    display: getValueForDevice({
+      desktopLarge: 'block',
+      tabSmall: 'block',
+      mobileLarge: 'none'
+    }),
     width: `${STRIPS_WIDTH}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
@@ -63,6 +70,11 @@ export const Title = styled.h1<{ fontSize?: number }>(
     fontSize: `${fontSize}px`,
     color: theme.colors.white,
     fontWeight: theme.fontWeights.semiBold,
+    textAlign: getValueForDevice({
+      desktopLarge: 'center',
+      tabSmall: 'center',
+      mobileLarge: 'left'
+    }),
     margin: getValueForDevice({
       desktopLarge: '22px 0',
       desktopMedium: '20px 0',
@@ -82,17 +94,23 @@ export const Description = styled.p(({ theme }) => ({
     laptopLarge: 17,
     laptopMedium: 16,
     tabLarge: 18,
-    tabSmall: 16
+    tabSmall: 16,
+    mobileMedium: 13
   }),
   color: theme.colors.white,
   fontWeight: theme.fontWeights.light,
-  textAlign: 'center',
+  textAlign: getValueForDevice({
+    desktopLarge: 'center',
+    tabSmall: 'center',
+    mobileLarge: 'left'
+  }),
   lineHeight: getValueForDevice({
     desktopLarge: '34px',
     desktopMedium: '32px',
     desktopSmall: '30px',
     laptopLarge: '28px',
-    laptopMedium: '26px'
+    laptopMedium: '26px',
+    mobileMedium: '21px'
   }),
   margin: 0,
   marginBottom: '8px'
@@ -114,7 +132,9 @@ export const HeroBox: React.FC = () => {
     desktopSmall: 46,
     laptopLarge: 40,
     laptopMedium: 36,
-    tabLarge: 38
+    tabLarge: 38,
+    mobileLarge: 36,
+    mobileMedium: 30
   });
 
   const longTitleFontSize = getValueForDevice({
@@ -123,7 +143,9 @@ export const HeroBox: React.FC = () => {
     desktopSmall: 38,
     laptopLarge: 38,
     laptopMedium: 33,
-    tabLarge: 35
+    tabLarge: 34,
+    mobileLarge: 32,
+    mobileMedium: 28
   });
 
   const width = getValueForDevice({
@@ -131,13 +153,17 @@ export const HeroBox: React.FC = () => {
     laptopLarge: 600,
     laptopMedium: 550,
     tabLarge: 600,
-    tabSmall: 500
+    tabSmall: 500,
+    mobileLarge: 400,
+    mobileMedium: 270,
+    mobileSmall: window.innerWidth * 0.86
   });
 
   const buttonsSpace = getValueForDevice({
     desktopLarge: 30,
     laptopLarge: 28,
-    laptopMedium: 22
+    laptopMedium: 22,
+    mobileMedium: 16
   });
 
   const top = getValueForDevice({
@@ -153,7 +179,11 @@ export const HeroBox: React.FC = () => {
       left='50%'
       transform='translate(-50%, -50%)'
       flexDirection='column'
-      alignItems='center'
+      alignItems={getValueForDevice({
+        desktopLarge: 'center',
+        tabSmall: 'center',
+        mobileLarge: 'start'
+      })}
       width={width}
     >
       <Subtitle>{greetingMessage?.toUpperCase()}</Subtitle>
@@ -200,7 +230,9 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     desktopSmall: 32,
     laptopLarge: 26,
     laptopMedium: 20,
-    tabLarge: 44
+    tabLarge: 70,
+    tabMedium: 60,
+    tabSmall: 44
   }),
   right: getValueForDevice({
     desktopLarge: '50%',

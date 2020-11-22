@@ -26,7 +26,8 @@ export const TimelineLine = styled.div(({ theme }) => ({
     desktopMedium: 115,
     desktopSmall: 110,
     laptopLarge: 100,
-    tabSmall: 120
+    tabSmall: 120,
+    mobileLarge: 140
   }),
   backgroundColor: theme.colors.primary100,
   marginLeft: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 0 : 8.5,
@@ -60,7 +61,16 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
       <>
         <TimelinePoint size={20} />
         <TimelineTextContainer side='right'>
-          <Box color='primary100' opacity={0.9} width='32%' textAlign='center'>
+          <Box
+            color='primary100'
+            opacity={0.9}
+            width={getValueForDevice({
+              desktopLarge: '32%',
+              mobileLarge: '32%',
+              mobileMedium: '40%'
+            })}
+            textAlign='center'
+          >
             {start} - {end}
           </Box>
           <ExpandableParagraph

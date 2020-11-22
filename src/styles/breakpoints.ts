@@ -13,7 +13,7 @@ export type Device =
   | 'desktopLarge';
 
 export const BREAKPOINTS: Record<Device, number> = {
-  mobileSmall: 320,
+  mobileSmall: 319,
   mobileMedium: 460,
   mobileLarge: 600,
   tabSmall: 720,

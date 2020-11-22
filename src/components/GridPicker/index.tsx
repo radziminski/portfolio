@@ -35,14 +35,19 @@ const GridPicker: React.FC<Props> = ({
     laptopLarge: 74,
     laptopMedium: 72,
     laptopSmall: 68,
-    tabLarge: 66
+    tabLarge: 66,
+    mobileLarge: 60,
+    mobileMedium: 52,
+    mobileSmall: 32
   });
   const iconMarginRight = getValueForDevice({
     desktopLarge: 50,
     desktopMedium: 46,
     desktopSmall: 42,
     laptopLarge: 38,
-    tabSmall: 20
+    tabSmall: 20,
+    mobileLarge: '16px',
+    mobileMedium: 0
   });
   const iconBoxWidth = getValueForDevice({
     desktopLarge: 100,
@@ -72,7 +77,15 @@ const GridPicker: React.FC<Props> = ({
     laptopMedium: 480,
     laptopSmall: 460,
     tabLarge: 440,
-    tabSmall: 400
+    tabSmall: 390,
+    mobileLarge: 280,
+    mobileMedium: 180
+  });
+
+  const columnsFlexDirection = getValueForDevice({
+    desktopLarge: 'row',
+    tabSmall: 'row',
+    mobileLarge: 'column'
   });
 
   return (
@@ -80,7 +93,7 @@ const GridPicker: React.FC<Props> = ({
       <FlexBox
         paddingX={paddingX}
         marginBottom={marginBottom}
-        justifyContent='space-around'
+        justifyContent='center'
         alignItems='center'
       >
         <Box
@@ -104,14 +117,29 @@ const GridPicker: React.FC<Props> = ({
         </Box>
       </FlexBox>
 
-      <FlexBox justifyContent='space-between' width='100%'>
+      <FlexBox
+        justifyContent={'space-between'}
+        alignItems={columnsFlexDirection === 'column' ? 'center' : undefined}
+        width='100%'
+        flexDirection={columnsFlexDirection}
+      >
         {columns.map((columnTitle, columnNumber) => (
           <FlexBox
             key={columnTitle}
             flexDirection='column'
             alignItems='center'
-            width={`${86 / columns.length}%`}
+            width={
+              columnsFlexDirection === 'column'
+                ? '100%'
+                : `${86 / columns.length}%`
+            }
             marginLeft={columnNumber === 0 ? marginLeft : undefined}
+            marginBottom={
+              columnsFlexDirection === 'column' &&
+              columnNumber !== columns.length - 1
+                ? 30
+                : 0
+            }
           >
             <ColumnTitle>{columnTitle}</ColumnTitle>
             <Grid>

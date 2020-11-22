@@ -62,7 +62,7 @@ const Timeline: React.FC<Props> = ({ points }) => {
     [points]
   );
   return (
-    <FlexBox alignItems='center' flexDirection='column' paddingBottom={10}>
+    <FlexBox alignItems='center' flexDirection='column' paddingBottom={11}>
       {pointsRender}
     </FlexBox>
   );
