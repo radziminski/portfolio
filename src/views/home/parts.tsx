@@ -81,7 +81,8 @@ export const Description = styled.p(({ theme }) => ({
     desktopSmall: 18,
     laptopLarge: 17,
     laptopMedium: 16,
-    tabLarge: 18
+    tabLarge: 18,
+    tabSmall: 16
   }),
   color: theme.colors.white,
   fontWeight: theme.fontWeights.light,
@@ -129,7 +130,8 @@ export const HeroBox: React.FC = () => {
     desktopLarge: 700,
     laptopLarge: 600,
     laptopMedium: 550,
-    tabLarge: 600
+    tabLarge: 600,
+    tabSmall: 500
   });
 
   const buttonsSpace = getValueForDevice({
@@ -200,12 +202,16 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     laptopMedium: 20,
     tabLarge: 44
   }),
-  left: getValueForDevice({
+  right: getValueForDevice({
     desktopLarge: '50%',
     laptopMedium: '50%',
-    tabLarge: '85%'
+    tabLarge: 50
   }),
-  transform: 'translate(-50%, -50%)',
+  transform: getValueForDevice({
+    desktopLarge: 'translate(50%, -50%)',
+    laptopMedium: 'translate(50%, -50%)',
+    tabLarge: 'none'
+  }),
   opacity: '60%',
   color: theme.colors.white,
   transition: 'opacity 0.1s, color 0.1s',

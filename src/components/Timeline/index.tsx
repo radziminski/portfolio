@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { FlexBox } from 'components/Box';
 import { TimelineLine, TimelineEntry } from './parts';
+import { LAYOUT_ORIENTATION_BREAKPOINT } from 'styles/breakpoints';
 
 export interface TimelinePointProps {
   start: string | number;
@@ -21,17 +22,36 @@ const Timeline: React.FC<Props> = ({ points }) => {
         <FlexBox
           key={index}
           flexDirection='column'
-          alignItems='center'
+          alignItems={
+            window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT
+              ? 'center'
+              : 'start'
+          }
           width='100%'
+          marginTop={
+            window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT || index === 0
+              ? 0
+              : -16
+          }
         >
           <FlexBox
             width='100%'
-            justifyContent='center'
+            justifyContent={
+              window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT
+                ? 'center'
+                : 'left'
+            }
             alignItems='center'
             position='relative'
           >
             <TimelineEntry
-              timelineSide={index % 2 === 1 ? 'left' : 'right'}
+              timelineSide={
+                window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT
+                  ? index % 2 === 1
+                    ? 'left'
+                    : 'right'
+                  : 'right'
+              }
               {...point}
             />
           </FlexBox>
@@ -42,7 +62,7 @@ const Timeline: React.FC<Props> = ({ points }) => {
     [points]
   );
   return (
-    <FlexBox alignItems='center' flexDirection='column'>
+    <FlexBox alignItems='center' flexDirection='column' paddingBottom={10}>
       {pointsRender}
     </FlexBox>
   );

@@ -34,13 +34,15 @@ const GridPicker: React.FC<Props> = ({
     desktopSmall: 78,
     laptopLarge: 74,
     laptopMedium: 72,
-    laptopSmall: 68
+    laptopSmall: 68,
+    tabLarge: 66
   });
   const iconMarginRight = getValueForDevice({
     desktopLarge: 50,
     desktopMedium: 46,
     desktopSmall: 42,
-    laptopLarge: 38
+    laptopLarge: 38,
+    tabSmall: 20
   });
   const iconBoxWidth = getValueForDevice({
     desktopLarge: 100,
@@ -60,14 +62,17 @@ const GridPicker: React.FC<Props> = ({
   const marginLeft = getValueForDevice({
     desktopLarge: 50,
     laptopLarge: 30,
-    laptopMedium: 20
+    laptopMedium: 20,
+    tabSmall: 0
   });
 
   const textWidth = getValueForDevice({
     desktopLarge: 600,
     laptopLarge: 500,
     laptopMedium: 480,
-    laptopSmall: 460
+    laptopSmall: 460,
+    tabLarge: 440,
+    tabSmall: 400
   });
 
   return (

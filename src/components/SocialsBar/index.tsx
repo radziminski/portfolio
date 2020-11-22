@@ -6,15 +6,6 @@ import ExternalLink from 'components/ExternalLink';
 import { SocialsList, SocialsItem } from './parts';
 import { getValueForDevice } from 'styles/breakpoints';
 
-const ICON_SIZE = getValueForDevice({
-  desktopLarge: 24,
-  desktopMedium: 23,
-  desktopSmall: 22,
-  laptopLarge: 21,
-  laptopMedium: 20,
-  tabLarge: 28
-});
-
 export type SocialsBarOrientation = 'vertical' | 'horizontal';
 
 export interface Props {
@@ -28,7 +19,15 @@ const SocialsBar: React.FC<Props> = ({
   elementDistance,
   iconSize
 }) => {
-  const renderIconSize = iconSize || ICON_SIZE;
+  const defaultIconSize = getValueForDevice({
+    desktopLarge: 24,
+    desktopMedium: 23,
+    desktopSmall: 22,
+    laptopLarge: 21,
+    laptopMedium: 20,
+    tabLarge: 28
+  });
+  const renderIconSize = iconSize || defaultIconSize;
   const socialLinks = useMemo(
     () => [
       {

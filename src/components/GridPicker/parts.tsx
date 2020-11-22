@@ -37,7 +37,9 @@ export const IconWrapper = styled.div<{ selected?: boolean }>(
       desktopSmall: 56,
       laptopLarge: 52,
       laptopMedium: 50,
-      laptopSmall: 46
+      laptopSmall: 46,
+      tabLarge: 44,
+      tabMedium: 42
     }),
     cursor: 'pointer',
     transition: 'all 0.2s',

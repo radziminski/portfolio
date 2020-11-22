@@ -13,24 +13,50 @@ const AboutView: React.FC = () => {
     text: { sectionTitles, about }
   } = useContext(TextContentContext);
 
+  const flexDirection = getValueForDevice({
+    desktopLarge: 'row',
+    tabMedium: 'row',
+    tabSmall: 'column',
+    mobileSmall: 'column'
+  });
+
+  const textWidth = getValueForDevice({
+    desktopLarge: '65%',
+    tabLarge: '60%',
+    tabSmall: '100%'
+  });
+
+  const photoWidth = getValueForDevice({
+    desktopLarge: '35%',
+    tabMedium: '35%',
+    tabSmall: '60%',
+    mobileSmall: '50%'
+  });
+
+  const photoMarginBottom = getValueForDevice({
+    desktopLarge: 0,
+    tabMedium: 0,
+    tabSmall: 40
+  });
+
   return (
     <Section variant='dark' withLinker>
-      <FlexBox justifyContent='space-between'>
+      <FlexBox
+        justifyContent='space-between'
+        flexDirection={flexDirection}
+        alignItems='center'
+      >
         <Box
-          width='35%'
+          width={photoWidth}
           marginRight={getValueForDevice({
             desktopLarge: 12,
             tabLarge: 8
           })}
+          marginBottom={photoMarginBottom}
         >
           <Photo src={PortraitPhoto} alt='Portrait' />
         </Box>
-        <Box
-          width={getValueForDevice({
-            desktopLarge: '65%',
-            tabLarge: '60%'
-          })}
-        >
+        <Box width={textWidth}>
           <SectionTitle type='left'>{sectionTitles.about}</SectionTitle>
           {about.split('\n').map((paragraph, index) => (
             <Box key={index} margin='15px 0'>

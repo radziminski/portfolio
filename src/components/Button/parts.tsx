@@ -6,40 +6,36 @@ interface StyleProps {
   padding?: string | number;
 }
 
-const FONT_SIZE = getValueForDevice({
-  desktopLarge: 20,
-  desktopMedium: 19,
-  desktopSmall: 18,
-  laptopLarge: 16,
-  laptopMedium: 14,
-  tabLarge: 14
-});
-
-const DEFAULT_HEIGHT = getValueForDevice({
-  desktopLarge: 48,
-  desktopMedium: 47,
-  desktopSmall: 46,
-  laptopLarge: 44,
-  laptopMedium: 42,
-  tabLarge: 38
-});
-
-const DEFAULT_PADDING = getValueForDevice({
-  desktopLarge: '16px 26px',
-  desktopMedium: '15px 24px',
-  desktopSmall: '14px 22px',
-  laptopLarge: '14px 20px',
-  laptopMedium: '8px 20px',
-  tabLarge: '8px 17px'
-});
-
 export const FullButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.primary100,
-    fontSize: FONT_SIZE,
+    fontSize: getValueForDevice({
+      desktopLarge: 20,
+      desktopMedium: 19,
+      desktopSmall: 18,
+      laptopLarge: 16,
+      laptopMedium: 14,
+      tabLarge: 14
+    }),
     color: theme.colors.dark50,
-    padding: padding || DEFAULT_PADDING,
-    height: DEFAULT_HEIGHT,
+    padding:
+      padding ||
+      getValueForDevice({
+        desktopLarge: '16px 26px',
+        desktopMedium: '15px 24px',
+        desktopSmall: '14px 22px',
+        laptopLarge: '14px 20px',
+        laptopMedium: '8px 20px',
+        tabLarge: '8px 17px'
+      }),
+    height: getValueForDevice({
+      desktopLarge: 48,
+      desktopMedium: 47,
+      desktopSmall: 46,
+      laptopLarge: 44,
+      laptopMedium: 42,
+      tabLarge: 38
+    }),
     margin,
     display: 'inline-flex',
     justifyContent: 'center',
@@ -60,10 +56,33 @@ export const FullButton = styled.button<StyleProps>(
 export const GhostButton = styled.button<StyleProps>(
   ({ theme, padding, margin }) => ({
     backgroundColor: theme.colors.transparent,
-    fontSize: FONT_SIZE,
-    height: DEFAULT_HEIGHT,
+    fontSize: getValueForDevice({
+      desktopLarge: 20,
+      desktopMedium: 19,
+      desktopSmall: 18,
+      laptopLarge: 16,
+      laptopMedium: 14,
+      tabLarge: 14
+    }),
+    height: getValueForDevice({
+      desktopLarge: 48,
+      desktopMedium: 47,
+      desktopSmall: 46,
+      laptopLarge: 44,
+      laptopMedium: 42,
+      tabLarge: 38
+    }),
     color: theme.colors.primary100,
-    padding: padding || DEFAULT_PADDING,
+    padding:
+      padding ||
+      getValueForDevice({
+        desktopLarge: '16px 26px',
+        desktopMedium: '15px 24px',
+        desktopSmall: '14px 22px',
+        laptopLarge: '14px 20px',
+        laptopMedium: '8px 20px',
+        tabLarge: '8px 17px'
+      }),
     margin,
     display: 'inline-flex',
     justifyContent: 'center',

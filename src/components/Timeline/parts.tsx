@@ -2,7 +2,10 @@ import Box from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
 import React from 'react';
 import styled from 'styled-components';
-import { getValueForDevice } from 'styles/breakpoints';
+import {
+  getValueForDevice,
+  LAYOUT_ORIENTATION_BREAKPOINT
+} from 'styles/breakpoints';
 import { TimelinePointProps } from '.';
 
 export const TimelinePoint = styled.div<{ size: number }>(
@@ -22,19 +25,23 @@ export const TimelineLine = styled.div(({ theme }) => ({
     desktopLarge: 120,
     desktopMedium: 115,
     desktopSmall: 110,
-    laptopLarge: 100
+    laptopLarge: 100,
+    tabSmall: 120
   }),
-  backgroundColor: theme.colors.primary100
+  backgroundColor: theme.colors.primary100,
+  marginLeft: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 0 : 8.5,
+  marginTop: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 0 : -16
 }));
 
 export const TimelineTextContainer = styled.div<{ side: 'left' | 'right' }>(
   ({ theme, side }) => ({
-    width: '48%',
+    width: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? '48%' : '90%',
     display: 'flex',
     height: 50,
     left: side === 'right' ? '52%' : 'auto',
     right: side === 'left' ? '52%' : 'auto',
-    position: 'absolute',
+    position:
+      window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 'absolute' : 'static',
     alignItems: 'center',
     justifyContent: 'space-between',
     fontSize: theme.fontSizes[4]

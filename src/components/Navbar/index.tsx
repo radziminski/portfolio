@@ -10,33 +10,6 @@ import MobileNavIcon from 'components/Nav/MobileNavIcon';
 import { useTheme } from 'styled-components';
 import MobileNav from 'components/Nav/MobileNav';
 
-const MOBILE_NAV_BREAKPOINT = BREAKPOINTS.tabLarge;
-
-const DEFAULT_PADDING_X = getValueForDevice({
-  desktopLarge: 220,
-  desktopMedium: 200,
-  desktopSmall: 160,
-  laptopLarge: 140,
-  laptopMedium: 130,
-  laptopSmall: 70
-});
-const DEFAULT_PADDING_Y = getValueForDevice({
-  desktopLarge: 0,
-  laptopMedium: 0,
-  laptopSmall: 0,
-  tabLarge: 42
-});
-
-const DEFAULT_TOP = getValueForDevice({
-  desktopLarge: 50,
-  laptopLarge: 40,
-  laptopMedium: 30,
-  tabLarge: 0
-});
-
-const IS_MOBILE = window.innerWidth <= MOBILE_NAV_BREAKPOINT;
-console.log(IS_MOBILE, window.innerWidth, MOBILE_NAV_BREAKPOINT);
-
 const Navbar = () => {
   const showStickedNav = useToggleStickedNav();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -44,6 +17,33 @@ const Navbar = () => {
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
   const [isScrollAtTop, setIsScrollAtTop] = useState(true);
   console.log(theme);
+
+  const MOBILE_NAV_BREAKPOINT = BREAKPOINTS.tabLarge;
+
+  const paddingX = getValueForDevice({
+    desktopLarge: 220,
+    desktopMedium: 200,
+    desktopSmall: 160,
+    laptopLarge: 140,
+    laptopMedium: 130,
+    laptopSmall: 70,
+    tabSmall: 50
+  });
+  const paddingY = getValueForDevice({
+    desktopLarge: 0,
+    laptopMedium: 0,
+    laptopSmall: 0,
+    tabLarge: 42
+  });
+
+  const topPosition = getValueForDevice({
+    desktopLarge: 50,
+    laptopLarge: 40,
+    laptopMedium: 30,
+    tabLarge: 0
+  });
+
+  const isMobile = window.innerWidth <= MOBILE_NAV_BREAKPOINT;
 
   const onScroll = () => {
     if (window.scrollY > 20) {
@@ -65,31 +65,29 @@ const Navbar = () => {
     <>
       <FlexBox
         width='100%'
-        paddingX={DEFAULT_PADDING_X}
-        paddingY={isScrollAtTop ? DEFAULT_PADDING_Y : DEFAULT_PADDING_Y - 10}
+        paddingX={paddingX}
+        paddingY={isScrollAtTop ? paddingY : paddingY - 10}
         justifyContent='space-between'
         alignItems='center'
-        position={!IS_MOBILE ? 'absolute' : 'fixed'}
-        top={DEFAULT_TOP}
+        position={!isMobile ? 'absolute' : 'fixed'}
+        top={topPosition}
         left={0}
         zIndex={9999}
         transition='all 0.2s'
         backgroundColor={theme.colors['dark50']}
         boxShadow={
-          !isScrollAtTop && IS_MOBILE
-            ? '0 15px 20px rgba(0,0,0,.25)'
-            : undefined
+          !isScrollAtTop && isMobile ? '0 15px 20px rgba(0,0,0,.25)' : undefined
         }
       >
         <Logo />
-        {!IS_MOBILE && (
+        {!isMobile && (
           <>
             <DesktopNav language='EN' />
             <LanguageDropdown />
             {showStickedNav && <DesktopStickedNav />}
           </>
         )}
-        {IS_MOBILE && (
+        {isMobile && (
           <>
             <MobileNavIcon
               onClick={toggleMobileNav}

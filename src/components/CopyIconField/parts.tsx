@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 export const Container = styled.div(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   color: theme.colors.gray90,
-  marginBottom: '30px',
+  marginBottom: getValueForDevice({
+    desktopLarge: '30px',
+    tabMedium: '30px',
+    tabSmall: '12px'
+  }),
   cursor: 'pointer',
   userSelect: 'none',
 

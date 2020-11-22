@@ -24,13 +24,26 @@ const HomeView: React.FC = () => {
   const socialsBarBottom = getValueForDevice({
     desktopLarge: 'auto',
     laptopSmall: 'auto',
-    tabLarge: 48
+    tabLarge: 44
   });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,
     laptopLarge: 105,
     laptopSmall: 80,
-    tabLarge: '78%'
+    tabLarge: 'auto'
+  });
+  const socialsBarLeft = getValueForDevice({
+    desktopLarge: 'auto',
+    laptopLarge: 'auto',
+    laptopSmall: 'auto',
+    tabLarge: 30
+  });
+
+  const socialsBarTransform = getValueForDevice({
+    desktopLarge: 'translate(50%, -50%)',
+    laptopLarge: 'translate(50%, -50%)',
+    laptopSmall: 'translate(50%, -50%)',
+    tabLarge: 'none'
   });
 
   const socialsBarOrientation: SocialsBarOrientation =
@@ -54,7 +67,8 @@ const HomeView: React.FC = () => {
         top={socialsBarTop}
         right={socialsBarRight}
         bottom={socialsBarBottom}
-        transform='translate(50%, -50%)'
+        left={socialsBarLeft}
+        transform={socialsBarTransform}
       >
         <SocialsBar
           orientation={socialsBarOrientation}

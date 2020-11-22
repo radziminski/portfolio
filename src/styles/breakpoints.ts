@@ -87,10 +87,10 @@ export const getCurrentDevice = (): Device => {
   return currDevice || 'desktopLarge';
 };
 
-export const getValueForDevice = (
-  valuesForDevices: ValuesForDevices
-): number => {
+export const getValueForDevice = (valuesForDevices: ValuesForDevices) => {
   return getLargestValueForDevice(valuesForDevices, getCurrentDevice());
 };
+
+export const LAYOUT_ORIENTATION_BREAKPOINT = BREAKPOINTS.tabSmall;
 
 export default BREAKPOINTS;

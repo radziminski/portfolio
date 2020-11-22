@@ -34,7 +34,9 @@ const ContactView: React.FC = () => {
 
   const formPadding = getValueForDevice({
     desktopLarge: '8%',
-    laptopLarge: '4%'
+    laptopLarge: '4%',
+    tabMedium: '4%',
+    tabSmall: 0
   });
 
   const iconSize = getValueForDevice({
@@ -52,16 +54,68 @@ const ContactView: React.FC = () => {
     laptopMedium: 15
   });
 
+  const flexDirection = getValueForDevice({
+    desktopLarge: 'row',
+    tabMedium: 'row',
+    tabSmall: 'column',
+    mobileSmall: 'column'
+  });
+
+  const width = getValueForDevice({
+    desktopLarge: '50%',
+    tabMedium: '50%',
+    tabSmall: '100%',
+    mobileSmall: '100%'
+  });
+  const textMarginBottom = getValueForDevice({
+    desktopLarge: 6,
+    tabMedium: 6,
+    tabSmall: 2,
+    mobileSmall: 2
+  });
+
+  const contentPaddingBottom = getValueForDevice({
+    desktopLarge: 0,
+    tabMedium: 0,
+    tabSmall: 8,
+    mobileSmall: 8
+  });
+  const contentMarginBottom = getValueForDevice({
+    desktopLarge: 0,
+    tabMedium: 0,
+    tabSmall: 4,
+    mobileSmall: 4
+  });
+
+  const socialsBarLeft = getValueForDevice({
+    desktopLarge: -18,
+    tabMedium: -18,
+    tabSmall: 'auto',
+    mobileSmall: 'auto'
+  });
+
+  const socialsBarRight = getValueForDevice({
+    desktopLarge: 'auto',
+    tabMedium: 'auto',
+    tabSmall: 0,
+    mobileSmall: '0,'
+  });
+
   return (
     <Section variant='dark' withLinker>
-      <FlexBox justifyContent='space-between'>
-        <Box width='50%' position='relative'>
+      <FlexBox justifyContent='space-between' flexDirection={flexDirection}>
+        <Box
+          width={width}
+          position='relative'
+          paddingBottom={contentPaddingBottom}
+          marginBottom={contentMarginBottom}
+        >
           <SectionTitle type='left'>{sectionTitles.contact}</SectionTitle>
 
           <FlexBox
             flexDirection='column'
             justifyContent='space-between'
-            marginBottom={6}
+            marginBottom={textMarginBottom}
           >
             <Paragraph fontSize={4} lineHeight={1.7}>
               {contactMsg} &rarr;
@@ -76,7 +130,12 @@ const ContactView: React.FC = () => {
             />
           ))}
 
-          <Box position='absolute' bottom={0} left={-18}>
+          <Box
+            position='absolute'
+            bottom={0}
+            left={socialsBarLeft}
+            right={socialsBarRight}
+          >
             <SocialsBar
               orientation='horizontal'
               elementDistance={iconDistance}
@@ -85,7 +144,7 @@ const ContactView: React.FC = () => {
           </Box>
         </Box>
 
-        <Box width='50%' paddingLeft={formPadding}>
+        <Box width={width} paddingLeft={formPadding}>
           <ContactForm />
         </Box>
       </FlexBox>
