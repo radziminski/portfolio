@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FlexBox } from 'components/Box';
 import Logo from 'components/Logo';
 import DesktopNav from 'components/Nav/DesktopHomeNav';
@@ -9,6 +9,7 @@ import BREAKPOINTS, { getValueForDevice } from 'styles/breakpoints';
 import MobileNavIcon from 'components/Nav/MobileNavIcon';
 import { useTheme } from 'styled-components';
 import MobileNav from 'components/Nav/MobileNav';
+import useOutsideClick from 'hooks/useOutsideClick';
 
 const Navbar = () => {
   const showStickedNav = useToggleStickedNav();
@@ -16,6 +17,10 @@ const Navbar = () => {
   const theme: any = useTheme();
   const [isMobileNavOpened, setIsMobileNavOpened] = useState(false);
   const [isScrollAtTop, setIsScrollAtTop] = useState(true);
+  const navRef = useRef(null);
+  useOutsideClick(navRef, () => {
+    setIsMobileNavOpened(false);
+  });
 
   const MOBILE_NAV_BREAKPOINT = BREAKPOINTS.tabLarge;
 
@@ -79,6 +84,7 @@ const Navbar = () => {
         boxShadow={
           !isScrollAtTop && isMobile ? '0 15px 20px rgba(0,0,0,.25)' : undefined
         }
+        ref={navRef}
       >
         <Logo />
         {!isMobile && (

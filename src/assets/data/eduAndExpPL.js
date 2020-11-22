@@ -39,6 +39,6 @@ const expList = [
     '12.2020',
     'Flutter Developer',
     'Tworzenie aplikacji mobilnej w technologii Flutter.'
-  ),
+  )
 ];
 export default expList;
