@@ -36,6 +36,12 @@ const expList = [
     made in React library, with usage of (mainly) Typescript, Redux and Styled Components. During this
     internship I have learned a lot about frontend & backend architecture, best practices and clean code
     principles.`
-  )
+  ),
+  Experience(
+    10,
+    '12.2020',
+    'Flutter developer',
+    'Creating mobile application with flutter for ... company.'
+  ),
 ];
 export default expList;

@@ -27,10 +27,19 @@ export const TimelineLine = styled.div(({ theme }) => ({
     desktopSmall: 110,
     laptopLarge: 100,
     tabSmall: 120,
-    mobileLarge: 140
+    mobileLarge: 150,
+    mobileMedium: 160
   }),
   backgroundColor: theme.colors.primary100,
-  marginLeft: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 0 : 8.5,
+  marginLeft: getValueForDevice({
+    desktopLarge: 0,
+    desktopMedium: 0,
+    desktopSmall: 0,
+    laptopLarge: 0,
+    tabSmall: 8.5,
+    mobileLarge: 8.5,
+    mobileMedium: 7.5
+  }),
   marginTop: window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT ? 0 : -16
 }));
 
@@ -59,7 +68,13 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   if (timelineSide === 'right')
     return (
       <>
-        <TimelinePoint size={20} />
+        <TimelinePoint
+          size={getValueForDevice({
+            desktopLarge: 20,
+            mobileLarge: 19,
+            mobileMedium: 16
+          })}
+        />
         <TimelineTextContainer side='right'>
           <Box
             color='primary100'
@@ -67,8 +82,15 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
             width={getValueForDevice({
               desktopLarge: '32%',
               mobileLarge: '32%',
-              mobileMedium: '40%'
+              mobileMedium: '34%'
             })}
+            style={{
+              fontSize: getValueForDevice({
+                desktopLarge: 'inherit',
+                mobileLarge: 'inherit',
+                mobileMedium: '11px'
+              })
+            }}
             textAlign='center'
           >
             {start} - {end}

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-import TextContentContext, { Languages } from 'services/text-content';
+import TextContentContext, { Language } from 'services/text-content';
 import { ThemeProvider } from 'styled-components';
 import getText from 'services/text-content/text';
 
@@ -13,7 +13,9 @@ import getSkills from 'services/text-content/skills';
 import { getCurrentDevice } from 'styles/breakpoints';
 
 const App: React.FC = () => {
-  const [language, setLanguage] = useState<Languages>('EN');
+  const [currLanguage, setCurrLanguage] = useState<Language>(
+    localStorage.getItem('language') as Language
+  );
   // Used only for re-rendering app on size change
   // eslint-disable-next-line
   const [deviceDimensions, setDeviceDimensions] = useState<number[]>([
@@ -25,6 +27,13 @@ const App: React.FC = () => {
   const onResize = useCallback(() => {
     setDeviceDimensions([window.innerWidth, window.innerHeight]);
   }, []);
+
+  const setLanguage = useCallback((language: Language): void => {
+    localStorage.setItem('language', language);
+    setCurrLanguage(language);
+  }, []);
+
+  const language = currLanguage;
 
   useEffect(() => {
     window.addEventListener('resize', onResize);

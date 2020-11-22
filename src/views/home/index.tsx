@@ -27,7 +27,8 @@ const HomeView: React.FC = () => {
     laptopSmall: 'auto',
     tabLarge: 70,
     tabMedium: 60,
-    tabSmall: 44
+    tabSmall: 44,
+    mobileMedium: 28
   });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getValueForDevice } from 'styles/breakpoints';
 
 export const Container = styled.nav(({ theme }) => ({
   position: 'absolute',
@@ -18,10 +19,18 @@ export const NavList = styled.div(() => ({
 export const NavElement = styled.div(({ theme }) => ({
   display: 'block',
   width: '100%',
-  padding: 25,
+  padding: getValueForDevice({
+    tabLarge: 25,
+    mobileLarge: 24,
+    mobileMedium: 20
+  }),
   textAlign: 'center',
   backgroundColor: theme.colors.dark50,
-  fontSize: theme.fontSizes[5],
+  fontSize: getValueForDevice({
+    tabLarge: theme.fontSizes[5],
+    mobileLarge: theme.fontSizes[5],
+    mobileMedium: theme.fontSizes[4]
+  }),
 
   cursor: 'pointer',
 
@@ -34,8 +43,16 @@ export const LanguageContainer = styled.div<{ active?: boolean }>(
   ({ theme, active }) => ({
     width: '50%',
     textAlign: 'center',
-    padding: 12,
-    fontSize: theme.fontSizes[6],
+    padding: getValueForDevice({
+      tabLarge: 12,
+      mobileLarge: 12,
+      mobileMedium: 8
+    }),
+    fontSize: getValueForDevice({
+      tabLarge: theme.fontSizes[6],
+      mobileLarge: theme.fontSizes[6],
+      mobileMedium: theme.fontSizes[5]
+    }),
     color: active ? theme.colors.dark80 : theme.colors.primary100,
     backgroundColor: active ? theme.colors.primary100 : theme.colors.dark80
   })

@@ -22,7 +22,7 @@ const PADDING_SIDE = {
   tabMedium: 50,
   tabSmall: 48,
   mobileLarge: 40,
-  mobileMedium: 26,
+  mobileMedium: 22,
   mobileSmall: 22
 };
 

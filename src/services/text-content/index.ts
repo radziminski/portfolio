@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 
 import getText, { TextContent } from 'services/text-content/text';
 import getNavLinks, { NavLink } from './navLinks';
@@ -7,15 +7,15 @@ import getEduAndExp, { Experience } from './eduAndExp';
 import getSkills, { Skill } from './skills';
 
 const DEFAULT_LANGUAGE = 'EN';
-export type Languages = 'EN' | 'PL';
+export type Language = 'EN' | 'PL';
 
 interface TextContentContext {
   text: TextContent;
   navLinks: NavLink[];
   eduAndExp: Experience[];
   projects: Project[];
-  setLanguage: null | React.Dispatch<React.SetStateAction<Languages>>;
-  language: Languages;
+  setLanguage: null | ((language: Language) => void);
+  language: Language;
   skills: { main: Skill[]; side: string[] };
 }
 

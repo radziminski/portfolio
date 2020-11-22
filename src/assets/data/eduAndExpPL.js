@@ -33,6 +33,12 @@ const expList = [
     'Stażysta Frontend w Swing Development',
     `Współtworzenie frontend'u aplikacji GreenLock służącej do zarządzania certyfikatami SSL. 
   Serwis tworzony był przy pomocy biblioteki React, w języku Typescript`
-  )
+  ),
+  Experience(
+    10,
+    '12.2020',
+    'Flutter Developer',
+    'Tworzenie aplikacji mobilnej w technologii Flutter.'
+  ),
 ];
 export default expList;

@@ -1,7 +1,7 @@
 import { IconifyIcon } from '@iconify/react';
 import * as skillsPL from 'assets/data/skillsPL';
 import * as skillsEN from 'assets/data/skillsEN';
-import { Languages } from 'services/text-content';
+import { Language } from 'services/text-content';
 
 export interface Skill {
   title: string;
@@ -12,7 +12,7 @@ export interface Skill {
 }
 
 export default function getSkills(
-  language: Languages
+  language: Language
 ): { main: Skill[]; side: string[] } {
   if (language === 'PL') return skillsPL;
   return skillsEN;

@@ -1,6 +1,6 @@
 import * as textPL from 'assets/data/textPL';
 import * as textEN from 'assets/data/textEN';
-import { Languages } from 'services/text-content';
+import { Language } from 'services/text-content';
 
 export interface TextContent {
   about: string;
@@ -27,7 +27,7 @@ export interface TextContent {
   };
 }
 
-export default function getText(language: Languages): TextContent {
+export default function getText(language: Language): TextContent {
   if (language === 'PL') return textPL;
   return textEN;
 }

@@ -81,7 +81,8 @@ export const Title = styled.h1<{ fontSize?: number }>(
       desktopSmall: '18px 0',
       laptopLarge: '14px 0',
       laptopMedium: '12px 0',
-      tabLarge: '14px 0'
+      tabLarge: '14px 0',
+      mobileMedium: '8px 0'
     })
   })
 );
@@ -155,7 +156,7 @@ export const HeroBox: React.FC = () => {
     tabLarge: 600,
     tabSmall: 500,
     mobileLarge: 400,
-    mobileMedium: 270,
+    mobileMedium: window.innerWidth * 0.82,
     mobileSmall: window.innerWidth * 0.86
   });
 
@@ -232,7 +233,8 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     laptopMedium: 20,
     tabLarge: 70,
     tabMedium: 60,
-    tabSmall: 44
+    tabSmall: 44,
+    mobileMedium: 28
   }),
   right: getValueForDevice({
     desktopLarge: '50%',
