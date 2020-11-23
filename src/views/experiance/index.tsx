@@ -12,7 +12,7 @@ const ExperienceView: React.FC = () => {
   } = useContext(TextContentContext);
 
   return (
-    <Section variant='light' withLinker>
+    <Section variant='light' withLinker name='section-experience'>
       <SectionTitle type='left'>{sectionTitles.experience} </SectionTitle>
       <Box paddingY={12}>
         <Timeline points={eduAndExp} />

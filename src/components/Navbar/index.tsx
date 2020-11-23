@@ -89,7 +89,7 @@ const Navbar = () => {
         <Logo />
         {!isMobile && (
           <>
-            <DesktopNav language='EN' />
+            <DesktopNav />
             <LanguageDropdown />
             {showStickedNav && <DesktopStickedNav />}
           </>
@@ -100,7 +100,13 @@ const Navbar = () => {
               onClick={toggleMobileNav}
               active={isMobileNavOpened}
             />
-            {isMobileNavOpened && <MobileNav />}
+            {isMobileNavOpened && (
+              <MobileNav
+                onClick={() => {
+                  setIsMobileNavOpened(false);
+                }}
+              />
+            )}
           </>
         )}
       </FlexBox>

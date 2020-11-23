@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-scroll';
 import MobileNavIcon from 'components/Nav/MobileNavIcon';
 import { MainContainer, ListContainer, ListElement } from './parts';
 import TextContentContext from 'services/text-content';
 import { getValueForDevice } from 'styles/breakpoints';
+import NavLinkWrapper from '../NavLinkWrapper';
 
 // Todo: Language - to be updates
 // const language = 'EN';
 
-const DesktopStickedNav = () => {
+const DesktopStickedNav: React.FC = () => {
   const [showNav, setShowNav] = useState(false);
 
   const { navLinks, language } = useContext(TextContentContext);
@@ -27,17 +27,13 @@ const DesktopStickedNav = () => {
     <ListContainer>
       {navLinks.slice(linksToCut).map((el, id) => (
         <ListElement key={id}>
-          <Link
-            style={{ padding: linkPadding, flexShrink: 0 }}
+          <NavLinkWrapper
+            padding={linkPadding}
             onClick={() => setShowNav((prevVal) => !prevVal)}
-            to={el.linkTo}
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
+            linkTo={el.linkTo}
           >
             {el.name}
-          </Link>
+          </NavLinkWrapper>
         </ListElement>
       ))}
     </ListContainer>

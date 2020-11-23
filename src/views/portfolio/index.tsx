@@ -9,7 +9,7 @@ const PortfolioView: React.FC = () => {
   } = useContext(TextContentContext);
 
   return (
-    <Section variant='dark' withLinker>
+    <Section variant='dark' withLinker name='section-projects'>
       <SectionTitle type='left'>{sectionTitles.projects}</SectionTitle>
     </Section>
   );

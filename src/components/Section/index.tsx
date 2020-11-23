@@ -9,6 +9,7 @@ export type SectionVariant = 'dark' | 'light';
 export interface Props {
   variant: SectionVariant;
   withLinker?: boolean;
+  name?: string;
 }
 
 const PADDING_SIDE = {
@@ -31,7 +32,9 @@ const PADDING_TOP = {
   desktopMedium: 78,
   desktopSmall: 76,
   laptopLarge: 72,
-  laptopMedium: 70
+  laptopMedium: 70,
+  mobileLarge: 66,
+  mobileMedium: 58
 };
 
 const PADDING_BOTTOM = {
@@ -44,7 +47,7 @@ const PADDING_BOTTOM = {
   tabSmall: 70
 };
 
-const SectionContainer = styled.div<Props>(({ theme, variant }) => ({
+const SectionContainer = styled.section<Props>(({ theme, variant }) => ({
   padding: `${getValueForDevice(PADDING_TOP)}px ${getValueForDevice(
     PADDING_SIDE
   )}px ${getValueForDevice(PADDING_BOTTOM)}px ${getValueForDevice(
@@ -55,8 +58,13 @@ const SectionContainer = styled.div<Props>(({ theme, variant }) => ({
   position: 'relative'
 }));
 
-export const Section: React.FC<Props> = ({ variant, withLinker, children }) => (
-  <SectionContainer variant={variant}>
+export const Section: React.FC<Props> = ({
+  variant,
+  withLinker,
+  children,
+  name
+}) => (
+  <SectionContainer variant={variant} name={name}>
     {withLinker && <Linker type={variant === 'light' ? 'dark' : 'light'} />}
     {children}
   </SectionContainer>

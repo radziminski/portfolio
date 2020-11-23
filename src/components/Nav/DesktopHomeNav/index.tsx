@@ -1,15 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-scroll';
 import TextContentContext from 'services/text-content';
 import { NavLink } from 'services/text-content/navLinks';
 import { getValueForDevice } from 'styles/breakpoints';
+import NavLinkWrapper from '../NavLinkWrapper';
 import { NavList, NavItem } from './parts';
 
-interface Props {
-  language: string;
-}
-
-const DesktopNav: React.FC<Props> = () => {
+const DesktopNav: React.FC = () => {
   const { navLinks } = useContext(TextContentContext);
 
   const itemPadding = getValueForDevice({
@@ -23,17 +19,9 @@ const DesktopNav: React.FC<Props> = () => {
     <NavList>
       {navLinks.slice(1).map((el: NavLink) => (
         <NavItem key={el.name}>
-          <Link
-            style={{ padding: itemPadding, cursor: 'pointer' }}
-            activeClass='active'
-            to={el.linkTo}
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
+          <NavLinkWrapper linkTo={el.linkTo} padding={itemPadding}>
             {el.name}
-          </Link>
+          </NavLinkWrapper>
         </NavItem>
       ))}
     </NavList>

@@ -1,7 +1,7 @@
 const navLinks = [
   {
     name: 'Home',
-    linkTo: 'header'
+    linkTo: 'home'
   },
   {
     name: 'About',

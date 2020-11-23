@@ -102,7 +102,7 @@ const ContactView: React.FC = () => {
   });
 
   return (
-    <Section variant='dark' withLinker>
+    <Section variant='dark' withLinker name='section-contact'>
       <FlexBox justifyContent='space-between' flexDirection={flexDirection}>
         <Box
           width={width}

@@ -1,23 +1,26 @@
 import { FlexBox } from 'components/Box';
 import React, { useContext, useMemo } from 'react';
 import TextContentContext from 'services/text-content';
+import NavLinkWrapper from '../NavLinkWrapper';
 import { Container, NavList, NavElement, LanguageContainer } from './parts';
 
-const MobileNav: React.FC = () => {
+const MobileNav: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const { navLinks, language, setLanguage } = useContext(TextContentContext);
 
   const links = useMemo(
     () =>
       navLinks.map((link) => (
-        <NavElement key={link.name}>{link.name}</NavElement>
+        <NavLinkWrapper linkTo={link.linkTo} key={link.name} onClick={onClick}>
+          <NavElement>{link.name}</NavElement>
+        </NavLinkWrapper>
       )),
-    [navLinks]
+    [navLinks, onClick]
   );
 
   return (
     <Container>
       <NavList>{links}</NavList>
-      <FlexBox>
+      <FlexBox onClick={onClick}>
         <LanguageContainer
           active={language === 'EN'}
           onClick={() => setLanguage && setLanguage('EN')}

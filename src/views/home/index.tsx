@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from 'components/Navbar';
-import { HeroBox, ArrowDownWrapper } from './parts';
+import { HeroBox, ArrowDownWrapper, Container } from './parts';
 import Box from 'components/Box';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import SocialsBar, { SocialsBarOrientation } from 'components/SocialsBar';
@@ -62,7 +62,7 @@ const HomeView: React.FC = () => {
   });
 
   return (
-    <Box width='100%' height='100vh' position='relative'>
+    <Container name='home'>
       <Navbar />
       <HeroBox />
       <ArrowDownWrapper>
@@ -81,7 +81,7 @@ const HomeView: React.FC = () => {
           elementDistance={socialsDistance}
         />
       </Box>
-    </Box>
+    </Container>
   );
 };
 

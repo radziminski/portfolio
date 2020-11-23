@@ -1,7 +1,7 @@
 const navLinks = [
   {
     name: 'Strona główna',
-    linkTo: 'header'
+    linkTo: 'home'
   },
   {
     name: 'O Mnie',

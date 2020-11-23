@@ -63,7 +63,7 @@ const SkillsView: React.FC = () => {
   );
 
   return (
-    <Section variant='light' withLinker>
+    <Section variant='light' withLinker name='section-skills'>
       <Box paddingLeft={leftPadding} position='relative'>
         {window.innerWidth > LAYOUT_ORIENTATION_BREAKPOINT
           ? rotatedTitle

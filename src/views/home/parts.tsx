@@ -5,7 +5,13 @@ import Button from 'components/Button';
 import TextContentContext from 'services/text-content';
 import { getValueForDevice } from 'styles/breakpoints';
 
-const STRIPS_WIDTH = getValueForDevice({
+export const Container = styled.section<{ name?: string }>({
+  width: '100%',
+  height: '100vh',
+  position: 'relative'
+});
+
+const STRIPS_WIDTH = {
   desktopLarge: 70,
   desktopMedium: 60,
   desktopSmall: 55,
@@ -14,7 +20,7 @@ const STRIPS_WIDTH = getValueForDevice({
   tabLarge: 34,
   mobileLarge: 30,
   mobileMedium: 26
-});
+};
 
 export const Subtitle = styled.div(({ theme }) => ({
   fontSize: getValueForDevice({
@@ -38,7 +44,7 @@ export const Subtitle = styled.div(({ theme }) => ({
       tabSmall: 'block',
       mobileLarge: 'none'
     }),
-    width: `${STRIPS_WIDTH}px`,
+    width: `${getValueForDevice(STRIPS_WIDTH)}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
     marginLeft: getValueForDevice({
@@ -53,7 +59,7 @@ export const Subtitle = styled.div(({ theme }) => ({
     // eslint-disable-next-line quotes
     content: `''`,
     display: 'block',
-    width: `${STRIPS_WIDTH}px`,
+    width: `${getValueForDevice(STRIPS_WIDTH)}px`,
     height: '2px',
     backgroundColor: theme.colors.primary100,
     marginRight: getValueForDevice({
