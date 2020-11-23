@@ -16,6 +16,7 @@ export const COLORS = {
   white: '#fff',
   primary100: '#ffcc73',
   primary50: '#a0814c',
+  dark30: '#222838',
   dark50: '#191d28',
   dark80: '#161922',
   dark100: '#0f1118',

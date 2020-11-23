@@ -4,10 +4,24 @@ interface Props {
   fontSize?: number;
   lineHeight?: number;
   color?: string;
+  textAlign?:
+    | 'end'
+    | 'inherit'
+    | 'initial'
+    | 'start'
+    | 'left'
+    | 'center'
+    | 'right'
+    | 'justify'
+    | '-moz-initial'
+    | 'revert'
+    | 'unset'
+    | 'match-parent'
+    | undefined;
 }
 
 export const Paragraph = styled.p<Props>(
-  ({ theme, fontSize, lineHeight, color }) => ({
+  ({ theme, fontSize, lineHeight, color, textAlign = 'left' }) => ({
     display: 'block',
     margin: '15px 0',
     lineHeight,
@@ -17,7 +31,7 @@ export const Paragraph = styled.p<Props>(
           ? fontSize
           : theme.fontSizes[fontSize])) ||
       theme.fontSizes[4],
-    textAlign: 'left',
+    textAlign,
     wordWrap: 'break-word',
     color: (color && theme.colors[color]) || theme.colors.gray90
   })
