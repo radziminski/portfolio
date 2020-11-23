@@ -1,8 +1,8 @@
 /* eslint-disable */
 export const about = `
-I am a third-year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
-I specialize in full-stack web development. I worked with different technologies, although React.js and Node.js are my strong suits.  
-In my free time, I work as a music producer (creating mainly electronic genres) on House Of Tracks (houseoftracks.com). I am also a member of the university ski team, where I am actively participating in national academic skiing competitions. 
+I am a fourth-year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
+I specialize in Fullstack Development. I worked with different technologies, although React, Node and Flutter are my favorites.  
+In my free time I work as a music producer (creating mainly electronic genres). I am also a member of the university ski team, where I am actively participating in national academic skiing competitions. 
 `;
 
 export const greetings = {

@@ -26,8 +26,8 @@ const Navbar = () => {
 
   const paddingX = getValueForDevice({
     desktopLarge: 220,
-    desktopMedium: 200,
-    desktopSmall: 160,
+    desktopMedium: 160,
+    desktopSmall: 150,
     laptopLarge: 140,
     laptopMedium: 130,
     laptopSmall: 70,
@@ -44,6 +44,7 @@ const Navbar = () => {
 
   const topPosition = getValueForDevice({
     desktopLarge: 50,
+    desktopMedium: 40,
     laptopLarge: 40,
     laptopMedium: 30,
     tabLarge: 0

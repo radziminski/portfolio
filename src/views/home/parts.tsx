@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import TextContentContext from 'services/text-content';
 import { getValueForDevice } from 'styles/breakpoints';
+import NavLinkWrapper from 'components/Nav/NavLinkWrapper';
 
 export const Container = styled.section<{ name?: string }>({
   width: '100%',
@@ -13,9 +14,9 @@ export const Container = styled.section<{ name?: string }>({
 
 const STRIPS_WIDTH = {
   desktopLarge: 70,
-  desktopMedium: 60,
-  desktopSmall: 55,
-  laptopLarge: 50,
+  desktopMedium: 50,
+  desktopSmall: 45,
+  laptopLarge: 40,
   laptopMedium: 36,
   tabLarge: 34,
   mobileLarge: 30,
@@ -25,7 +26,7 @@ const STRIPS_WIDTH = {
 export const Subtitle = styled.div(({ theme }) => ({
   fontSize: getValueForDevice({
     desktopLarge: 20,
-    desktopMedium: 19,
+    desktopMedium: 18,
     desktopSmall: 18,
     laptopLarge: 16,
     laptopMedium: 14,
@@ -83,8 +84,8 @@ export const Title = styled.h1<{ fontSize?: number }>(
     }),
     margin: getValueForDevice({
       desktopLarge: '22px 0',
-      desktopMedium: '20px 0',
-      desktopSmall: '18px 0',
+      desktopMedium: '16px 0',
+      desktopSmall: '16px 0',
       laptopLarge: '14px 0',
       laptopMedium: '12px 0',
       tabLarge: '14px 0',
@@ -96,7 +97,7 @@ export const Title = styled.h1<{ fontSize?: number }>(
 export const Description = styled.p(({ theme }) => ({
   fontSize: getValueForDevice({
     desktopLarge: 20,
-    desktopMedium: 19,
+    desktopMedium: 18,
     desktopSmall: 18,
     laptopLarge: 17,
     laptopMedium: 16,
@@ -113,7 +114,7 @@ export const Description = styled.p(({ theme }) => ({
   }),
   lineHeight: getValueForDevice({
     desktopLarge: '34px',
-    desktopMedium: '32px',
+    desktopMedium: '30px',
     desktopSmall: '30px',
     laptopLarge: '28px',
     laptopMedium: '26px',
@@ -135,7 +136,7 @@ export const HeroBox: React.FC = () => {
 
   const titleFontSize = getValueForDevice({
     desktopLarge: 55,
-    desktopMedium: 50,
+    desktopMedium: 48,
     desktopSmall: 46,
     laptopLarge: 40,
     laptopMedium: 36,
@@ -176,7 +177,8 @@ export const HeroBox: React.FC = () => {
   const top = getValueForDevice({
     desktopLarge: '50%',
     laptopLarge: '52%',
-    tabLarge: '50%'
+    tabLarge: '50%',
+    mobileLarge: '46%'
   });
 
   return (
@@ -207,23 +209,13 @@ export const HeroBox: React.FC = () => {
       </Title>
       <Description>{text.headerSubtitle}</Description>
       <FlexBox marginTop='28px'>
-        <Button
-          variant='full'
-          onClick={() => {
-            /** todo */
-          }}
-        >
-          {text.btns.contact}
-        </Button>
+        <NavLinkWrapper linkTo='section-contact'>
+          <Button variant='full'>{text.btns.contact}</Button>
+        </NavLinkWrapper>
         <FlexBox marginX={buttonsSpace} />
-        <Button
-          variant='ghost'
-          onClick={() => {
-            /** todo */
-          }}
-        >
-          {text.btns.about}
-        </Button>
+        <NavLinkWrapper linkTo='section-about'>
+          <Button variant='ghost'>{text.btns.about}</Button>
+        </NavLinkWrapper>
       </FlexBox>
     </FlexBox>
   );
@@ -232,15 +224,15 @@ export const HeroBox: React.FC = () => {
 export const ArrowDownWrapper = styled.button(({ theme }) => ({
   position: 'absolute',
   bottom: getValueForDevice({
-    desktopLarge: 40,
-    desktopMedium: 36,
-    desktopSmall: 32,
+    desktopLarge: 36,
+    desktopMedium: 28,
+    desktopSmall: 28,
     laptopLarge: 26,
     laptopMedium: 20,
     tabLarge: 70,
     tabMedium: 60,
     tabSmall: 44,
-    mobileMedium: 28
+    mobileLarge: 86
   }),
   right: getValueForDevice({
     desktopLarge: '50%',

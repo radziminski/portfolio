@@ -8,7 +8,7 @@ interface StyleProps {
 
 const FONT_SIZE = {
   desktopLarge: 20,
-  desktopMedium: 19,
+  desktopMedium: 18,
   desktopSmall: 18,
   laptopLarge: 16,
   laptopMedium: 14,
@@ -28,7 +28,7 @@ const PADDING = {
 
 const HEIGHT = {
   desktopLarge: 48,
-  desktopMedium: 47,
+  desktopMedium: 46,
   desktopSmall: 46,
   laptopLarge: 44,
   laptopMedium: 42,

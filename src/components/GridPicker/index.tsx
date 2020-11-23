@@ -79,7 +79,7 @@ const GridPicker: React.FC<Props> = ({
     tabLarge: 440,
     tabSmall: 390,
     mobileLarge: 280,
-    mobileMedium: 180
+    mobileMedium: 230
   });
 
   const columnsFlexDirection = getValueForDevice({

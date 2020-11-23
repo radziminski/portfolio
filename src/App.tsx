@@ -14,7 +14,7 @@ import { getCurrentDevice } from 'styles/breakpoints';
 
 const App: React.FC = () => {
   const [currLanguage, setCurrLanguage] = useState<Language>(
-    localStorage.getItem('language') as Language
+    (localStorage.getItem('language') as Language) || 'EN'
   );
   // Used only for re-rendering app on size change
   // eslint-disable-next-line

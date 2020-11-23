@@ -21,7 +21,10 @@ const CopyIconField: React.FC<Props> = ({ text, icon }) => {
         setShowMessage(false);
       }, MESSAGE_APPEAR_DURATION_MS);
     } catch (error) {
-      console.error('The browses does not support copiyng text to clipboard');
+      console.error(
+        'The browser does not support copying text to clipboard: ' + error
+      );
+      setShowMessage(false);
     }
   };
 

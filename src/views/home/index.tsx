@@ -5,6 +5,7 @@ import Box from 'components/Box';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import SocialsBar, { SocialsBarOrientation } from 'components/SocialsBar';
 import BREAKPOINTS, { getValueForDevice } from 'styles/breakpoints';
+import NavLinkWrapper from 'components/Nav/NavLinkWrapper';
 
 const HomeView: React.FC = () => {
   const iconSize = getValueForDevice({
@@ -28,7 +29,7 @@ const HomeView: React.FC = () => {
     tabLarge: 70,
     tabMedium: 60,
     tabSmall: 44,
-    mobileMedium: 28
+    mobileLarge: 86
   });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,
@@ -66,7 +67,9 @@ const HomeView: React.FC = () => {
       <Navbar />
       <HeroBox />
       <ArrowDownWrapper>
-        <FiArrowDownCircle size={iconSize} />
+        <NavLinkWrapper linkTo='section-about'>
+          <FiArrowDownCircle size={iconSize} />
+        </NavLinkWrapper>
       </ArrowDownWrapper>
       <Box
         position='absolute'
