@@ -1,47 +1,111 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import gitIcon from '@iconify/icons-fa-brands/git-alt';
+import githubFilled from '@iconify-icons/ant-design/github-filled';
+import playFilledAlt from '@iconify-icons/carbon/play-filled-alt';
 import Box, { FlexBox } from 'components/Box';
 import { ImageContainer, ImageBackOverlay, ImageMain, Title } from './parts';
-import offMusem from 'assets/img/off_museum.jpg';
+import offMuseumScreenshot from 'assets/img/off_museum.jpg';
 import Paragraph from 'components/Paragraph';
 import Button from 'components/Button';
+import {
+  getValueForDevice,
+  LAYOUT_ORIENTATION_BREAKPOINT
+} from 'styles/breakpoints';
 
-const ProjectCard: React.FC = () => {
+interface Props {
+  side?: 'right' | 'left';
+  title: string;
+  description: string;
+  liveLink: string;
+  codeLink: string;
+}
+
+const ProjectCard: React.FC<Props> = ({
+  side,
+  title,
+  description,
+  liveLink,
+  codeLink
+}) => {
+  const isMobile = window.innerWidth <= LAYOUT_ORIENTATION_BREAKPOINT;
+
+  const paddingY = getValueForDevice({
+    desktopLarge: 30,
+    tabSmall: 30,
+    mobileLarge: 18
+  });
+
   return (
-    <FlexBox padding='30px 0' justifyContent='flex-start'>
+    <FlexBox
+      paddingY={paddingY}
+      marginX={isMobile ? 20 : 0}
+      justifyContent={'space-between'}
+      alignItems={isMobile ? 'center' : 'auto'}
+      flexDirection={
+        isMobile ? 'column' : side === 'right' ? 'row-reverse' : 'row'
+      }
+      marginY={!isMobile ? 20 : 0}
+    >
       <Box>
         <ImageContainer>
           <ImageBackOverlay />
           <ImageMain>
             <img
-              src={offMusem}
-              style={{ maxHeight: '100%', objectFit: 'cover' }}
+              src={offMuseumScreenshot}
+              style={{
+                maxHeight: '100%',
+                objectFit: 'cover'
+              }}
               alt='Off Museum Website Preview'
             />
           </ImageMain>
         </ImageContainer>
       </Box>
-      <Box marginLeft={60} flex={1}>
-        <Title>OFF Museum</Title>
-        <Paragraph textAlign='justify'>
-          Id proident est eu Lorem ex incididunt ipsum cupidatat dolor nostrud.
-          Non veniam enim in magna duis tempor enim ullamco ipsum dolore.
-          Adipisicing duis officia deserunt nisi. Dolore enim ipsum ex aliquip
-          ullamco cillum eu commodo veniam eiusmod nulla.
-        </Paragraph>
-        <FlexBox>
-          <Button variant='ghost'>
-            <Icon
-              icon={gitIcon}
-              style={{
-                transform: 'scale(1.6)'
-              }}
-            ></Icon>
-          </Button>
-          <Button variant='full'>Live Demo</Button>
+      <FlexBox
+        marginLeft={side === 'right' || isMobile ? 0 : 60}
+        marginRight={side === 'left' || isMobile ? 0 : 60}
+        flex={1}
+        justifyContent='space-between'
+        alignItems={isMobile ? 'center' : 'auto'}
+        flexDirection='column'
+      >
+        <Title>{title}</Title>
+        <Box marginBottom={isMobile ? '12px' : 0}>
+          <Paragraph textAlign='justify'>{description}</Paragraph>
+        </Box>
+        <FlexBox marginTop='auto' marginBottom={22}>
+          {codeLink && (
+            <Button
+              variant='ghost'
+              onClick={() => window.open(codeLink, '_blank')}
+            >
+              <Icon
+                icon={githubFilled}
+                style={{
+                  transform: 'scale(1.4)'
+                }}
+              />
+              <Box marginLeft='10px'>Browse Code</Box>
+            </Button>
+          )}
+          {liveLink && codeLink && <Box marginLeft='20px' />}
+          {liveLink && (
+            <Button
+              variant='full'
+              onClick={() => window.open(liveLink, '_blank')}
+            >
+              <Icon
+                icon={playFilledAlt}
+                style={{
+                  transform: 'scale(1.4)'
+                }}
+              />
+              <Box width='10px' />
+              Live Demo
+            </Button>
+          )}
         </FlexBox>
-      </Box>
+      </FlexBox>
     </FlexBox>
   );
 };
