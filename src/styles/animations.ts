@@ -54,6 +54,19 @@ export const animations = `
         transform: translateY(0);
     }
 }
+
+@keyframes move-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes move-in-left {
     0% {
         opacity: 0;
@@ -76,4 +89,6 @@ export const animations = `
         transform: translateX(0);
     }
 }
+
+
 `;

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Box, { FlexBox } from 'components/Box';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import Button from 'components/Button';
 import TextContentContext from 'services/text-content';
 import { getValueForDevice } from 'styles/breakpoints';
@@ -23,54 +23,78 @@ const STRIPS_WIDTH = {
   mobileMedium: 26
 };
 
-export const Subtitle = styled.div(({ theme }) => ({
-  fontSize: getValueForDevice({
-    desktopLarge: 20,
-    desktopMedium: 18,
-    desktopSmall: 18,
-    laptopLarge: 16,
-    laptopMedium: 14,
-    tabLarge: 16,
-    mobileMedium: 12
-  }),
-  color: theme.colors.primary100,
-  display: 'flex',
-  alignItems: 'center',
+const stripAnimation = keyframes`
+0% {
+  width: 0;
+}
 
-  '&:after': {
-    // eslint-disable-next-line quotes
-    content: `''`,
-    display: getValueForDevice({
-      desktopLarge: 'block',
-      tabSmall: 'block',
-      mobileLarge: 'none'
+100% {
+  width: ${getValueForDevice(STRIPS_WIDTH)}px;
+}
+`;
+
+export const Subtitle = styled.div(
+  ({ theme }) => ({
+    fontSize: getValueForDevice({
+      desktopLarge: 20,
+      desktopMedium: 18,
+      desktopSmall: 18,
+      laptopLarge: 16,
+      laptopMedium: 14,
+      tabLarge: 16,
+      mobileMedium: 12
     }),
-    width: `${getValueForDevice(STRIPS_WIDTH)}px`,
-    height: '2px',
-    backgroundColor: theme.colors.primary100,
-    marginLeft: getValueForDevice({
-      desktopLarge: '20px',
-      desktopSmall: '18px',
-      laptopLarge: '16px',
-      laptopMedium: '14px'
-    })
-  },
+    color: theme.colors.primary100,
+    display: 'flex',
+    alignItems: 'center',
+    animation: 'fade-in 0.8s ease-out 0.2s',
+    animationFillMode: 'backwards',
 
-  '&:before': {
-    // eslint-disable-next-line quotes
-    content: `''`,
-    display: 'block',
-    width: `${getValueForDevice(STRIPS_WIDTH)}px`,
-    height: '2px',
-    backgroundColor: theme.colors.primary100,
-    marginRight: getValueForDevice({
-      desktopLarge: '20px',
-      desktopSmall: '18px',
-      laptopLarge: '16px',
-      laptopMedium: '14px'
-    })
-  }
-}));
+    '&:after': {
+      // eslint-disable-next-line quotes
+      content: `''`,
+      display: getValueForDevice({
+        desktopLarge: 'block',
+        tabSmall: 'block',
+        mobileLarge: 'none'
+      }),
+      height: '2px',
+      width: `${getValueForDevice(STRIPS_WIDTH)}px`,
+      backgroundColor: theme.colors.primary100,
+      marginLeft: getValueForDevice({
+        desktopLarge: '20px',
+        desktopSmall: '18px',
+        laptopLarge: '16px',
+        laptopMedium: '14px'
+      })
+    },
+
+    '&:before': {
+      // eslint-disable-next-line quotes
+      content: `''`,
+      display: 'block',
+      width: `${getValueForDevice(STRIPS_WIDTH)}px`,
+      height: '2px',
+      backgroundColor: theme.colors.primary100,
+      marginRight: getValueForDevice({
+        desktopLarge: '20px',
+        desktopSmall: '18px',
+        laptopLarge: '16px',
+        laptopMedium: '14px'
+      })
+    }
+  }),
+  css`
+    &::after {
+      animation: ${stripAnimation} 1s ease-out;
+      animationfillmode: backwards;
+    }
+    &::before {
+      animation: ${stripAnimation} 1s ease-out;
+      animationfillmode: backwards;
+    }
+  `
+);
 
 export const Title = styled.h1<{ fontSize?: number }>(
   ({ theme, fontSize = 55 }) => ({
@@ -90,7 +114,9 @@ export const Title = styled.h1<{ fontSize?: number }>(
       laptopMedium: '12px 0',
       tabLarge: '14px 0',
       mobileMedium: '8px 0'
-    })
+    }),
+    animation: 'fade-in 1.4s ease-out 0.6s',
+    animationFillMode: 'backwards'
   })
 );
 
@@ -121,7 +147,9 @@ export const Description = styled.p(({ theme }) => ({
     mobileMedium: '21px'
   }),
   margin: 0,
-  marginBottom: '8px'
+  marginBottom: '8px',
+  animation: 'fade-in 1.8s ease-out 1.0s',
+  animationFillMode: 'backwards'
 }));
 
 export const HeroBox: React.FC = () => {
@@ -208,7 +236,13 @@ export const HeroBox: React.FC = () => {
         Radzimiński
       </Title>
       <Description>{text.headerSubtitle}</Description>
-      <FlexBox marginTop='28px'>
+      <FlexBox
+        marginTop='28px'
+        style={{
+          animation: 'move-in-up 1.8s ease-out 1.4s',
+          animationFillMode: 'backwards'
+        }}
+      >
         <NavLinkWrapper linkTo='section-contact'>
           <Button variant='full'>{text.btns.contact}</Button>
         </NavLinkWrapper>

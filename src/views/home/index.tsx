@@ -66,11 +66,19 @@ const HomeView: React.FC = () => {
     <Container name='home'>
       <Navbar />
       <HeroBox />
-      <ArrowDownWrapper>
-        <NavLinkWrapper linkTo='section-about'>
-          <FiArrowDownCircle size={iconSize} />
-        </NavLinkWrapper>
-      </ArrowDownWrapper>
+      <div
+        style={{
+          animation: 'fade-in 0.8s ease-out 1.6s',
+          animationFillMode: 'backwards'
+        }}
+      >
+        <ArrowDownWrapper>
+          <NavLinkWrapper linkTo='section-about'>
+            <FiArrowDownCircle size={iconSize} />
+          </NavLinkWrapper>
+        </ArrowDownWrapper>
+      </div>
+
       <Box
         position='absolute'
         top={socialsBarTop}
