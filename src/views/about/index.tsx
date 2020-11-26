@@ -7,6 +7,8 @@ import Paragraph from 'components/Paragraph';
 import PortraitPhoto from 'assets/img/photo.jpg';
 import Photo from 'components/Photo';
 import { getValueForDevice } from 'styles/breakpoints';
+import AnimatedInView from 'components/AnimatedInView';
+import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 
 const AboutView: React.FC = () => {
   const {
@@ -50,21 +52,31 @@ const AboutView: React.FC = () => {
           width={photoWidth}
           marginRight={getValueForDevice({
             desktopLarge: 12,
-            tabLarge: 8
+            tabLarge: 8,
+            tabSmall: 0
           })}
           marginBottom={photoMarginBottom}
         >
-          <Photo src={PortraitPhoto} alt='Portrait' />
+          <AnimatedInView
+            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <Photo src={PortraitPhoto} alt='Portrait' />
+          </AnimatedInView>
         </Box>
+
         <Box width={textWidth}>
-          <SectionTitle type='left'>{sectionTitles.about}</SectionTitle>
-          {about.split('\n').map((paragraph, index) => (
-            <Box key={index} margin='15px 0'>
-              <Paragraph fontSize={4} lineHeight={1.8}>
-                {paragraph}
-              </Paragraph>
-            </Box>
-          ))}
+          <AnimatedInView
+            animation={`move-in-right-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <SectionTitle type='left'>{sectionTitles.about}</SectionTitle>
+            {about.split('\n').map((paragraph, index) => (
+              <Box key={index} margin='15px 0'>
+                <Paragraph fontSize={4} lineHeight={1.8}>
+                  {paragraph}
+                </Paragraph>
+              </Box>
+            ))}
+          </AnimatedInView>
         </Box>
       </FlexBox>
     </Section>

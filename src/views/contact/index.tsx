@@ -9,6 +9,8 @@ import SocialsBar from 'components/SocialsBar';
 import Paragraph from 'components/Paragraph';
 import CopyIconField from 'components/CopyIconField';
 import { getValueForDevice } from 'styles/breakpoints';
+import AnimatedInView from 'components/AnimatedInView';
+import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 
 const ICON_STYLE = {
   transform: 'translateY(3px)'
@@ -110,25 +112,31 @@ const ContactView: React.FC = () => {
           paddingBottom={contentPaddingBottom}
           marginBottom={contentMarginBottom}
         >
-          <SectionTitle type='left'>{sectionTitles.contact}</SectionTitle>
-
-          <FlexBox
-            flexDirection='column'
-            justifyContent='space-between'
-            marginBottom={textMarginBottom}
+          <AnimatedInView
+            animation={`move-in-left-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
           >
-            <Paragraph fontSize={4} lineHeight={1.7}>
-              {contactMsg} &rarr;
-            </Paragraph>
-          </FlexBox>
-
-          {contactMethods.map((method) => (
-            <CopyIconField
-              key={method.label}
-              icon={method.icon}
-              text={method.value}
-            />
-          ))}
+            <SectionTitle type='left'>{sectionTitles.contact}</SectionTitle>
+            <FlexBox
+              flexDirection='column'
+              justifyContent='space-between'
+              marginBottom={textMarginBottom}
+            >
+              <Paragraph fontSize={4} lineHeight={1.7}>
+                {contactMsg} &rarr;
+              </Paragraph>
+            </FlexBox>{' '}
+          </AnimatedInView>
+          <AnimatedInView
+            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.5s`}
+          >
+            {contactMethods.map((method) => (
+              <CopyIconField
+                key={method.label}
+                icon={method.icon}
+                text={method.value}
+              />
+            ))}
+          </AnimatedInView>
 
           <Box
             position='absolute'
@@ -136,16 +144,25 @@ const ContactView: React.FC = () => {
             left={socialsBarLeft}
             right={socialsBarRight}
           >
-            <SocialsBar
-              orientation='horizontal'
-              elementDistance={iconDistance}
-              iconSize={iconSize}
-            />
+            <AnimatedInView
+              animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.6s`}
+              rootMarginY={0}
+            >
+              <SocialsBar
+                orientation='horizontal'
+                elementDistance={iconDistance}
+                iconSize={iconSize}
+              />
+            </AnimatedInView>
           </Box>
         </Box>
 
         <Box width={width} paddingLeft={formPadding}>
-          <ContactForm />
+          <AnimatedInView
+            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <ContactForm />
+          </AnimatedInView>
         </Box>
       </FlexBox>
     </Section>

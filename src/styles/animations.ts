@@ -81,6 +81,28 @@ export const animations = `
 @keyframes move-in-right {
     0% {
         opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes move-in-left-short {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes move-in-right-short {
+    0% {
+        opacity: 0;
         transform: translateX(-20px);
     }
 
