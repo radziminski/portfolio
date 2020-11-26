@@ -67,7 +67,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <TextContentContext.Provider value={textContent}>
-          <div style={{ opacity: appOpacity, transition: 'opacity 0.7s' }}>
+          <div style={{ opacity: appOpacity, transition: 'opacity 1s' }}>
             <LandingPage />
           </div>
         </TextContentContext.Provider>

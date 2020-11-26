@@ -1,6 +1,7 @@
 import Box from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import {
   getValueForDevice,
@@ -66,6 +67,16 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   timelineSide
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+    rootMargin: `-${window.innerHeight * 0.42}px 0px`
+  });
+
+  useEffect(() => {
+    if (inView) setIsOpen(true);
+    else setIsOpen(false);
+  }, [inView]);
 
   if (timelineSide === 'right')
     return (
@@ -77,7 +88,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
             mobileMedium: 16
           })}
         />
-        <TimelineTextContainer side='right'>
+        <TimelineTextContainer side='right' ref={ref}>
           <Box
             color='primary100'
             opacity={0.9}
@@ -111,7 +122,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   return (
     <>
       <TimelinePoint size={20} />
-      <TimelineTextContainer side='left'>
+      <TimelineTextContainer side='left' ref={ref}>
         <ExpandableParagraph
           title={title}
           content={description}
