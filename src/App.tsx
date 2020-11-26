@@ -16,6 +16,9 @@ const App: React.FC = () => {
   const [currLanguage, setCurrLanguage] = useState<Language>(
     (localStorage.getItem('language') as Language) || 'EN'
   );
+  // Used for FOUC hiding
+  const [appOpacity, setAppOpacity] = useState(0);
+
   // Used only for re-rendering app on size change
   // eslint-disable-next-line
   const [deviceDimensions, setDeviceDimensions] = useState<number[]>([
@@ -40,6 +43,12 @@ const App: React.FC = () => {
     return () => window.removeEventListener('resize', onResize);
   }, [onResize]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setAppOpacity(1);
+    }, 50);
+  }, []);
+
   const textContent = useMemo(
     () => ({
       text: getText(language),
@@ -58,7 +67,9 @@ const App: React.FC = () => {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <TextContentContext.Provider value={textContent}>
-          <LandingPage />
+          <div style={{ opacity: appOpacity, transition: 'opacity 0.7s' }}>
+            <LandingPage />
+          </div>
         </TextContentContext.Provider>
       </ThemeProvider>
     </div>

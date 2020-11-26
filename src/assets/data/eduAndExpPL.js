@@ -36,7 +36,7 @@ const expList = [
   ),
   Experience(
     10,
-    '12.2020',
+    '02.2021',
     'Flutter Developer',
     'Tworzenie aplikacji mobilnej w technologii Flutter.'
   )

@@ -8,16 +8,19 @@ interface Props {
   title: string;
   textAlign?: 'left' | 'center' | 'right';
   content: string;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
 const ExpandableParagraph: React.FC<Props> = ({
   title,
   content,
-  textAlign
+  textAlign,
+  isOpen,
+  setIsOpen
 }) => {
   const [contentHeight, setContentHeight] = useState(0);
   const [titleHeight, setTitleHeight] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
 
   const contentRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -40,7 +43,7 @@ const ExpandableParagraph: React.FC<Props> = ({
       style={{ wordWrap: 'break-word' }}
       overflow='hidden'
       height={contentHeight + titleHeight}
-      onClick={() => setIsOpen((prevState) => !prevState)}
+      onClick={() => setIsOpen(!isOpen)}
       cursor='pointer'
     >
       <FlexBox

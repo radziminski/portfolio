@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useObserver = (
   ref: React.RefObject<HTMLElement>,
-  callback: () => void,
+  onEnter: () => void,
   threshold = 0.01
 ) => {
   useEffect(() => {
@@ -23,14 +23,14 @@ const useObserver = (
               !didCancel &&
               (entry.intersectionRatio > 0 || entry.isIntersecting)
             )
-              callback();
+              onEnter();
           });
         }, observerOptions);
 
         observer.observe(ref.current);
         observedElement = ref.current;
       } else {
-        callback();
+        onEnter();
       }
     }
 
@@ -40,7 +40,7 @@ const useObserver = (
         observer.unobserve(observedElement);
       }
     };
-  }, [ref, threshold, callback]);
+  }, [ref, threshold, onEnter]);
 };
 
 export default useObserver;

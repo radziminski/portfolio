@@ -9,7 +9,7 @@ import Footer from 'views/footer';
 
 const LandingPage: React.FC = () => {
   return (
-    <>
+    <main>
       <HomeView />
       <AboutView />
       <SkillsView />
@@ -17,7 +17,7 @@ const LandingPage: React.FC = () => {
       <ExperienceView />
       <ContactView />
       <Footer />
-    </>
+    </main>
   );
 };
 

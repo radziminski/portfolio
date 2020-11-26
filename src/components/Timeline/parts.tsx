@@ -1,6 +1,6 @@
 import Box from 'components/Box';
 import ExpandableParagraph from 'components/ExpandableParagraph';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   getValueForDevice,
@@ -65,6 +65,8 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   description,
   timelineSide
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   if (timelineSide === 'right')
     return (
       <>
@@ -99,6 +101,8 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
             title={title}
             content={description}
             textAlign='left'
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
           />
         </TimelineTextContainer>
       </>
@@ -112,6 +116,8 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
           title={title}
           content={description}
           textAlign='right'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
         />
         <Box color='primary100' opacity={0.95} width='32%' textAlign='center'>
           {start} - {end}
