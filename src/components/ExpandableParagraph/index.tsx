@@ -71,13 +71,13 @@ const ExpandableParagraph: React.FC<Props> = ({
           marginTop={'2px'}
           align-items='center'
           transform={isOpen ? 'rotate(180deg)' : ''}
-          transition='all 0.2s'
+          transition='all 0.35s'
           height={20}
         >
           <MdKeyboardArrowDown size={24} />
         </FlexBox>
       </FlexBox>
-      <Box ref={contentRef} opacity={isOpen ? 1 : 0} transition='all 0.15s'>
+      <Box ref={contentRef} opacity={isOpen ? 1 : 0} transition='all 0.4s'>
         <Text
           lineHeight={1.6}
           textAlign={content.length > 80 ? 'justify' : textAlign || 'left'}

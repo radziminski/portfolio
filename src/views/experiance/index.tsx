@@ -4,6 +4,8 @@ import Section from 'components/Section';
 import SectionTitle from 'components/SectionTitle';
 import Box from 'components/Box';
 import Timeline from 'components/Timeline';
+import AnimatedInView from 'components/AnimatedInView';
+import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 
 const ExperienceView: React.FC = () => {
   const {
@@ -13,13 +15,22 @@ const ExperienceView: React.FC = () => {
 
   return (
     <Section variant='light' withLinker name='section-experience'>
-      <SectionTitle type='left'>{sectionTitles.experience} </SectionTitle>
+      <AnimatedInView
+        animation={`move-in-right-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+      >
+        <SectionTitle type='left'>{sectionTitles.experience}</SectionTitle>
+      </AnimatedInView>
       <Box paddingY={12}>
         <Timeline points={eduAndExp} />
       </Box>
 
       <Box display='flex' justifyContent='flex-end'>
-        <SectionTitle type='left'>{sectionTitles.education} </SectionTitle>
+        <AnimatedInView
+          animation={`move-in-left-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          rootMarginY={0}
+        >
+          <SectionTitle type='left'>{sectionTitles.education} </SectionTitle>{' '}
+        </AnimatedInView>
       </Box>
     </Section>
   );

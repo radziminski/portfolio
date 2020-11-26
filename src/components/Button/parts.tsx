@@ -6,6 +6,8 @@ interface StyleProps {
   padding?: string | number;
 }
 
+const SCALE_ON_HOVER = 1.08;
+
 const FONT_SIZE = {
   desktopLarge: 20,
   desktopMedium: 18,
@@ -52,7 +54,7 @@ export const FullButton = styled.button<StyleProps>(
     border: 'none',
 
     '&:hover:not(:disabled)': {
-      transform: 'scale(1.1)'
+      transform: `scale(${SCALE_ON_HOVER})`
     },
     '&:active:not(:disabled)': {
       transform: 'scale(1)'
@@ -76,7 +78,7 @@ export const GhostButton = styled.button<StyleProps>(
     border: `2px solid ${theme.colors.primary100}`,
 
     '&:hover:not(:disabled)': {
-      transform: 'scale(1.1)'
+      transform: `scale(${SCALE_ON_HOVER})`
     },
     '&:active:not(:disabled)': {
       transform: 'scale(1)'

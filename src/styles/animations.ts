@@ -112,5 +112,26 @@ export const animations = `
     }
 }
 
+@keyframes move-in-bottom-right {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move-in-top-left {
+    0% {
+        opacity: 0;
+        transform: translate(20px, 20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
 
 `;

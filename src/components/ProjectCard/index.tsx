@@ -11,6 +11,8 @@ import {
   getValueForDevice,
   LAYOUT_ORIENTATION_BREAKPOINT
 } from 'styles/breakpoints';
+import AnimatedInView from 'components/AnimatedInView';
+import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 
 interface Props {
   side?: 'right' | 'left';
@@ -48,17 +50,25 @@ const ProjectCard: React.FC<Props> = ({
     >
       <Box>
         <ImageContainer>
-          <ImageBackOverlay />
-          <ImageMain>
-            <img
-              src={offMuseumScreenshot}
-              style={{
-                maxHeight: '100%',
-                objectFit: 'cover'
-              }}
-              alt='Off Museum Website Preview'
-            />
-          </ImageMain>
+          <AnimatedInView
+            animation={`move-in-top-left ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <ImageBackOverlay />
+          </AnimatedInView>
+          <AnimatedInView
+            animation={`move-in-bottom-right ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <ImageMain>
+              <img
+                src={offMuseumScreenshot}
+                style={{
+                  maxHeight: '100%',
+                  objectFit: 'cover'
+                }}
+                alt='Off Museum Website Preview'
+              />
+            </ImageMain>
+          </AnimatedInView>
         </ImageContainer>
       </Box>
       <FlexBox
@@ -69,40 +79,57 @@ const ProjectCard: React.FC<Props> = ({
         alignItems={isMobile ? 'center' : 'auto'}
         flexDirection='column'
       >
-        <Title>{title}</Title>
-        <Box marginBottom={isMobile ? '12px' : 0}>
-          <Paragraph textAlign='justify'>{description}</Paragraph>
-        </Box>
+        <AnimatedInView
+          animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+        >
+          <Title>{title}</Title>
+        </AnimatedInView>
+        <AnimatedInView
+          animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+        >
+          <Box marginBottom={isMobile ? '12px' : 0}>
+            <Paragraph textAlign='justify'>{description}</Paragraph>
+          </Box>
+        </AnimatedInView>
+
         <FlexBox marginTop='auto' marginBottom={22}>
           {codeLink && (
-            <Button
-              variant='ghost'
-              onClick={() => window.open(codeLink, '_blank')}
+            <AnimatedInView
+              animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
             >
-              <Icon
-                icon={githubFilled}
-                style={{
-                  transform: 'scale(1.4)'
-                }}
-              />
-              <Box marginLeft='10px'>Browse Code</Box>
-            </Button>
+              <Button
+                variant='ghost'
+                onClick={() => window.open(codeLink, '_blank')}
+              >
+                <Icon
+                  icon={githubFilled}
+                  style={{
+                    transform: 'scale(1.4)'
+                  }}
+                />
+                <Box marginLeft='10px'>Browse Code</Box>
+              </Button>
+            </AnimatedInView>
           )}
           {liveLink && codeLink && <Box marginLeft='20px' />}
           {liveLink && (
-            <Button
-              variant='full'
-              onClick={() => window.open(liveLink, '_blank')}
+            <AnimatedInView
+              animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
             >
-              <Icon
-                icon={playFilledAlt}
-                style={{
-                  transform: 'scale(1.4)'
-                }}
-              />
-              <Box width='10px' />
-              Live Demo
-            </Button>
+              <Button
+                variant='full'
+                onClick={() => window.open(liveLink, '_blank')}
+              >
+                <Icon
+                  icon={playFilledAlt}
+                  style={{
+                    transform: 'scale(1.4)'
+                  }}
+                />
+                <Box width='10px' />
+                Live Demo
+              </Button>
+            </AnimatedInView>
           )}
         </FlexBox>
       </FlexBox>

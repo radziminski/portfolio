@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { ColumnTitle, Container, Grid, IconWrapper, Title } from './parts';
 import { Icon, IconifyIcon } from '@iconify/react';
 import { getValueForDevice } from 'styles/breakpoints';
+import AnimatedInView from 'components/AnimatedInView';
+import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 
 interface GridItem {
   icon: IconifyIcon;
@@ -101,19 +103,28 @@ const GridPicker: React.FC<Props> = ({
           width={iconBoxWidth}
           overflow='hidden'
         >
-          <Icon
-            icon={chosenItem.icon}
-            style={{
-              fontSize: iconSize,
-              transform: `scale(${chosenItem.iconScaleFactor || 1.0})`
-            }}
-          />
+          <AnimatedInView
+            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <Icon
+              icon={chosenItem.icon}
+              style={{
+                fontSize: iconSize,
+                transform: `scale(${chosenItem.iconScaleFactor || 1.0})`
+              }}
+            />
+          </AnimatedInView>
         </Box>
+
         <Box style={{ width: textWidth }}>
-          <Title>{chosenItem.title}</Title>
-          <Paragraph color='gray90' style={{ margin: '4px 0' }}>
-            {chosenItem.description}
-          </Paragraph>
+          <AnimatedInView
+            animation={`move-in-right-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          >
+            <Title>{chosenItem.title}</Title>
+            <Paragraph color='gray90' style={{ margin: '4px 0' }}>
+              {chosenItem.description}
+            </Paragraph>
+          </AnimatedInView>
         </Box>
       </FlexBox>
 
@@ -126,8 +137,6 @@ const GridPicker: React.FC<Props> = ({
         {columns.map((columnTitle, columnNumber) => (
           <FlexBox
             key={columnTitle}
-            flexDirection='column'
-            alignItems='center'
             width={
               columnsFlexDirection === 'column'
                 ? '100%'
@@ -141,25 +150,33 @@ const GridPicker: React.FC<Props> = ({
                 : 0
             }
           >
-            <ColumnTitle>{columnTitle}</ColumnTitle>
-            <Grid>
-              {gridItems
-                ?.filter((item) => item.column === columnTitle)
-                .map((item, index) => (
-                  <IconWrapper
-                    key={index}
-                    onClick={() => setChosenItem(item)}
-                    selected={item === chosenItem}
-                  >
-                    <Icon
-                      icon={item.icon}
-                      style={{
-                        transform: `scale(${item.iconScaleFactor || 1.0})`
-                      }}
-                    />
-                  </IconWrapper>
-                ))}
-            </Grid>
+            <AnimatedInView
+              animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out ${
+                columnNumber * 0.3 + 0.2
+              }s`}
+            >
+              <FlexBox flexDirection='column' alignItems='center'>
+                <ColumnTitle>{columnTitle}</ColumnTitle>
+                <Grid>
+                  {gridItems
+                    ?.filter((item) => item.column === columnTitle)
+                    .map((item, index) => (
+                      <IconWrapper
+                        key={index}
+                        onClick={() => setChosenItem(item)}
+                        selected={item === chosenItem}
+                      >
+                        <Icon
+                          icon={item.icon}
+                          style={{
+                            transform: `scale(${item.iconScaleFactor || 1.0})`
+                          }}
+                        />
+                      </IconWrapper>
+                    ))}
+                </Grid>
+              </FlexBox>
+            </AnimatedInView>
           </FlexBox>
         ))}
       </FlexBox>

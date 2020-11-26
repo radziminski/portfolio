@@ -74,8 +74,11 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   });
 
   useEffect(() => {
-    if (inView) setIsOpen(true);
-    else setIsOpen(false);
+    // Used for debouncing
+    setTimeout(() => {
+      if (inView) setIsOpen(true);
+      else setIsOpen(false);
+    }, 90);
   }, [inView]);
 
   if (timelineSide === 'right')

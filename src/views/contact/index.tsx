@@ -113,7 +113,7 @@ const ContactView: React.FC = () => {
           marginBottom={contentMarginBottom}
         >
           <AnimatedInView
-            animation={`move-in-left-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+            animation={`move-in-right-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
           >
             <SectionTitle type='left'>{sectionTitles.contact}</SectionTitle>
             <FlexBox
@@ -127,7 +127,7 @@ const ContactView: React.FC = () => {
             </FlexBox>{' '}
           </AnimatedInView>
           <AnimatedInView
-            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.5s`}
+            animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.3s`}
           >
             {contactMethods.map((method) => (
               <CopyIconField
@@ -145,7 +145,7 @@ const ContactView: React.FC = () => {
             right={socialsBarRight}
           >
             <AnimatedInView
-              animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.6s`}
+              animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out 0.5s`}
               rootMarginY={0}
             >
               <SocialsBar
