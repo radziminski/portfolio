@@ -96,6 +96,7 @@ const ProjectCard: React.FC<Props> = ({
           {codeLink && (
             <AnimatedInView
               animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+              rootMarginY={0}
             >
               <Button
                 variant='ghost'
@@ -115,6 +116,7 @@ const ProjectCard: React.FC<Props> = ({
           {liveLink && (
             <AnimatedInView
               animation={`move-in-${side}-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+              rootMarginY={0}
             >
               <Button
                 variant='full'

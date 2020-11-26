@@ -154,8 +154,9 @@ const GridPicker: React.FC<Props> = ({
               animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out ${
                 columnNumber * 0.3 + 0.2
               }s`}
+              style={{ width: '100%' }}
             >
-              <FlexBox flexDirection='column' alignItems='center'>
+              <FlexBox flexDirection='column' alignItems='center' width='100%'>
                 <ColumnTitle>{columnTitle}</ColumnTitle>
                 <Grid>
                   {gridItems

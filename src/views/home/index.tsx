@@ -6,6 +6,7 @@ import { FiArrowDownCircle } from 'react-icons/fi';
 import SocialsBar, { SocialsBarOrientation } from 'components/SocialsBar';
 import BREAKPOINTS, { getValueForDevice } from 'styles/breakpoints';
 import NavLinkWrapper from 'components/Nav/NavLinkWrapper';
+import AnimatedInView from 'components/AnimatedInView';
 
 const HomeView: React.FC = () => {
   const iconSize = getValueForDevice({
@@ -66,18 +67,13 @@ const HomeView: React.FC = () => {
     <Container name='home'>
       <Navbar />
       <HeroBox />
-      <div
-        style={{
-          animation: 'fade-in 0.8s ease-out 1.6s',
-          animationFillMode: 'backwards'
-        }}
-      >
+      <AnimatedInView animation='fade-in 1.8s ease-in-out 1.4s' rootMarginY={0}>
         <ArrowDownWrapper>
           <NavLinkWrapper linkTo='section-about'>
             <FiArrowDownCircle size={iconSize} />
           </NavLinkWrapper>
         </ArrowDownWrapper>
-      </div>
+      </AnimatedInView>
 
       <Box
         position='absolute'
