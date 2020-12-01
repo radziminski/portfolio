@@ -54,7 +54,7 @@ export const main = [
   ),
   Skill(
     'Typescript',
-    'Together with Dart, my favorite programming language. With experience in other strongly typed languages, transition from Javascript was quick and easy for me and I know I\'m never coming back. In combination with React, it gives me foundation to develop any web application I can imagine in most scalable way. ',
+    "Together with Dart, my favorite programming language. With experience in other strongly typed languages, transition from Javascript was quick and easy for me and I know I'm never coming back. In combination with React, it gives me foundation to develop any web application I can imagine in most scalable way. ",
     'web',
     typescriptIcon,
     true
