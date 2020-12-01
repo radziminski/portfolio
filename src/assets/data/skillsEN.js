@@ -67,13 +67,7 @@ export const main = [
     true,
     0.9
   ),
-  Skill(
-    'React',
-    'My favorite frontend library. ',
-    'web',
-    reactIcon,
-    true
-  ),
+  Skill('React', 'My favorite frontend library. ', 'web', reactIcon, true),
   Skill(
     'Redux',
     'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
