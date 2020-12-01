@@ -56,7 +56,7 @@ export const main = [
   ),
   Skill(
     'Typescript',
-    "My favorite programming language and definitely the one I most frequently use. In combination with React and Node it gives me the foundation to develop any web application I can imagine.",
+    'My favorite programming language and definitely the one I most frequently use. In combination with React and Node it gives me the foundation to develop any web application I can imagine.',
     'web',
     typescriptIcon,
     true
@@ -69,7 +69,13 @@ export const main = [
     true,
     0.9
   ),
-  Skill('React', 'My favorite frontend library. Advanced React knowledge (hooks, virtual DOM, etc.) in combination with connected technologies (styled components/css modules, redux, axios and many more) allows me to create large, optimized and scalable web applications.', 'web', reactIcon, true),
+  Skill(
+    'React',
+    'My favorite frontend library. Advanced React knowledge (hooks, virtual DOM, etc.) in combination with connected technologies (styled components/css modules, redux, axios and many more) allows me to create large, optimized and scalable web applications.',
+    'web',
+    reactIcon,
+    true
+  ),
   Skill(
     'Redux',
     'My most frequently used global state management pattern. Although it requires more boilerplate code than react-context or MobX, its still my favorite one since it creates well structured and error-free code architecture in the end.',
@@ -86,7 +92,7 @@ export const main = [
   ),
   Skill(
     'Node',
-    'After using .NET, Spring Boot or Django, Node is by far my favorite backend technology. Not only it uses my favorite language (JS/TS), but it also makes creating REST Api\'s quick and intuitive for me.',
+    "After using .NET, Spring Boot or Django, Node is by far my favorite backend technology. Not only it uses my favorite language (JS/TS), but it also makes creating REST Api's quick and intuitive for me.",
     'web',
     nodejsIcon,
     true
@@ -129,13 +135,13 @@ export const main = [
   ),
   Skill(
     'Python',
-    'Although I\'ve never built any commercial projects with python I have often used it for data processing or some advanced calculations (which I often needed during my studies). I\'ve also used it for learning the very basics of machine learning and data science. I had also a chance to work with its server frameworks like FastAPI or Django.',
+    "Although I've never built any commercial projects with python I have often used it for data processing or some advanced calculations (which I often needed during my studies). I've also used it for learning the very basics of machine learning and data science. I had also a chance to work with its server frameworks like FastAPI or Django.",
     'other',
     pythonIcon
   ),
   Skill(
     'x86 & MIPS assembly',
-    'One of the components of my studies where Computer Architecture course. I\'ve discovered how computers are constructed from scratch - I\'ve learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project\'s I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about removing comments from source files, while second one was about mirroring bpm images. ',
+    "One of the components of my studies where Computer Architecture course. I've discovered how computers are constructed from scratch - I've learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project's I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about removing comments from source files, while second one was about mirroring bpm images. ",
     'other',
     assemblyIcon
   ),
@@ -147,7 +153,7 @@ export const main = [
   ),
   Skill(
     'Git',
-    'During my commercial and academic experience I\'ve always used git version control system - I am familiar with concepts like commits, branches, merges or pull requests - generally on everything that is essential for successful development in larger teams.',
+    "During my commercial and academic experience I've always used git version control system - I am familiar with concepts like commits, branches, merges or pull requests - generally on everything that is essential for successful development in larger teams.",
     'other',
     gitIcon
   )

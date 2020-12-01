@@ -19,29 +19,25 @@ const expList = [
     2015,
     'now',
     'Music producer at House Of Tracks',
-    'Diamond seller level with over 50 sold tracks.'
+    'Diamond seller level with over 50 sold tracks. Self-made end-to-end production process, from composing, through mixing to mastering. Producing various electronic and pop genres, with recent focus on Future Bass, Techno and Hardstyle.'
   ),
   Experience(
     2017,
-    'now',
+    2021,
     'Bachelor in Computer Science',
-    'Faculty of Electronics and Information Technology at Warsaw University of Technology'
+    'Faculty of Electronics and Information Technology at Warsaw University of Technology. Rector\'s scholarship for outstanding academic achievements throughout whole duration of my studies. Member of science club "Fiber Team" and of skiing sport club, actively participating in national academic skiing championships.'
   ),
   Experience(
     '07',
     '08.2020',
-    'Frontend developer intern in Swing Development',
-    `Creating frontend for GreenLock - 
-    web application for managing  SSL certificates and controlling their expiration date. App was 
-    made in React library, with usage of (mainly) Typescript, Redux and Styled Components. During this
-    internship I have learned a lot about frontend & backend architecture, best practices and clean code
-    principles.`
+    'Frontend Developer Intern at Swing Dev',
+    `Creating React application for GreenLock - website for managing SSL certificates and controlling their expiration date. During this internship I have learned a lot about frontend & backend architecture, Typescript, best practices, optimization, design patterns and clean code principles.`
   ),
   Experience(
     10,
     '02.2021',
-    'Flutter developer',
-    'Creating mobile application with flutter for ... company.'
+    'Flutter Developer in JFK studio',
+    'Creating mobile applications with flutter for one of the biggest companies in Poland.'
   )
 ];
 export default expList;

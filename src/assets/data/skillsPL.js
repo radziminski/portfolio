@@ -48,21 +48,21 @@ export const main = [
   ),
   Skill(
     'Javascript',
-    'Język programowania w którym czuję się najlepiej. Świetna znajomość Javascript\'u ES8+ i jego zawaansowanych konceptów (takich jak asynchroniczność, \'closures\' , czy pętli zdarzeń) pozwala mi na rozwiązanie prawie każdego problemu jaki napotkam.',
+    "Język programowania w którym czuję się najlepiej. Świetna znajomość Javascript'u ES8+ i jego zawaansowanych konceptów (takich jak asynchroniczność, 'closures' , czy pętli zdarzeń) pozwala mi na rozwiązanie prawie każdego problemu jaki napotkam.",
     'web',
     javascriptIcon,
     true
   ),
   Skill(
     'Typescript',
-    'Mój ulubiony i najczęściej używany język programowania. W połączeniu z React\'em i Node\'em daje mi podstawy do tworzenia najbardziej wymagających projektów.',
+    "Mój ulubiony i najczęściej używany język programowania. W połączeniu z React'em i Node'em daje mi podstawy do tworzenia najbardziej wymagających projektów.",
     'web',
     typescriptIcon,
     true
   ),
   Skill(
     'SCSS',
-    'Dobra znajomość preprocesora SASS sprawia, że stylowanie elementów jest dla mnie szybkie i przyjemne. Pozwala mi na implementację różnorodnych projektów, w czasie który nie byłby osiągalny z czystym CSS\'em.',
+    "Dobra znajomość preprocesora SASS sprawia, że stylowanie elementów jest dla mnie szybkie i przyjemne. Pozwala mi na implementację różnorodnych projektów, w czasie który nie byłby osiągalny z czystym CSS'em.",
     'web',
     sassIcon,
     true,
@@ -98,7 +98,7 @@ export const main = [
   ),
   Skill(
     'MongoDB',
-    'Jedna z moich ulubionych w użyciu baz danych, jeśli chodzi o pracę z Node - dzięki strukturze danych podobnej do Javascript\'owych obiektów, jej działanie jest bardzo intuicyjne.',
+    "Jedna z moich ulubionych w użyciu baz danych, jeśli chodzi o pracę z Node - dzięki strukturze danych podobnej do Javascript'owych obiektów, jej działanie jest bardzo intuicyjne.",
     'web',
     mongodbIcon,
     true,
