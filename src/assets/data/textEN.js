@@ -14,7 +14,7 @@ export const greetings = {
 export const headerTitle = "I'm";
 
 export const headerSubtitle =
-  'Full-stack web developer, computer scientist and music producer. Student of bachelor studies at Faculty of Electronics and Information Technology at Warsaw University of Technology.';
+  'Full Stack Software Developer, Computer Scientist & Music Producer. Student of bachelor studies at Faculty of Electronics and Information Technology at Warsaw University of Technology.';
 
 export const sectionTitles = {
   about: 'About Me',

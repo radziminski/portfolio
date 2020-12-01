@@ -14,7 +14,7 @@ export interface Props {
 
 const PADDING_SIDE = {
   desktopLarge: 360,
-  desktopMedium: 270,
+  desktopMedium: 250,
   desktopSmall: 180,
   laptopLarge: 220,
   laptopMedium: 180,

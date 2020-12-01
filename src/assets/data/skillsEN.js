@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import reactIcon from '@iconify/icons-fa-brands/react';
 import javascriptIcon from '@iconify/icons-simple-icons/javascript';
 import html5Icon from '@iconify/icons-simple-icons/html5';
@@ -29,14 +30,16 @@ function Skill(title, description, type, icon, scaleFactor = 1.0) {
 export const main = [
   Skill(
     'HTML',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    // eslint-disable-next-line max-len
+    'The base of the whole web development. I believe that proper semantic HTML structure should be a starting point for building every website.',
     'web',
     html5Icon,
     true
   ),
   Skill(
     'CSS',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    // eslint-disable-next-line max-len
+    'After working with several different frontend frameworks including QT and JUCE, CSS uses by far my favorite UI styling pattern. Strong CSS3 knowledge allows me to quickly implement most complicated designs.',
     'web',
     css3Icon,
     true,
@@ -44,21 +47,21 @@ export const main = [
   ),
   Skill(
     'Javascript',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Programming language I am the best at. After years of programming in C++, learning Javascript opened whole new world for me. Strong knowledge of ES2018+ Javascript gives me ability to solve almost any problem I face.',
     'web',
     javascriptIcon,
     true
   ),
   Skill(
     'Typescript',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Together with Dart, my favorite programming language. With experience in other strongly typed languages, transition from Javascript was quick and easy for me and I know I\'m never coming back. In combination with React, it gives me foundation to develop any web application I can imagine in most scalable way. ',
     'web',
     typescriptIcon,
     true
   ),
   Skill(
     'SCSS',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Good knowledge of SASS preprocessor makes CSS styling way',
     'web',
     sassIcon,
     true,
@@ -66,7 +69,7 @@ export const main = [
   ),
   Skill(
     'React',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'My favorite frontend library. ',
     'web',
     reactIcon,
     true
