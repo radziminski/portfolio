@@ -30,7 +30,7 @@ const HomeView: React.FC = () => {
     tabLarge: 70,
     tabMedium: 60,
     tabSmall: 44,
-    mobileLarge: 86
+    mobileLarge: 45
   });
   const socialsBarRight = getValueForDevice({
     desktopLarge: 110,

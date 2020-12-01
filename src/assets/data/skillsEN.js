@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable max-len */
 import reactIcon from '@iconify/icons-fa-brands/react';
 import javascriptIcon from '@iconify/icons-simple-icons/javascript';
@@ -10,6 +11,7 @@ import firebaseIcon from '@iconify/icons-simple-icons/firebase';
 import reduxIcon from '@iconify/icons-simple-icons/redux';
 import postgresIcon from '@iconify/icons-simple-icons/postgresql';
 import cIcon from '@iconify/icons-file-icons/c';
+import flutterIcon from '@iconify/icons-file-icons/flutter';
 import assemblyIcon from '@iconify/icons-file-icons/assembly-intel';
 import typescriptIcon from '@iconify/icons-simple-icons/typescript';
 import pythonIcon from '@iconify/icons-fa-brands/python';
@@ -31,7 +33,7 @@ export const main = [
   Skill(
     'HTML',
     // eslint-disable-next-line max-len
-    'The base of the whole web development. I believe that proper semantic HTML structure should be a starting point for building every website.',
+    'The base of the whole web development. I believe that proper semantic HTML5 structure should be a starting point for building every well-designed website.',
     'web',
     html5Icon,
     true
@@ -39,7 +41,7 @@ export const main = [
   Skill(
     'CSS',
     // eslint-disable-next-line max-len
-    'After working with several different frontend frameworks including QT and JUCE, CSS uses by far my favorite UI styling pattern. Strong CSS3 knowledge allows me to quickly implement most complicated designs.',
+    'CSS is by far my favorite UI styling technology. Strong CSS3 knowledge allows me to quickly implement most complicated designs.',
     'web',
     css3Icon,
     true,
@@ -47,44 +49,51 @@ export const main = [
   ),
   Skill(
     'Javascript',
-    'Programming language I am the best at. After years of programming in C++, learning Javascript opened whole new world for me. Strong knowledge of ES2018+ Javascript gives me ability to solve almost any problem I face.',
+    'Programming language I feel the best at. Strong knowledge of ES8+ Javascript and its advanced concepts (including Ajax, closures, event loop and more) gives me ability to solve almost any problem I face.',
     'web',
     javascriptIcon,
     true
   ),
   Skill(
     'Typescript',
-    "Together with Dart, my favorite programming language. With experience in other strongly typed languages, transition from Javascript was quick and easy for me and I know I'm never coming back. In combination with React, it gives me foundation to develop any web application I can imagine in most scalable way. ",
+    "My favorite programming language and definitely the one I most frequently use. In combination with React and Node it gives me the foundation to develop any web application I can imagine.",
     'web',
     typescriptIcon,
     true
   ),
   Skill(
     'SCSS',
-    'Good knowledge of SASS preprocessor makes CSS styling way',
+    'Good knowledge of SASS preprocessor makes CSS styling much quicker and fun for me. It allows me to bring to life various designs in time that was not achievable with vanilla CSS.',
     'web',
     sassIcon,
     true,
     0.9
   ),
-  Skill('React', 'My favorite frontend library. ', 'web', reactIcon, true),
+  Skill('React', 'My favorite frontend library. Advanced React knowledge (hooks, virtual DOM, etc.) in combination with connected technologies (styled components/css modules, redux, axios and many more) allows me to create large, optimized and scalable web applications.', 'web', reactIcon, true),
   Skill(
     'Redux',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'My most frequently used global state management pattern. Although it requires more boilerplate code than react-context or MobX, its still my favorite one since it creates well structured and error-free code architecture in the end.',
     'web',
     reduxIcon,
     true
   ),
   Skill(
+    'Flutter',
+    'One of my favorite technologies and definitely my most frequently used mobile framework. Countless built-in widgets and simple and intuitive use allowed me to create various cross platform applications with fully native feel.',
+    'web',
+    flutterIcon,
+    true
+  ),
+  Skill(
     'Node',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'After using .NET, Spring Boot or Django, Node is by far my favorite backend technology. Not only it uses my favorite language (JS/TS), but it also makes creating REST Api\'s quick and intuitive for me.',
     'web',
     nodejsIcon,
     true
   ),
   Skill(
     'MongoDB',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'My favorite database when it comes to working with Node, thanks to its similarity in structure to javascript objects.',
     'web',
     mongodbIcon,
     true,
@@ -92,7 +101,7 @@ export const main = [
   ),
   Skill(
     'SQL',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Relational databases were one of the core components of my studies - I have learned a lot about database modelling, advanced querying, joins etc. I have used SQL databases (mainly PostgreSQL) in many of my academic and individual projects.',
     'web',
     postgresIcon,
     true,
@@ -100,7 +109,7 @@ export const main = [
   ),
   Skill(
     'Firebase',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'I used firebase every time I needed to use very simple data storage for my website, or implement fast and reliable authentication without need of implementing whole backend server.',
     'web',
     firebaseIcon,
     true,
@@ -108,37 +117,37 @@ export const main = [
   ),
   Skill(
     'Figma',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Before starting to code new project I like to briefly plan and design the UIs of my it beforehand, since It makes the development process way easier and faster. For that purpose I love using Figma and its user-friendly interface.',
     'other',
     figmaIcon
   ),
   Skill(
     'C, C++',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Language in which I\'ve made my first steps in software world - I wrote my first "hello world" program at the age of 13. Then, I used it for writing my high school exam. C and C++ were also the main languages I\'ve used during my studies - I used them for learning algorithms and data structures, programming microcontrollers or studying multithreaded programming.',
     'other',
     cIcon
   ),
   Skill(
     'Python',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'Although I\'ve never built any commercial projects with python I have often used it for data processing or some advanced calculations (which I often needed during my studies). I\'ve also used it for learning the very basics of machine learning and data science. I had also a chance to work with its server frameworks like FastAPI or Django.',
     'other',
     pythonIcon
   ),
   Skill(
     'x86 & MIPS assembly',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'One of the components of my studies where Computer Architecture course. I\'ve discovered how computers are constructed from scratch - I\'ve learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project\'s I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about removing comments from source files, while second one was about mirroring bpm images. ',
     'other',
     assemblyIcon
   ),
   Skill(
     'Shell',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'I have learned Linux fundamentals during the Operation Systems course during my studies. It also included basics of linux terminal, shell programming and processes scheduling.',
     'other',
     shellIcon
   ),
   Skill(
     'Git',
-    'Lorem ipsum dispum Lorem ipsum dispum Lorem ipsum dispum',
+    'During my commercial and academic experience I\'ve always used git version control system - I am familiar with concepts like commits, branches, merges or pull requests - generally on everything that is essential for successful development in larger teams.',
     'other',
     gitIcon
   )

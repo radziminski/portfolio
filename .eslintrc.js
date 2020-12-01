@@ -24,7 +24,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 1,
     'react/display-name': 0,
     'react/prop-types': 0,
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': [0, 'unix'],
     quotes: ['error', 'single'],
     semi: [2, 'always'],
     'max-len': [

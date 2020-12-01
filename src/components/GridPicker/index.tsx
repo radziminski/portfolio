@@ -63,8 +63,8 @@ const GridPicker: React.FC<Props> = ({
     laptopLarge: 0
   });
   const marginBottom = getValueForDevice({
-    desktopLarge: 50,
-    laptopLarge: 35
+    desktopLarge: 30,
+    laptopLarge: 20
   });
   const marginLeft = getValueForDevice({
     desktopLarge: 50,
@@ -97,6 +97,7 @@ const GridPicker: React.FC<Props> = ({
         marginBottom={marginBottom}
         justifyContent='center'
         alignItems='center'
+        minHeight={100}
       >
         <Box
           marginRight={iconMarginRight}

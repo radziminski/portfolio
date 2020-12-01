@@ -206,7 +206,7 @@ export const HeroBox: React.FC = () => {
     desktopLarge: '50%',
     laptopLarge: '52%',
     tabLarge: '50%',
-    mobileLarge: '46%'
+    mobileLarge: '48%'
   });
 
   return (
@@ -266,7 +266,7 @@ export const ArrowDownWrapper = styled.button(({ theme }) => ({
     tabLarge: 70,
     tabMedium: 60,
     tabSmall: 44,
-    mobileLarge: 86
+    mobileLarge: 45
   }),
   right: getValueForDevice({
     desktopLarge: '50%',

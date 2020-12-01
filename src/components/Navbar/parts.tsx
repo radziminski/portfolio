@@ -4,9 +4,13 @@ import Dropdown from 'components/Dropdown';
 import TextContentContext from 'services/text-content';
 import { getValueForDevice } from 'styles/breakpoints';
 
+const SUPPORTED_LANGUAGES = ['English', 'Polski'];
+
 export const LanguageDropdown: React.FC = () => {
-  const { setLanguage } = useContext(TextContentContext);
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const { setLanguage, language } = useContext(TextContentContext);
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    language === 'EN' ? SUPPORTED_LANGUAGES[0] : SUPPORTED_LANGUAGES[1]
+  );
   return (
     <Dropdown
       width={getValueForDevice({
@@ -14,7 +18,7 @@ export const LanguageDropdown: React.FC = () => {
         laptopLarge: 110,
         laptopSmall: 100
       })}
-      options={['English', 'Polski']}
+      options={SUPPORTED_LANGUAGES}
       value={selectedLanguage}
       onChange={(value) => {
         setSelectedLanguage(value);

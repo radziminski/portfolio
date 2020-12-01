@@ -70,7 +70,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0,
-    rootMargin: `-${window.innerHeight * 0.42}px 0px`
+    rootMargin: `-${window.innerHeight * 0.44}px 0px`
   });
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
     setTimeout(() => {
       if (inView) setIsOpen(true);
       else setIsOpen(false);
-    }, 90);
+    }, 160);
   }, [inView]);
 
   if (timelineSide === 'right')

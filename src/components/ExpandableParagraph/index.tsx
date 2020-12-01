@@ -4,6 +4,8 @@ import Text from 'components/Text';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Title } from './parts';
 
+const CONTENT_HEIGHT_OFFSET = 10;
+
 interface Props {
   title: string;
   textAlign?: 'left' | 'center' | 'right';
@@ -27,7 +29,7 @@ const ExpandableParagraph: React.FC<Props> = ({
 
   useEffect(() => {
     if (contentRef && contentRef.current)
-      setContentHeight(contentRef.current.clientHeight);
+      setContentHeight(contentRef.current.clientHeight + CONTENT_HEIGHT_OFFSET);
   }, [contentRef, content]);
 
   useEffect(() => {

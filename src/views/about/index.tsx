@@ -4,7 +4,7 @@ import SectionTitle from 'components/SectionTitle';
 import TextContentContext from 'services/text-content';
 import Box, { FlexBox } from 'components/Box';
 import Paragraph from 'components/Paragraph';
-import PortraitPhoto from 'assets/img/photo.jpg';
+import PortraitPhoto from 'assets/img/myphoto.png';
 import Photo from 'components/Photo';
 import { getValueForDevice } from 'styles/breakpoints';
 import AnimatedInView from 'components/AnimatedInView';

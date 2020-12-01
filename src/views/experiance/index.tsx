@@ -21,7 +21,12 @@ const ExperienceView: React.FC = () => {
         <SectionTitle type='left'>{sectionTitles.experience}</SectionTitle>
       </AnimatedInView>
       <Box paddingY={12}>
-        <Timeline points={eduAndExp} />
+        <AnimatedInView
+          animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out`}
+          rootMarginY={0}
+        >
+          <Timeline points={eduAndExp} />
+        </AnimatedInView>
       </Box>
 
       <Box display='flex' justifyContent='flex-end'>

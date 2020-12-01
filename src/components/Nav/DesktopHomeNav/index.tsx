@@ -13,7 +13,7 @@ const DesktopNav: React.FC = () => {
     desktopMedium: '10px 22px',
     laptopLarge: '8px 18px',
     laptopMedium: '8px 16px',
-    laptopSmall: '8px 14px'
+    laptopSmall: '8px 10px'
   });
 
   return (
