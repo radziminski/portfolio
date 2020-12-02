@@ -34,8 +34,8 @@ const expList = [
     `Creating React application for GreenLock - website for managing SSL certificates and controlling their expiration date. During this internship I have learned a lot about frontend & backend architecture, Typescript, best practices, optimization, design patterns and clean code principles.`
   ),
   Experience(
-    10,
-    '02.2021',
+    '10.2020',
+    'now',
     'Flutter Developer in JFK studio',
     'Creating mobile applications with flutter for one of the biggest companies in Poland.'
   )

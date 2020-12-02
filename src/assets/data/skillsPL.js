@@ -70,7 +70,7 @@ export const main = [
   ),
   Skill(
     'React',
-    'Moja ulubiona "frontend\'owa" biblioteka. Zawansowana znajomość Reacta (hook\'i, wirtualny DOM itd.) w połączeniu z powiązanymi technologiami (styled components/css modules, redux, axios i wiele więcej) pozwala mi na tworzenie czystych, zoptymalizowanych i skalowalnych aplikacji internetowych.',
+    'Moja ulubiona frontend\'owa biblioteka. Zawansowana znajomość Reacta (hooki, wirtualny DOM, memoizacja i więcej) w połączeniu z powiązanymi technologiami (styled components/css modules, Redux, Axios itd.) pozwala mi na tworzenie czystych, zoptymalizowanych i skalowalnych aplikacji internetowych.',
     'web',
     reactIcon,
     true
@@ -91,7 +91,7 @@ export const main = [
   ),
   Skill(
     'Node',
-    'Po pracy z takimi technologiami jak .NET, Spring Boot, czy Django, Node jest zdecydowanie moją ulubioną "backend\'ową" technologią. Nie tylko używa mojego ulubionego języka (JS/TS), ale sprawia też że produkcja interfejsów REST jest dla mnie szybka i intuicyjna.',
+    'Po pracy z takimi technologiami jak .NET, Spring Boot, czy Django, Node jest zdecydowanie moją ulubioną backend\'ową technologią. Nie tylko używa mojego ulubionego języka (JS/TS), ale sprawia też że produkcja interfejsów REST jest dla mnie szybka i intuicyjna.',
     'web',
     nodejsIcon,
     true
@@ -114,7 +114,7 @@ export const main = [
   ),
   Skill(
     'Firebase',
-    'Używałem firebase, kiedy tylko potrzebowałem szybkiego i niezawodnego sposobu autoryzacji i przechowywania danych bez tworzenia calego serwera "backend\'owego".',
+    'Używałem firebase, kiedy tylko potrzebowałem szybkiego i niezawodnego sposobu autoryzacji i przechowywania danych bez tworzenia calego serwera backend\'owego.',
     'web',
     firebaseIcon,
     true,
@@ -122,7 +122,7 @@ export const main = [
   ),
   Skill(
     'Figma',
-    'Przed rozpoczęciem każdego projektu, lubię "przleać na ekran" moją wizję interfejsu użytkownika, gdyż ułatwia i usprawnia to proces przyszłej implementacji. Do tego używam programu Figma i jego przyjaznego interfejsu.',
+    'Przed rozpoczęciem każdego projektu, lubię rozplanować moją wizję interfejsu użytkownika, gdyż ułatwia i usprawnia to proces przyszłej implementacji. Do tego używam programu Figma, w którym potrafię szybko zwizualizować moje pomysły.',
     'other',
     figmaIcon
   ),

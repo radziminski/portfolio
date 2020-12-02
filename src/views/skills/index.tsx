@@ -55,7 +55,13 @@ const SkillsView: React.FC = () => {
   );
   const normalTitle = useMemo(
     () => (
-      <Box marginBottom={8}>
+      <Box
+        marginBottom={getValueForDevice({
+          desktopLarge: 8,
+          tabSmall: 8,
+          mobileLarge: 5
+        })}
+      >
         <SectionTitle type='left'>{sectionTitles.skills}</SectionTitle>
       </Box>
     ),
@@ -70,9 +76,10 @@ const SkillsView: React.FC = () => {
           : normalTitle}
         <GridPicker
           columns={columns}
-          gridItems={skills.main.map((skill) => ({
+          gridItems={skills.main.map((skill, i) => ({
             ...skill,
-            column: skill.type === 'web' ? columns[0] : columns[1]
+            column: skill.type === 'web' ? columns[0] : columns[1],
+            index: i
           }))}
           initiallySelectedElement={5}
         />

@@ -33,9 +33,10 @@ const PortfolioView: React.FC = () => {
           codeLink={project.githubLink}
           liveLink={project.liveLink}
           side={index % 2 ? 'right' : 'left'}
+          image={project.image}
         />
       ))}
-      {shownProjectsNum < projects.length - 1 && (
+      {shownProjectsNum < projects.length && (
         <FlexBox justifyContent='center' marginTop={!isMobile ? 50 : 0}>
           <Button onClick={showMoreProjects}>Show More</Button>
         </FlexBox>

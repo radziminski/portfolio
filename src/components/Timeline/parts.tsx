@@ -28,8 +28,8 @@ export const TimelineLine = styled.div(({ theme }) => ({
     desktopSmall: 110,
     laptopLarge: 100,
     tabSmall: 130,
-    mobileLarge: 160,
-    mobileMedium: 170
+    mobileLarge: 170,
+    mobileMedium: 180
   }),
   backgroundColor: theme.colors.primary100,
   marginLeft: getValueForDevice({

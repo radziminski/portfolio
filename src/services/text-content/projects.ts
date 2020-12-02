@@ -9,6 +9,7 @@ export interface Project {
   githubLink: string;
   liveLink: string;
   stack: string[];
+  image: string;
 }
 
 export default function getProjects(language: Language): Project[] {

@@ -4,7 +4,6 @@ import githubFilled from '@iconify-icons/ant-design/github-filled';
 import playFilledAlt from '@iconify-icons/carbon/play-filled-alt';
 import Box, { FlexBox } from 'components/Box';
 import { ImageContainer, ImageBackOverlay, ImageMain, Title } from './parts';
-import offMuseumScreenshot from 'assets/img/off_museum.jpg';
 import Paragraph from 'components/Paragraph';
 import Button from 'components/Button';
 import {
@@ -20,6 +19,7 @@ interface Props {
   description: string;
   liveLink: string;
   codeLink: string;
+  image: string;
 }
 
 const ProjectCard: React.FC<Props> = ({
@@ -27,7 +27,8 @@ const ProjectCard: React.FC<Props> = ({
   title,
   description,
   liveLink,
-  codeLink
+  codeLink,
+  image
 }) => {
   const isMobile = window.innerWidth <= LAYOUT_ORIENTATION_BREAKPOINT;
 
@@ -59,14 +60,16 @@ const ProjectCard: React.FC<Props> = ({
             animation={`move-in-bottom-right ${REGULAR_ANIMATION_TIME_S}s ease-out`}
           >
             <ImageMain>
-              <img
-                src={offMuseumScreenshot}
-                style={{
-                  maxHeight: '100%',
-                  objectFit: 'cover'
-                }}
-                alt='Off Museum Website Preview'
-              />
+              {image && (
+                <img
+                  src={image}
+                  style={{
+                    maxHeight: '100%',
+                    objectFit: 'cover'
+                  }}
+                  alt='Off Museum Website Preview'
+                />
+              )}
             </ImageMain>
           </AnimatedInView>
         </ImageContainer>

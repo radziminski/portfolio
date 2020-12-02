@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint-disable quotes */
 function Experience(start, end, title, description) {
   return {
     start,
@@ -35,8 +36,8 @@ const expList = [
     "Współtworzenie serwisu GreenLock - aplikacji służącej do zarządzania certyfikatami SSL oraz do kontrolowania terminu ich wygaśnięcia. Serwis współtworzyłem przy pomocy biblioteki React, w języku Typescript. Podczas stażu nauczyłem się wiele o architektórze oprogramowania, optymalizacji, wzorcach projektowych oraz dobrych praktykach tworzenia aplikacji frontend'owych."
   ),
   Experience(
-    10,
-    '02.2021',
+    '10.2020',
+    'teraz',
     'Flutter Developer w JFK studio',
     'Tworzenie aplikacji mobilnych w technologii Flutter dla jednej z największych firm w Polsce.'
   )

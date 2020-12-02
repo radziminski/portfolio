@@ -1,6 +1,6 @@
 import Box, { FlexBox } from 'components/Box';
 import Paragraph from 'components/Paragraph';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ColumnTitle, Container, Grid, IconWrapper, Title } from './parts';
 import { Icon, IconifyIcon } from '@iconify/react';
 import { getValueForDevice } from 'styles/breakpoints';
@@ -13,6 +13,7 @@ interface GridItem {
   description: string;
   iconScaleFactor?: number;
   column: string;
+  index: number;
 }
 
 interface Props {
@@ -29,6 +30,11 @@ const GridPicker: React.FC<Props> = ({
   const [chosenItem, setChosenItem] = useState(
     gridItems[initiallySelectedElement]
   );
+  console.log(gridItems);
+
+  useEffect(() => {
+    setChosenItem((prevItem) => gridItems[prevItem.index || 0]);
+  }, [gridItems]);
 
   const iconSize = getValueForDevice({
     desktopLarge: 84,
@@ -48,14 +54,21 @@ const GridPicker: React.FC<Props> = ({
     desktopSmall: 42,
     laptopLarge: 38,
     tabSmall: 20,
-    mobileLarge: '16px',
+    mobileLarge: 0,
     mobileMedium: 0
+  });
+  const iconMarginBottom = getValueForDevice({
+    desktopLarge: 0,
+    tabSmall: 0,
+    mobileLarge: '16px'
   });
   const iconBoxWidth = getValueForDevice({
     desktopLarge: 100,
     desktopMedium: 90,
     desktopSmall: 80,
-    laptopLarge: 75
+    laptopLarge: 75,
+    tabLarge: 75,
+    mobileLarge: 75
   });
 
   const paddingX = getValueForDevice({
@@ -80,13 +93,30 @@ const GridPicker: React.FC<Props> = ({
     laptopSmall: 460,
     tabLarge: 440,
     tabSmall: 390,
-    mobileLarge: 280,
-    mobileMedium: 230
+    mobileLarge: '95%'
+  });
+
+  const textAlign = getValueForDevice({
+    desktopLarge: 'left',
+    tabSmall: 'left',
+    mobileLarge: 'center'
   });
 
   const columnsFlexDirection = getValueForDevice({
     desktopLarge: 'row',
     tabSmall: 'row',
+    mobileLarge: 'column'
+  });
+
+  const selectedItemBoxMinHeight = getValueForDevice({
+    desktopLarge: 100,
+    tabLarge: 120,
+    mobileLarge: 150
+  });
+
+  const selectedItemFlexDirection = getValueForDevice({
+    desktopLarge: 'row',
+    tabLarge: 'row',
     mobileLarge: 'column'
   });
 
@@ -97,12 +127,15 @@ const GridPicker: React.FC<Props> = ({
         marginBottom={marginBottom}
         justifyContent='center'
         alignItems='center'
-        minHeight={100}
+        minHeight={selectedItemBoxMinHeight}
+        flexDirection={selectedItemFlexDirection}
       >
-        <Box
+        <FlexBox
           marginRight={iconMarginRight}
+          marginBottom={iconMarginBottom}
           width={iconBoxWidth}
           overflow='hidden'
+          justifyContent='center'
         >
           <AnimatedInView
             animation={`fade-in ${REGULAR_ANIMATION_TIME_S}s ease-out`}
@@ -115,14 +148,22 @@ const GridPicker: React.FC<Props> = ({
               }}
             />
           </AnimatedInView>
-        </Box>
+        </FlexBox>
 
-        <Box style={{ width: textWidth }}>
+        <Box style={{ width: textWidth }} textAlign={textAlign}>
           <AnimatedInView
             animation={`move-in-right-short ${REGULAR_ANIMATION_TIME_S}s ease-out`}
           >
             <Title>{chosenItem.title}</Title>
-            <Paragraph color='gray90' style={{ margin: '4px 0' }}>
+            <Paragraph
+              color='gray90'
+              style={{ margin: '4px 0' }}
+              textAlign={
+                textAlign === 'center' && chosenItem.description?.length > 30
+                  ? 'justify'
+                  : 'left'
+              }
+            >
               {chosenItem.description}
             </Paragraph>
           </AnimatedInView>

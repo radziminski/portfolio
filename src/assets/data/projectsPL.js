@@ -1,11 +1,15 @@
 /* eslint-disable */
+import offMuseum from 'assets/img/off_museum.jpg';
+import sortify from 'assets/img/sortify.jpg';
+import covid from 'assets/img/covid.jpg';
 function Project(
   title,
   subTitle,
   description,
   githubLink,
   liveLink,
-  stack = []
+  stack = [],
+  image
 ) {
   return {
     title,
@@ -13,7 +17,8 @@ function Project(
     description,
     githubLink,
     liveLink,
-    stack
+    stack,
+    image
   };
 }
 
@@ -24,7 +29,8 @@ const projects = [
     "Aplikacja internetowa prezentująca animacje różnych algorytmów sortujących. Używa zawaaansowanego asynchronicznego javascript'a do dokłądnego synchronizowania animacji.",
     'https://github.com/radziminski/sortify',
     'https://radziminski.github.io/sortify',
-    ['html', 'css', 'js']
+    ['html', 'css', 'js'],
+    sortify
   ),
   Project(
     'Baza Pytań COVID',
@@ -40,15 +46,8 @@ const projects = [
     'Stronga muzeum sztuki nowoczesnej zrobiona w HTML, CSS i odrobiną javascript.',
     'https://github.com/radziminski/off-museum',
     'https://radziminski.github.io/off-museum',
-    ['html', 'css']
-  ),
-  Project(
-    'Vienna Residence',
-    'Strona hotelu',
-    'Strona hotelu Vienna Residence z kompletnym systemem rezerwacji. [backend w produkcji]',
-    'https://github.com/radziminski/vienna-residence',
-    'https://radziminski.github.io/vienna-residence',
-    ['react', 'nodejs', 'mongodb']
+    ['html', 'css'],
+    offMuseum
   ),
   Project(
     'Collab Finder',
@@ -56,7 +55,8 @@ const projects = [
     'Aplikacja inspirowana mediami społecznościowymi pozwalająca muzykom znajdowanie innych producentów w celu wspólnej współpracy.',
     'https://github.com/radziminski/collab-finder',
     '',
-    ['react', 'redux', 'nodejs', 'mongodb']
+    ['react', 'redux', 'nodejs', 'mongodb'],
+    null
   )
 ];
 

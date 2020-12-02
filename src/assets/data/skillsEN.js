@@ -71,7 +71,7 @@ export const main = [
   ),
   Skill(
     'React',
-    'My favorite frontend library. Advanced React knowledge (hooks, virtual DOM, etc.) in combination with connected technologies (styled components/css modules, redux, axios and many more) allows me to create large, optimized and scalable web applications.',
+    'My favorite frontend library. Strong React knowledge (hooks, virtual DOM, memoization and more) in combination with related packages (styled components/css modules, Redux, Axios, RxJs etc.) allows me to create large, optimized and scalable web applications.',
     'web',
     reactIcon,
     true
@@ -123,7 +123,7 @@ export const main = [
   ),
   Skill(
     'Figma',
-    'Before starting to code new project I like to briefly plan and design the UIs of my it beforehand, since It makes the development process way easier and faster. For that purpose I love using Figma and its user-friendly interface.',
+    'Before starting a new project I like to briefly plan and design the UIs of it beforehand, since it makes the development process easier and faster. For that purpose I love using Figma - it allows me to quickly visualize my ideas.',
     'other',
     figmaIcon
   ),
