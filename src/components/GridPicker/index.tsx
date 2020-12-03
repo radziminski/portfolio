@@ -109,7 +109,7 @@ const GridPicker: React.FC<Props> = ({
   });
 
   const selectedItemBoxMinHeight = getValueForDevice({
-    desktopLarge: 100,
+    desktopLarge: 120,
     tabLarge: 120,
     mobileLarge: 150
   });
@@ -134,7 +134,6 @@ const GridPicker: React.FC<Props> = ({
           marginRight={iconMarginRight}
           marginBottom={iconMarginBottom}
           width={iconBoxWidth}
-          overflow='hidden'
           justifyContent='center'
         >
           <AnimatedInView

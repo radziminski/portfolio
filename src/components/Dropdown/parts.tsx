@@ -12,6 +12,7 @@ export const SelectedOptionContainer = styled.div<{ width?: number }>(
     padding: '8px 12px',
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
     color: theme.colors.gray90,
     width: width ? `${width}px` : 'auto'
   })

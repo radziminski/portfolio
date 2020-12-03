@@ -12,6 +12,7 @@ import {
 } from 'styles/breakpoints';
 import AnimatedInView from 'components/AnimatedInView';
 import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
+import ImagePlaceholder from 'components/ImagePlaceholder';
 
 interface Props {
   side?: 'right' | 'left';
@@ -60,7 +61,7 @@ const ProjectCard: React.FC<Props> = ({
             animation={`move-in-bottom-right ${REGULAR_ANIMATION_TIME_S}s ease-out`}
           >
             <ImageMain>
-              {image && (
+              {image ? (
                 <img
                   src={image}
                   style={{
@@ -69,6 +70,8 @@ const ProjectCard: React.FC<Props> = ({
                   }}
                   alt='Off Museum Website Preview'
                 />
+              ) : (
+                <ImagePlaceholder />
               )}
             </ImageMain>
           </AnimatedInView>

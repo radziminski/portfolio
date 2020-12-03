@@ -23,6 +23,12 @@ const DesktopStickedNav: React.FC = () => {
     laptopLarge: '8px 20px'
   });
 
+  const fixAboutWordBreak = () => (
+    <span>
+      O<span style={{ opacity: 0 }}>..</span>Mnie
+    </span>
+  );
+
   const nav = (
     <ListContainer>
       {navLinks.slice(linksToCut).map((el, id) => (
@@ -32,7 +38,7 @@ const DesktopStickedNav: React.FC = () => {
             onClick={() => setShowNav((prevVal) => !prevVal)}
             linkTo={el.linkTo}
           >
-            {el.name}
+            {el.name === 'O Mnie' ? fixAboutWordBreak() : el.name}
           </NavLinkWrapper>
         </ListElement>
       ))}

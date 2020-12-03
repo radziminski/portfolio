@@ -45,7 +45,7 @@ const projects = [
   Project(
     'OFF Museum',
     'Art Museum landing page',
-    'Landing page for modern art museum, built with HTML, CSS and a pinch of javascript.',
+    'Landing page for modern art museum, presenting its new exhibitions, payment plans and general information. Built with HTML, CSS (with SCSS preprocessor) and vanilla javascript.',
     'https://github.com/radziminski/off-museum',
     'https://radziminski.github.io/off-museum',
     ['html', 'css'],
@@ -54,11 +54,11 @@ const projects = [
   Project(
     'Collab Finder',
     'Web App connecting music producers',
-    'Social-network based website where music producers can find others and collaborate on their music. [frontend in development]',
+    'Social-network based website where music producers can find others and collaborate on their music. [frontend in development]. Built in Express (Node) with MongoDB database. Frontend in development.',
     'https://github.com/radziminski/collab-finder',
     '',
     ['react', 'redux', 'nodejs', 'mongodb'],
-    null,
+    null
   )
 ];
 
