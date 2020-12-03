@@ -27,19 +27,21 @@ export const BREAKPOINTS: Record<Device, number> = {
   desktopLarge: 1920
 };
 
+type ValueForDevice = number | string | number[] | boolean;
+
 export interface ValuesForDevices {
-  mobileSmall?: number | string | number[];
-  mobileMedium?: number | string | number[];
-  mobileLarge?: number | string | number[];
-  tabSmall?: number | string | number[];
-  tabMedium?: number | string | number[];
-  tabLarge?: number | string | number[];
-  laptopSmall?: number | string | number[];
-  laptopMedium?: number | string | number[];
-  laptopLarge?: number | string | number[];
-  desktopSmall?: number | string | number[];
-  desktopMedium?: number | string | number[];
-  desktopLarge?: number | string | number[];
+  mobileSmall?: ValueForDevice;
+  mobileMedium?: ValueForDevice;
+  mobileLarge?: ValueForDevice;
+  tabSmall?: ValueForDevice;
+  tabMedium?: ValueForDevice;
+  tabLarge?: ValueForDevice;
+  laptopSmall?: ValueForDevice;
+  laptopMedium?: ValueForDevice;
+  laptopLarge?: ValueForDevice;
+  desktopSmall?: ValueForDevice;
+  desktopMedium?: ValueForDevice;
+  desktopLarge?: ValueForDevice;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

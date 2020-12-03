@@ -63,6 +63,11 @@ const HomeView: React.FC = () => {
     mobileMedium: 10
   });
 
+  const showSocialsBar = getValueForDevice({
+    desktopLarge: false,
+    tabLarge: true
+  });
+
   return (
     <Container name='home'>
       <Navbar />
@@ -75,19 +80,21 @@ const HomeView: React.FC = () => {
         </ArrowDownWrapper>
       </AnimatedInView>
 
-      <Box
-        position='absolute'
-        top={socialsBarTop}
-        right={socialsBarRight}
-        bottom={socialsBarBottom}
-        left={socialsBarLeft}
-        transform={socialsBarTransform}
-      >
-        <SocialsBar
-          orientation={socialsBarOrientation}
-          elementDistance={socialsDistance}
-        />
-      </Box>
+      {showSocialsBar && (
+        <Box
+          position='absolute'
+          top={socialsBarTop}
+          right={socialsBarRight}
+          bottom={socialsBarBottom}
+          left={socialsBarLeft}
+          transform={socialsBarTransform}
+        >
+          <SocialsBar
+            orientation={socialsBarOrientation}
+            elementDistance={socialsDistance}
+          />
+        </Box>
+      )}
     </Container>
   );
 };

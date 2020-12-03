@@ -30,7 +30,6 @@ const GridPicker: React.FC<Props> = ({
   const [chosenItem, setChosenItem] = useState(
     gridItems[initiallySelectedElement]
   );
-  console.log(gridItems);
 
   useEffect(() => {
     setChosenItem((prevItem) => gridItems[prevItem.index || 0]);

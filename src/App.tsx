@@ -10,7 +10,6 @@ import getNavLinks from 'services/text-content/navLinks';
 import getEduAndExp from 'services/text-content/eduAndExp';
 import getProjects from 'services/text-content/projects';
 import getSkills from 'services/text-content/skills';
-import { getCurrentDevice } from 'styles/breakpoints';
 
 const App: React.FC = () => {
   const [currLanguage, setCurrLanguage] = useState<Language>(
@@ -25,7 +24,6 @@ const App: React.FC = () => {
     window.innerWidth,
     window.innerHeight
   ]);
-  console.log(getCurrentDevice());
 
   const onResize = useCallback(() => {
     setDeviceDimensions([window.innerWidth, window.innerHeight]);
