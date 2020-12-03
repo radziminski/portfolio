@@ -24,7 +24,7 @@ export const ImageBackOverlay = styled.div(({ theme }) => ({
   opacity: 0.85
 }));
 
-export const ImageContainer = styled.div(({ theme }) => ({
+export const ImageContainer = styled.div({
   display: 'flex',
   height: getValueForDevice({
     desktopLarge: 240,
@@ -37,19 +37,19 @@ export const ImageContainer = styled.div(({ theme }) => ({
     mobileLarge: 300
   }),
   position: 'relative'
-}));
+});
 
-export const ImageMain = styled.div(({ theme }) => ({
+export const ImageMain = styled.div({
   display: 'flex',
-  backgroundColor: 'white',
   height: getValueForDevice(imgSingleHeight),
   width: getValueForDevice(imgSingleWidth),
   position: 'absolute',
   bottom: 0,
   right: 0,
   overflow: 'hidden',
-  justifyContent: 'center'
-}));
+  justifyContent: 'center',
+  backgroundColor: 'transparent'
+});
 
 export const Title = styled.h3(({ theme }) => ({
   color: theme.colors.primary100,
