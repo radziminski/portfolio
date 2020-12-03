@@ -1,8 +1,8 @@
 /* eslint-disable */
 export const about = `
 I am a fourth-year Computer Science student. I have started coding in the primary school and my programming passion has been growing ever since.
-I specialize in Fullstack Development. I worked with different technologies, although React, Node and Flutter are my favorites.  
-In my free time I work as a music producer (creating mainly electronic genres). I am also a member of the university ski team, where I am actively participating in national academic skiing competitions. 
+I specialize in FullStack Software Development. I worked with different technologies, although React, Node and Flutter are my favorites.  
+In my free time I work as a music producer (creating mainly electronic genres). I am also a member of my university ski team, where I am actively participating in national academic skiing competitions. 
 `;
 
 export const greetings = {
@@ -14,7 +14,7 @@ export const greetings = {
 export const headerTitle = "I'm";
 
 export const headerSubtitle =
-  'Full Stack Software Developer, Computer Scientist & Music Producer. Student of bachelor studies at Faculty of Electronics and Information Technology at Warsaw University of Technology.';
+  'FullStack Software Developer, Computer Scientist & Music Producer. Student of bachelor studies at Faculty of Electronics and Information Technology at Warsaw University of Technology.';
 
 export const sectionTitles = {
   about: 'About Me',
