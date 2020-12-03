@@ -4,6 +4,7 @@ import Paragraph from '../components/Paragraph';
 import Linker from '../components/Linker';
 import getText from '../assets/data/text';
 import SelfPhoto from '../components/SelfPhoto';
+ 
 
 const stringToParagraph = (string) => string.split('\n').map((el, id) => <Paragraph key={id}>{el}</Paragraph>);
 
