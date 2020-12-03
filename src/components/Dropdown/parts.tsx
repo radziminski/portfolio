@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const DropdownContainer = styled.div(({ theme }) => ({
+export const DropdownContainer = styled.div({
   cursor: 'pointer',
   position: 'relative'
-}));
+});
 
 export const SelectedOptionContainer = styled.div<{ width?: number }>(
   ({ theme, width }) => ({
@@ -22,12 +22,12 @@ export const SelectedOptionText = styled.div(({ theme }) => ({
   fontSize: theme.fontSizes[3]
 }));
 
-export const DropdownOptionsList = styled.ul(({ theme }) => ({
+export const DropdownOptionsList = styled.ul({
   position: 'absolute',
   top: '140%',
   left: 0,
   width: '100%'
-}));
+});
 
 export const DropdownOptionItem = styled.div(({ theme }) => ({
   display: 'flex',
