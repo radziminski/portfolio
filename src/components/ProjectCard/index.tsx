@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Icon } from '@iconify/react';
 import githubFilled from '@iconify-icons/ant-design/github-filled';
 import playFilledAlt from '@iconify-icons/carbon/play-filled-alt';
@@ -13,6 +13,7 @@ import {
 import AnimatedInView from 'components/AnimatedInView';
 import { REGULAR_ANIMATION_TIME_S } from 'app-constants/animations';
 import ImagePlaceholder from 'components/ImagePlaceholder';
+import TextContentContext from 'services/text-content';
 
 interface Props {
   side?: 'right' | 'left';
@@ -31,6 +32,10 @@ const ProjectCard: React.FC<Props> = ({
   codeLink,
   image
 }) => {
+  const {
+    text: { btns }
+  } = useContext(TextContentContext);
+
   const isMobile = window.innerWidth <= LAYOUT_ORIENTATION_BREAKPOINT;
 
   const paddingY = getValueForDevice({
@@ -114,7 +119,7 @@ const ProjectCard: React.FC<Props> = ({
                     transform: 'scale(1.4)'
                   }}
                 />
-                <Box marginLeft='10px'>Browse Code</Box>
+                <Box marginLeft='10px'>{btns.browseCode}</Box>
               </Button>
             </AnimatedInView>
           )}
@@ -135,7 +140,7 @@ const ProjectCard: React.FC<Props> = ({
                   }}
                 />
                 <Box width='10px' />
-                Live Demo
+                {btns.liveDemo}
               </Button>
             </AnimatedInView>
           )}

@@ -146,7 +146,7 @@ export const main = [
   ),
   Skill(
     'Shell',
-    'Podczas przedmiotu "Systemy operayjne", poznałem podstawy systemów Linux, w tym, komendy terminalu oraz pisania skryptów Shell.',
+    'Podczas przedmiotu "Systemy operacyjne", poznałem podstawy systemów Linux, w tym, komendy terminalu oraz pisania skryptów Shell.',
     'other',
     shellIcon
   ),

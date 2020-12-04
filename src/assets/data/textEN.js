@@ -36,7 +36,9 @@ export const tel = 'Phone';
 export const btns = {
   contact: 'Contact Me',
   about: 'About',
-  send: 'Send!'
+  send: 'Send',
+  browseCode: 'Browse Code',
+  liveDemo: 'Live Demo'
 };
 
 export const form = {

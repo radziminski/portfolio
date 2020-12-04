@@ -19,7 +19,7 @@ export const headerSubtitle =
 export const sectionTitles = {
   about: 'O Mnie',
   skills: 'Umiejętności',
-  skillsSubFirst: 'Technologie Webowe:',
+  skillsSubFirst: 'Technologie Webowe',
   skillsSubSecond: 'Inne Technologie',
   skillsSubThird: 'Pracowałem również z',
   projects: 'Projekty',
@@ -36,7 +36,9 @@ export const tel = 'Tel.';
 export const btns = {
   contact: 'Kontakt',
   about: 'O Mnie',
-  send: 'Wyślij!'
+  send: 'Wyślij',
+  browseCode: 'Github Repo',
+  liveDemo: 'Wersja Live'
 };
 
 export const form = {

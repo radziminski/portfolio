@@ -18,6 +18,8 @@ export interface TextContent {
     contact: string;
     about: string;
     send: string;
+    browseCode: string;
+    liveDemo: string;
   };
   form: {
     subject: string;

@@ -25,7 +25,7 @@ const expList = [
   Experience(
     2017,
     'teraz',
-    'Infomratyczne Studia Inżynierskie',
+    'Informatyczne Studia Inżynierskie',
     `Wydział Elektroniki i Technik Informacyjnych Politechniki Warszawskiej. 
     Stypendium rektora za wybitne osiągnięcia w nauce oraz działalność naukową i sportową. Członek koła naukowego Fiber Team oraz sekcji narciarskiej PW, biorąc aktywny udział w ogólnopolskich zawodach akademickich.`
   ),

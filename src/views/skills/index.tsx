@@ -9,13 +9,15 @@ import {
   LAYOUT_ORIENTATION_BREAKPOINT
 } from 'styles/breakpoints';
 
-const columns = ['Web Technologies:', 'Other Technologies:'];
-
 const SkillsView: React.FC = () => {
   const {
     text: { sectionTitles },
     skills
   } = useContext(TextContentContext);
+  const columns = [
+    `${sectionTitles.skillsSubFirst}:`,
+    `${sectionTitles.skillsSubSecond}:`
+  ];
 
   const leftPadding = getValueForDevice({
     desktopLarge: 150,
