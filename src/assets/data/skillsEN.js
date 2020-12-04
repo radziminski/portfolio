@@ -141,7 +141,7 @@ export const main = [
   ),
   Skill(
     'x86 & MIPS assembly',
-    "One of the components of my studies where Computer Architecture course. I've discovered how computers are constructed from scratch - I've learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project's I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about removing comments from source files, while second one was about mirroring bpm images. ",
+    "One of the components of my studies where Computer Architecture course. I've discovered how computers are constructed from scratch - I've learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project's I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about changing non-ascii characters into escape sequences in files, while second was about mirroring bmp images. ",
     'other',
     assemblyIcon
   ),

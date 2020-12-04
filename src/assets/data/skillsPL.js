@@ -40,7 +40,7 @@ export const main = [
   ),
   Skill(
     'CSS',
-    'Moja ulubiona technologia stylowania interfejsów użytkownika. Bardzo dobra znajomość CSS3 pozwala mi na szybkie tworzenie nawet najbardziej skomplikowanych projektów. ',
+    'Moja ulubiona technologia implementowania interfejsów użytkownika. Bardzo dobra znajomość CSS3 pozwala mi na szybkie tworzenie nawet najbardziej skomplikowanych projektów. ',
     'web',
     css3Icon,
     true,
@@ -140,7 +140,7 @@ export const main = [
   ),
   Skill(
     'x86 & MIPS assembly',
-    'Jedynm z komponentów moich studiów była architektura komputerów. Dowiedziałem się jak zbudowane są komputery od zera - uczyłem się o potokach, superskalarach, stronicowaniu itd. Jako projekt na laboratoria, moim zadaniem była implementacja dwóch projektów w asemblerach MIPS oraz x86 (x86-64). Pierwszy słyżył do usuwania komentarzy z plików źródłowych, a drugi do tworzenia odbicia lustrzanego obrazka BMP.',
+    'Jedynm z komponentów moich studiów była architektura komputerów. Dowiedziałem się jak zbudowane są komputery od zera - uczyłem się o potokach, superskalarach, stronicowaniu itd. Jako projekt na laboratoria, moim zadaniem była implementacja dwóch projektów w asemblerach MIPS oraz x86 (x86-64). Pierwszy słyżył do zamieniania znaków nie ascii na "escape sequences", a drugi do tworzenia odbicia lustrzanego obrazka BMP.',
     'other',
     assemblyIcon
   ),
