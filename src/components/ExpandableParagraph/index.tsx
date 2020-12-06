@@ -4,7 +4,7 @@ import Text from 'components/Text';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Title } from './parts';
 
-const CONTENT_HEIGHT_OFFSET = 20;
+const CONTENT_HEIGHT_OFFSET = 34;
 
 interface Props {
   title: string;

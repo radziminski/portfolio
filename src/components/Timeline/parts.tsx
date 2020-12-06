@@ -23,10 +23,10 @@ export const TimelineLine = styled.div(({ theme }) => ({
   display: 'flex',
   width: '2px',
   height: getValueForDevice({
-    desktopLarge: 120,
-    desktopMedium: 115,
-    desktopSmall: 110,
-    laptopLarge: 100,
+    desktopLarge: 130,
+    desktopMedium: 125,
+    desktopSmall: 120,
+    laptopLarge: 110,
     tabSmall: 130,
     mobileLarge: 170,
     mobileMedium: 180
