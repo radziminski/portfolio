@@ -36,7 +36,7 @@ const expList = [
   Experience(
     '10.2020',
     'now',
-    'Flutter Developer in JFK studio',
+    'Flutter Developer in JKF Studio',
     'Creating mobile applications with flutter for one of the biggest companies in Poland.'
   )
 ];

@@ -48,7 +48,7 @@ export const main = [
   ),
   Skill(
     'Javascript',
-    "Język programowania w którym czuję się najlepiej. Świetna znajomość Javascript'u ES8+ i jego zawaansowanych konceptów (takich jak asynchroniczność, 'closures' , czy pętli zdarzeń) pozwala mi na rozwiązanie prawie każdego problemu jaki napotkam.",
+    "Język programowania w którym czuję się najlepiej. Świetna znajomość Javascript'u ES8+ i jego zaawansowanych konceptów (takich jak asynchroniczność, 'closures' , czy pętli zdarzeń) pozwala mi na rozwiązanie prawie każdego problemu jaki napotkam.",
     'web',
     javascriptIcon,
     true
@@ -70,7 +70,7 @@ export const main = [
   ),
   Skill(
     'React',
-    "Moja ulubiona frontend'owa biblioteka. Zawansowana znajomość Reacta (hooki, wirtualny DOM, memoizacja i więcej) w połączeniu z powiązanymi technologiami (styled components/css modules, Redux, Axios itd.) pozwala mi na tworzenie czystych, zoptymalizowanych i skalowalnych aplikacji internetowych.",
+    "Moja ulubiona frontend'owa biblioteka. Zaawansowana znajomość Reacta (hooki, wirtualny DOM, memoizacja i więcej) w połączeniu z powiązanymi technologiami (styled components/css modules, Redux, Axios itd.) pozwala mi na tworzenie czystych, zoptymalizowanych i skalowalnych aplikacji internetowych.",
     'web',
     reactIcon,
     true
@@ -106,7 +106,7 @@ export const main = [
   ),
   Skill(
     'SQL',
-    'Relacyjne bazy danych były jednym z fundamentalych konceptów z którym wieloktornie się spotkałem podczas moich studiów. Używałem baz SQL (głównie PostgreSQL) w wielu projektach komercyjnych i akademickich nad którymi pracowałem.',
+    'Relacyjne bazy danych były jednym z fundamentalnych konceptów z którym wielokrotnie się spotkałem podczas moich studiów. Używałem baz SQL (głównie PostgreSQL) w wielu projektach komercyjnych i akademickich nad którymi pracowałem.',
     'web',
     postgresIcon,
     true,
@@ -128,19 +128,19 @@ export const main = [
   ),
   Skill(
     'C, C++',
-    'Język w którym stawiałem swoje pierwsze kroki w świecie oprogramowania - napisałem swój pierwszy program "Hello World" w wieku 13 lat. Znajomośc języka przydała się również podczas pisania rozszerzonej matury z matematyki. C oraz C++ były też głównymi językami, których używałem podczas moich studiów - uczyłem się w nich algorytmów, struktur danych, programowania mikrokontrolerów, czy wielowątkowości.',
+    'Język w którym stawiałem swoje pierwsze kroki w świecie oprogramowania - napisałem swój pierwszy program "Hello World" w wieku 13 lat. Znajomość języka przydała się również podczas pisania rozszerzonej matury z informatyki. C oraz C++ były też głównymi językami których używałem podczas moich studiów - uczyłem się w nich algorytmów, struktur danych, programowania mikrokontrolerów, czy wielowątkowości.',
     'other',
     cIcon
   ),
   Skill(
     'Python',
-    'Mimo, że nigdy nie używałem Pythona podczas pracy nad komercyjnnymi projektami, często używałem go w potrzebie przetworzenia danych, czy zawaansowanych obliczeń. Uczyłem się w nim również podstaw uczenia maszynowego. Miałem okazję również pracować z bibliotekami FastAPI i Django.',
+    'Mimo, że nigdy nie używałem Pythona podczas pracy nad komercyjnymi projektami, często używałem go w potrzebie przetworzenia danych, czy zaawansowanych obliczeń. Uczyłem się w nim również podstaw uczenia maszynowego. Miałem okazję również pracować z bibliotekami FastAPI i Django.',
     'other',
     pythonIcon
   ),
   Skill(
     'x86 & MIPS assembly',
-    'Jedynm z komponentów moich studiów była architektura komputerów. Dowiedziałem się jak zbudowane są komputery od zera - uczyłem się o potokach, superskalarach, stronicowaniu itd. Jako projekt na laboratoria, moim zadaniem była implementacja dwóch projektów w asemblerach MIPS oraz x86 (x86-64). Pierwszy słyżył do zamieniania znaków nie ascii na "escape sequences", a drugi do tworzenia odbicia lustrzanego obrazka BMP.',
+    'Jednym z komponentów moich studiów była architektura komputerów. Dowiedziałem się o potokach, superskalarach, stronicowaniu itd. Jako projekt na laboratoria, zaimplementowałem dwa projekty w asemblerach MIPS oraz x86 (x86-64). Pierwszy służył do usuwania znaków nie-ASCII, a drugi do tworzenia odbicia lustrzanego obrazka BMP.',
     'other',
     assemblyIcon
   ),

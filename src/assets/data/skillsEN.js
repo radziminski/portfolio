@@ -115,7 +115,7 @@ export const main = [
   ),
   Skill(
     'Firebase',
-    'I used firebase every time I needed to use very simple data storage for my website, or implement fast and reliable authentication without need of implementing whole backend server.',
+    'I\'ve used firebase every time I needed to use very simple data storage for my website, or implement fast and reliable authentication without need of implementing a whole backend server.',
     'web',
     firebaseIcon,
     true,
@@ -129,7 +129,7 @@ export const main = [
   ),
   Skill(
     'C, C++',
-    'Language in which I\'ve made my first steps in software world - I wrote my first "hello world" program at the age of 13. Then, I used it for writing my high school exam. C and C++ were also the main languages I\'ve used during my studies - I used them for learning algorithms and data structures, programming microcontrollers or studying multithreaded programming.',
+    'Language in which I\'ve made my first steps in software World - I wrote my first "Hello world" program at the age of 13. Then, I used it for writing my high school exam. C and C++ were also the main languages I\'ve used during my studies - I used them for learning algorithms, data structures, programming microcontrollers or multithreaded programming.',
     'other',
     cIcon
   ),
@@ -141,7 +141,7 @@ export const main = [
   ),
   Skill(
     'x86 & MIPS assembly',
-    "One of the components of my studies where Computer Architecture course. I've discovered how computers are constructed from scratch - I've learnt about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project's I were supposed to implement two programs in MIPS and x86 (and x86-64) assemblies. First one was about changing non-ascii characters into escape sequences in files, while second was about mirroring bmp images. ",
+    "One of the components of my studies was Computer Architecture course. I've learnt there about processor pipelines, superscalars, hazards, penalties, caching or paging. As a laboratory project I implemented two programs in MIPS and x86 (and x86-64) assemblies. First one was about removing non-ascii characters, while second was about mirroring bmp images. ",
     'other',
     assemblyIcon
   ),

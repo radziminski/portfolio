@@ -33,12 +33,12 @@ const expList = [
     '07',
     '08.2020',
     'Stażysta Frontend w Swing Dev',
-    "Współtworzenie serwisu GreenLock - aplikacji służącej do zarządzania certyfikatami SSL oraz do kontrolowania terminu ich wygaśnięcia. Serwis współtworzyłem przy pomocy biblioteki React, w języku Typescript. Podczas stażu nauczyłem się wiele o architektórze oprogramowania, optymalizacji, wzorcach projektowych oraz dobrych praktykach tworzenia aplikacji frontend'owych."
+    "Współtworzenie serwisu GreenLock - aplikacji służącej do zarządzania certyfikatami SSL oraz do kontrolowania terminu ich wygaśnięcia. Serwis współtworzyłem przy pomocy biblioteki React, w języku Typescript. Podczas stażu nauczyłem się wiele o architekturze oprogramowania, optymalizacji, wzorcach projektowych oraz dobrych praktykach tworzenia aplikacji frontend'owych."
   ),
   Experience(
     '10.2020',
     'teraz',
-    'Flutter Developer w JFK studio',
+    'Flutter Developer w JKF Studio',
     'Tworzenie aplikacji mobilnych w technologii Flutter dla jednej z największych firm w Polsce.'
   )
 ];
