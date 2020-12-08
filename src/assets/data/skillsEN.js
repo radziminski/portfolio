@@ -115,7 +115,7 @@ export const main = [
   ),
   Skill(
     'Firebase',
-    'I\'ve used firebase every time I needed to use very simple data storage for my website, or implement fast and reliable authentication without need of implementing a whole backend server.',
+    "I've used firebase every time I needed to use very simple data storage for my website, or implement fast and reliable authentication without need of implementing a whole backend server.",
     'web',
     firebaseIcon,
     true,

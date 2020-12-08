@@ -9,6 +9,8 @@ import {
 } from 'styles/breakpoints';
 import { TimelinePointProps } from '.';
 
+const TIMELINE_ENTRY_CLOSE_OFFSET = 0.25;
+
 export const TimelinePoint = styled.div<{ size: number }>(
   ({ theme, size }) => ({
     display: 'flex',
@@ -70,7 +72,7 @@ export const TimelineEntry: React.FC<TimelinePointProps> = ({
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0,
-    rootMargin: `-${window.innerHeight * 0.44}px 0px`
+    rootMargin: `-${window.innerHeight * TIMELINE_ENTRY_CLOSE_OFFSET}px 0px`
   });
 
   useEffect(() => {
