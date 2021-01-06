@@ -23,7 +23,7 @@
     "@types/react-scroll": "^1.8.0",
     "@types/styled-components": "^5.1.2",
     "@types/styled-system": "^5.1.10",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.22.1",
     "react": "^16.13.1",
