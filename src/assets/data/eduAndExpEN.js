@@ -35,9 +35,15 @@ const expList = [
   ),
   Experience(
     '10.2020',
-    'now',
-    'Flutter Developer in JKF Studio',
+    '02.2021',
+    'Flutter Developer at JKF Studio',
     'Creating mobile applications with flutter for one of the biggest companies in Poland.'
+  ),
+  Experience(
+    '03.2021',
+    'now',
+    'Junior Frontend Developer at Swing Dev',
+    'Working on Frontend applications for various US-based startups.'
   )
 ];
 export default expList;
