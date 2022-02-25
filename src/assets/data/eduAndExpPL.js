@@ -45,7 +45,7 @@ const expList = [
     '03.2021',
     'teraz',
     'Młodszy programista Frontend w Swing Dev',
-    'Tworzenie aplikacji Frontend\'owych dla startup\'ów z USA.'
+    "Tworzenie aplikacji Frontend'owych dla startup'ów z USA."
   )
 ];
 export default expList;
