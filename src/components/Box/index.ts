@@ -68,9 +68,6 @@ export const boxStyledSystem = compose(
 );
 
 const Box = styled.div<BoxProps>(
-  {
-    flexShrink: 0 // this is for Safari
-  },
   boxStyledSystem
 );
 
