@@ -25,6 +25,7 @@ module.exports = {
     'react/display-name': 0,
     'react/prop-types': 0,
     'linebreak-style': [0, 'unix'],
+    '@typescript-eslint/no-explicit-any': 'off',
     quotes: ['error', 'single'],
     semi: [2, 'always'],
     'max-len': [
@@ -43,3 +44,4 @@ module.exports = {
     }
   }
 };
+
