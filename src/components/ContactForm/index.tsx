@@ -1,5 +1,5 @@
 import React, { useContext, useMemo } from 'react';
-import { database as db } from 'services/firebase';
+// import { database as db } from 'services/firebase';
 import Form, { FormInput } from 'components/Form';
 import TextContentContext from 'services/text-content';
 
@@ -31,22 +31,23 @@ const ContactForm: React.FC = () => {
 
   const onSubmit = (values: Record<string, string>) => {
     const payload = { ...values };
-    return new Promise<string>((resolve, reject) => {
-      db.collection('messages')
-        .doc()
-        .set(payload)
-        .then(() => resolve(successMessage))
-        .catch(() => reject(errorMessage));
-    });
+    // return new Promise<string>((resolve, reject) => {
+    //   db.collection('messages')
+    //     .doc()
+    //     .set(payload)
+    //     .then(() => resolve(successMessage))
+    //     .catch(() => reject(errorMessage));
+    // });
   };
 
   return (
     <Form
       inputs={contactFormFields}
-      onSubmit={onSubmit}
+      // onSubmit={onSubmit}
       sendBtnText={text.btns.send}
     />
   );
 };
 
 export default ContactForm;
+

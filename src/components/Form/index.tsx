@@ -18,7 +18,7 @@ export interface FormInput {
 
 export interface Props {
   inputs: FormInput[];
-  onSubmit: (values: Record<string, string>) => Promise<string>;
+  onSubmit?: (values: Record<string, string>) => Promise<string>;
   sendBtnText?: string;
 }
 
@@ -47,14 +47,14 @@ const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
 
     setShowMessage(true);
     setIsLoading(true);
-    onSubmit(values)
-      .then((resultMessage) => {
-        onSubmitFinished(resultMessage);
-        clearFormValues();
-      })
-      .catch((errMessage) => {
-        onSubmitFinished(errMessage);
-      });
+    // onSubmit(values)
+    //   .then((resultMessage) => {
+    //     onSubmitFinished(resultMessage);
+    //     clearFormValues();
+    //   })
+    //   .catch((errMessage) => {
+    //     onSubmitFinished(errMessage);
+    //   });
   };
 
   const clearFormValues = useCallback(
@@ -134,3 +134,4 @@ const Form: React.FC<Props> = ({ inputs, onSubmit, sendBtnText }) => {
 };
 
 export default Form;
+
